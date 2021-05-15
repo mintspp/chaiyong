@@ -33,25 +33,25 @@
     </div>
 
     <div class="container">
-      <div style="margin-top: 60px">
+      <div style="margin-top: 40px;margin-bottom: 40px">
         <b-row>
-          <b-col xl="3" lg="3" sm="6">
-            <img alt="Vue logo" src="../assets/logo.png" />
+          <b-col cols="6" lg="3">
+            <img alt="Vue logo" width="170px" src="../assets/logo.png" />
           </b-col>
-          <b-col xl="3" lg="3" sm="6">
-            <img alt="Vue logo" src="../assets/logo.png" />
+          <b-col cols="6" lg="3">
+            <img alt="Vue logo" width="170px" src="../assets/logo.png" />
           </b-col>
-          <b-col xl="3" lg="3" sm="6">
-            <img alt="Vue logo" src="../assets/logo.png" />
+          <b-col cols="6" lg="3">
+            <img alt="Vue logo" width="170px" src="../assets/logo.png" />
           </b-col>
-          <b-col xl="3" lg="3" sm="6">
-            <img alt="Vue logo" src="../assets/logo.png" />
+          <b-col cols="6" lg="3">
+            <img alt="Vue logo" width="170px" src="../assets/logo.png" />
           </b-col>
         </b-row>
       </div>
       <div>
         <b-row>
-          <b-col xl="4" lg="4" sm="6" >
+          <b-col cols="6" lg="4">
             <b-card
               title="Card Title"
               img-src="https://picsum.photos/600/300/?image=25"
@@ -69,7 +69,7 @@
               <b-button href="#" variant="primary">Go somewhere</b-button>
             </b-card>
           </b-col>
-          <b-col xl="4" lg="4" sm="6" >
+          <b-col cols="6" lg="4">
             <b-card
               title="Card Title"
               img-src="https://picsum.photos/600/300/?image=25"
@@ -87,7 +87,7 @@
               <b-button href="#" variant="primary">Go somewhere</b-button>
             </b-card>
           </b-col>
-          <b-col xl="4" lg="4" sm="6" >
+          <b-col cols="6" lg="4">
             <b-card
               title="Card Title"
               img-src="https://picsum.photos/600/300/?image=25"
