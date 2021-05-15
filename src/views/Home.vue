@@ -35,99 +35,77 @@
     <div class="container">
       <div style="margin-top: 60px">
         <b-row>
-          <b-col xl="3" lg="3" sm="12">
+          <b-col xl="3" lg="3" sm="6">
             <img alt="Vue logo" src="../assets/logo.png" />
           </b-col>
-          <b-col xl="3" lg="3" sm="12">
+          <b-col xl="3" lg="3" sm="6">
             <img alt="Vue logo" src="../assets/logo.png" />
           </b-col>
-          <b-col xl="3" lg="3" sm="12">
+          <b-col xl="3" lg="3" sm="6">
             <img alt="Vue logo" src="../assets/logo.png" />
           </b-col>
-          <b-col xl="3" lg="3" sm="12">
+          <b-col xl="3" lg="3" sm="6">
             <img alt="Vue logo" src="../assets/logo.png" />
           </b-col>
         </b-row>
       </div>
-      <div class="container">
-        <div>
-          <b-row>
-            <b-cor xl="6" lg="6" sm="12" style="margin: 10px">
-              <b-card
-                title="Card Title"
-                img-src="https://picsum.photos/600/300/?image=25"
-                img-alt="Image"
-                img-top
-                tag="article"
-                style="max-width: 20rem"
-                class="mb-2"
-              >
-                <b-card-text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </b-card-text>
+      <div>
+        <b-row>
+          <b-col xl="4" lg="4" sm="6" >
+            <b-card
+              title="Card Title"
+              img-src="https://picsum.photos/600/300/?image=25"
+              img-alt="Image"
+              img-top
+              tag="article"
+              style="max-width: 20rem"
+              class="mb-2"
+            >
+              <b-card-text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </b-card-text>
 
-                <b-button href="#" variant="primary">Go somewhere</b-button>
-              </b-card>
-            </b-cor>
-            <b-cor xl="6" lg="6" sm="12" style="margin: 10px">
-              <b-card
-                title="Card Title"
-                img-src="https://picsum.photos/600/300/?image=25"
-                img-alt="Image"
-                img-top
-                tag="article"
-                style="max-width: 20rem"
-                class="mb-2"
-              >
-                <b-card-text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </b-card-text>
+              <b-button href="#" variant="primary">Go somewhere</b-button>
+            </b-card>
+          </b-col>
+          <b-col xl="4" lg="4" sm="6" >
+            <b-card
+              title="Card Title"
+              img-src="https://picsum.photos/600/300/?image=25"
+              img-alt="Image"
+              img-top
+              tag="article"
+              style="max-width: 20rem"
+              class="mb-2"
+            >
+              <b-card-text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </b-card-text>
 
-                <b-button href="#" variant="primary">Go somewhere</b-button>
-              </b-card>
-            </b-cor>
-          </b-row>
-          <b-row>
-            <b-cor xl="6" lg="6" sm="12" style="margin: 10px">
-              <b-card
-                title="Card Title"
-                img-src="https://picsum.photos/600/300/?image=25"
-                img-alt="Image"
-                img-top
-                tag="article"
-                style="max-width: 20rem"
-                class="mb-2"
-              >
-                <b-card-text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </b-card-text>
+              <b-button href="#" variant="primary">Go somewhere</b-button>
+            </b-card>
+          </b-col>
+          <b-col xl="4" lg="4" sm="6" >
+            <b-card
+              title="Card Title"
+              img-src="https://picsum.photos/600/300/?image=25"
+              img-alt="Image"
+              img-top
+              tag="article"
+              style="max-width: 20rem"
+              class="mb-2"
+            >
+              <b-card-text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </b-card-text>
 
-                <b-button href="#" variant="primary">Go somewhere</b-button>
-              </b-card>
-            </b-cor>
-            <b-cor xl="6" lg="6" sm="12" style="margin: 10px">
-              <b-card
-                title="Card Title"
-                img-src="https://picsum.photos/600/300/?image=25"
-                img-alt="Image"
-                img-top
-                tag="article"
-                style="max-width: 20rem"
-                class="mb-2"
-              >
-                <b-card-text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </b-card-text>
-
-                <b-button href="#" variant="primary">Go somewhere</b-button>
-              </b-card>
-            </b-cor>
-          </b-row>
-        </div>
+              <b-button href="#" variant="primary">Go somewhere</b-button>
+            </b-card>
+          </b-col>
+        </b-row>
       </div>
     </div>
   </div>
