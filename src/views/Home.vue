@@ -33,7 +33,7 @@
     </div>
 
     <div>
-      <div style="margin-top: 50px;">
+      <div style="margin-top: 50px">
         <b-row>
           <b-col cols="6" lg="3">
             <img alt="Vue logo" width="170px" src="../assets/logo.png" />
@@ -51,9 +51,8 @@
       </div>
     </div>
 
-    <div style="margin: 35px; margin-top: 50px;">
-    <div >
-      <b-card title="Card title" sub-title="Card subtitle">
+    <div>
+      <b-card align="left" style="margin: 35px;" title="Card title" sub-title="Card subtitle">
         <b-card-text>
           Some quick example text to build on the <em>card title</em> and make
           up the bulk of the card's content.
@@ -64,9 +63,7 @@
         <a href="#" class="card-link">Card link</a>
         <b-link href="#" class="card-link">Another link</b-link>
       </b-card>
-      </div>
-      <div style="margin-top: 30px;">
-      <b-card title="Card title" sub-title="Card subtitle">
+      <b-card align="left" style="margin: 35px;" title="Card title" sub-title="Card subtitle">
         <b-card-text>
           Some quick example text to build on the <em>card title</em> and make
           up the bulk of the card's content.
@@ -77,8 +74,7 @@
         <a href="#" class="card-link">Card link</a>
         <b-link href="#" class="card-link">Another link</b-link>
       </b-card>
-      </div><div style="margin-top: 30px;">
-      <b-card title="Card title" sub-title="Card subtitle">
+      <b-card align="left" style="margin: 35px;" title="Card title" sub-title="Card subtitle">
         <b-card-text>
           Some quick example text to build on the <em>card title</em> and make
           up the bulk of the card's content.
@@ -89,10 +85,9 @@
         <a href="#" class="card-link">Card link</a>
         <b-link href="#" class="card-link">Another link</b-link>
       </b-card>
-      </div>
     </div>
-    
-    <div style="margin: 35px; margin-top: 50px;" align="center">
+
+    <div style="margin: 35px; margin-top: 50px" align="center">
       <b-row>
         <b-col cols="6" lg="3">
           <b-card
