@@ -35,25 +35,25 @@
     <div>
       <div style="margin-top: 50px">
         <b-row>
-          <b-col cols="6" lg="3">
-            <img alt="Vue logo" width="170px" src="../assets/logo.png" />
+          <b-col cols="6" lg="3" >
+            <img alt="Vue logo" width="150px" src="../assets/logo.png" />
           </b-col>
           <b-col cols="6" lg="3">
-            <img alt="Vue logo" width="170px" src="../assets/logo.png" />
+            <img alt="Vue logo" width="150px" src="../assets/logo.png" />
           </b-col>
           <b-col cols="6" lg="3">
-            <img alt="Vue logo" width="170px" src="../assets/logo.png" />
+            <img alt="Vue logo" width="150px" src="../assets/logo.png" />
           </b-col>
           <b-col cols="6" lg="3">
-            <img alt="Vue logo" width="170px" src="../assets/logo.png" />
+            <img alt="Vue logo" width="150px" src="../assets/logo.png" />
           </b-col>
         </b-row>
       </div>
     </div>
 
     <div>
-      <b-card align="left" style="margin: 35px" title="สินค้าโปรโมชั่น">
-       <div align="right">ดูทั้งหมด...</div> 
+      <b-card align="left" style="margin: 10px" title="สินค้าโปรโมชั่น">
+        <div align="right">ดูทั้งหมด...</div>
         <div align="center">
           <b-row>
             <b-col cols="6" lg="3">
@@ -66,12 +66,14 @@
                 class="mb-2"
               >
                 <div align="left">
-                  <div class="fonts"><b>กรรไกรตัดผม</b></div>
+                  <div class="fonts" style="font-size: 15px">
+                    <b>กรรไกรตัดผม</b>
+                  </div>
 
                   <b-row>
                     <b-col cols="6"
                       ><div align="left">
-                        <h6>฿100</h6>
+                        <h6 style="font-size: 12px">฿100</h6>
                       </div>
                     </b-col>
                     <b-col cols="6">
@@ -97,12 +99,14 @@
                 class="mb-2"
               >
                 <div align="left">
-                  <div class="fonts"><b>ชุดกรรไกรตัดผม</b></div>
+                  <div class="fonts" style="font-size: 15px">
+                    <b>ชุดกรรไกร</b>
+                  </div>
 
                   <b-row>
                     <b-col cols="6"
                       ><div align="left">
-                        <h6>฿100</h6>
+                        <h6 style="font-size: 12px">฿100</h6>
                       </div>
                     </b-col>
                     <b-col cols="6">
@@ -128,12 +132,14 @@
                 class="mb-2"
               >
                 <div align="left">
-                  <div class="fonts"><b>ไดร์เป่าผม</b></div>
+                  <div class="fonts" style="font-size: 15px">
+                    <b>ไดร์เป่าผม</b>
+                  </div>
 
                   <b-row>
                     <b-col cols="6"
                       ><div align="left">
-                        <h6>฿100</h6>
+                        <h6 style="font-size: 12px">฿100</h6>
                       </div>
                     </b-col>
                     <b-col cols="6">
@@ -159,12 +165,14 @@
                 class="mb-2"
               >
                 <div align="left">
-                  <div class="fonts"><b>ไดร์เป่าผม</b></div>
+                  <div class="fonts" style="font-size: 15px">
+                    <b>ไดร์เป่าผม</b>
+                  </div>
 
                   <b-row>
                     <b-col cols="6"
                       ><div align="left">
-                        <h6>฿100</h6>
+                        <h6 style="font-size: 12px">฿100</h6>
                       </div>
                     </b-col>
                     <b-col cols="6">
@@ -183,8 +191,8 @@
           </b-row>
         </div>
       </b-card>
-      <b-card align="left" style="margin: 35px" title="สินค้าขายดี">
-        <div align="right">ดูทั้งหมด...</div> 
+      <b-card align="left" style="margin: 10px" title="สินค้าขายดี">
+        <div align="right">ดูทั้งหมด...</div>
         <div align="center">
           <b-row>
             <b-col cols="6" lg="3">
@@ -197,12 +205,14 @@
                 class="mb-2"
               >
                 <div align="left">
-                  <div class="fonts"><b>กรรไกรตัดผม</b></div>
+                  <div class="fonts" style="font-size: 15px">
+                    <b>กรรไกรตัดผม</b>
+                  </div>
 
                   <b-row>
                     <b-col cols="6"
                       ><div align="left">
-                        <h6>฿100</h6>
+                        <h6 style="font-size: 12px">฿100</h6>
                       </div>
                     </b-col>
                     <b-col cols="6">
@@ -228,12 +238,14 @@
                 class="mb-2"
               >
                 <div align="left">
-                  <div class="fonts"><b>ชุดกรรไกรตัดผม</b></div>
+                  <div class="fonts" style="font-size: 15px">
+                    <b>ชุดกรรไกร</b>
+                  </div>
 
                   <b-row>
                     <b-col cols="6"
                       ><div align="left">
-                        <h6>฿100</h6>
+                        <h6 style="font-size: 12px">฿100</h6>
                       </div>
                     </b-col>
                     <b-col cols="6">
@@ -259,12 +271,14 @@
                 class="mb-2"
               >
                 <div align="left">
-                  <div class="fonts"><b>ไดร์เป่าผม</b></div>
+                  <div class="fonts" style="font-size: 15px">
+                    <b>ไดร์เป่าผม</b>
+                  </div>
 
                   <b-row>
                     <b-col cols="6"
                       ><div align="left">
-                        <h6>฿100</h6>
+                        <h6 style="font-size: 12px">฿100</h6>
                       </div>
                     </b-col>
                     <b-col cols="6">
@@ -290,12 +304,14 @@
                 class="mb-2"
               >
                 <div align="left">
-                  <div class="fonts"><b>ไดร์เป่าผม</b></div>
+                  <div class="fonts" style="font-size: 15px">
+                    <b>ไดร์เป่าผม</b>
+                  </div>
 
                   <b-row>
                     <b-col cols="6"
                       ><div align="left">
-                        <h6>฿100</h6>
+                        <h6 style="font-size: 12px">฿100</h6>
                       </div>
                     </b-col>
                     <b-col cols="6">
@@ -316,9 +332,8 @@
       </b-card>
     </div>
 
-   
     <div style="margin: 35px; margin-top: 50px" align="center">
-      <div align="left">สินค้าทั้งหมด</div>
+      <div align="left" style="font-size: 1.5rem;">สินค้าทั้งหมด</div>
       <b-row>
         <b-col cols="6" lg="3">
           <b-card
@@ -330,12 +345,14 @@
             class="mb-2"
           >
             <div align="left">
-              <div class="fonts"><b>กรรไกรตัดผม</b></div>
+              <div class="fonts" style="font-size: 15px">
+                <b>กรรไกรตัดผม</b>
+              </div>
 
               <b-row>
                 <b-col cols="6"
                   ><div align="left">
-                    <h6>฿100</h6>
+                    <h6 style="font-size: 12px">฿100</h6>
                   </div>
                 </b-col>
                 <b-col cols="6">
@@ -361,12 +378,12 @@
             class="mb-2"
           >
             <div align="left">
-              <div class="fonts"><b>ชุดกรรไกรตัดผม</b></div>
+              <div class="fonts" style="font-size: 15px"><b>ชุดกรรไกร</b></div>
 
               <b-row>
                 <b-col cols="6"
                   ><div align="left">
-                    <h6>฿100</h6>
+                    <h6 style="font-size: 12px">฿100</h6>
                   </div>
                 </b-col>
                 <b-col cols="6">
@@ -392,12 +409,12 @@
             class="mb-2"
           >
             <div align="left">
-              <div class="fonts"><b>ไดร์เป่าผม</b></div>
+              <div class="fonts" style="font-size: 15px"><b>ไดร์เป่าผม</b></div>
 
               <b-row>
                 <b-col cols="6"
                   ><div align="left">
-                    <h6>฿100</h6>
+                    <h6 style="font-size: 12px">฿100</h6>
                   </div>
                 </b-col>
                 <b-col cols="6">
@@ -423,12 +440,12 @@
             class="mb-2"
           >
             <div align="left">
-              <div class="fonts"><b>ไดร์เป่าผม</b></div>
+              <div class="fonts" style="font-size: 15px"><b>ไดร์เป่าผม</b></div>
 
               <b-row>
                 <b-col cols="6"
                   ><div align="left">
-                    <h6>฿100</h6>
+                    <h6 style="font-size: 12px">฿100</h6>
                   </div>
                 </b-col>
                 <b-col cols="6">
