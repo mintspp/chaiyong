@@ -34,7 +34,7 @@
 
     <div>
       <div style="margin-top: 50px">
-        <b-row>
+        <b-row style="    margin-right: 0px;margin-left: 0px">
           <b-col cols="6" lg="3" >
             <img alt="Vue logo" width="150px" src="../assets/logo.png" />
           </b-col>
