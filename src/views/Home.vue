@@ -52,42 +52,273 @@
     </div>
 
     <div>
-      <b-card align="left" style="margin: 35px;" title="Card title" sub-title="Card subtitle">
-        <b-card-text>
-          Some quick example text to build on the <em>card title</em> and make
-          up the bulk of the card's content.
-        </b-card-text>
+      <b-card align="left" style="margin: 35px" title="สินค้าโปรโมชั่น">
+       <div align="right">ดูทั้งหมด...</div> 
+        <div align="center">
+          <b-row>
+            <b-col cols="6" lg="3">
+              <b-card
+                img-src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/1.png?alt=media&token=e0d3062d-2311-46f8-9ab6-90130e24d351"
+                img-alt="Image"
+                img-top
+                tag="article"
+                style="max-width: 20rem"
+                class="mb-2"
+              >
+                <div align="left">
+                  <div class="fonts"><b>กรรไกรตัดผม</b></div>
 
-        <b-card-text>A second paragraph of text in the card.</b-card-text>
+                  <b-row>
+                    <b-col cols="6"
+                      ><div align="left">
+                        <h6>฿100</h6>
+                      </div>
+                    </b-col>
+                    <b-col cols="6">
+                      <div align="right">
+                        <b-icon
+                          icon="cart4"
+                          style="width: 20px; height: 20px"
+                          variant="success"
+                        ></b-icon>
+                      </div>
+                    </b-col>
+                  </b-row>
+                </div>
+              </b-card>
+            </b-col>
+            <b-col cols="6" lg="3">
+              <b-card
+                img-src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/2.png?alt=media&token=f40ffb34-af16-4a16-81d9-780268ccaa76"
+                img-alt="Image"
+                img-top
+                tag="article"
+                style="max-width: 20rem"
+                class="mb-2"
+              >
+                <div align="left">
+                  <div class="fonts"><b>ชุดกรรไกรตัดผม</b></div>
 
-        <a href="#" class="card-link">Card link</a>
-        <b-link href="#" class="card-link">Another link</b-link>
+                  <b-row>
+                    <b-col cols="6"
+                      ><div align="left">
+                        <h6>฿100</h6>
+                      </div>
+                    </b-col>
+                    <b-col cols="6">
+                      <div align="right">
+                        <b-icon
+                          icon="cart4"
+                          style="width: 20px; height: 20px"
+                          variant="success"
+                        ></b-icon>
+                      </div>
+                    </b-col>
+                  </b-row>
+                </div>
+              </b-card>
+            </b-col>
+            <b-col cols="6" lg="3">
+              <b-card
+                img-src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/3.png?alt=media&token=eb90bddf-c4dc-4ecf-887e-c27b720a5b62"
+                img-alt="Image"
+                img-top
+                tag="article"
+                style="max-width: 20rem"
+                class="mb-2"
+              >
+                <div align="left">
+                  <div class="fonts"><b>ไดร์เป่าผม</b></div>
+
+                  <b-row>
+                    <b-col cols="6"
+                      ><div align="left">
+                        <h6>฿100</h6>
+                      </div>
+                    </b-col>
+                    <b-col cols="6">
+                      <div align="right">
+                        <b-icon
+                          icon="cart4"
+                          style="width: 20px; height: 20px"
+                          variant="success"
+                        ></b-icon>
+                      </div>
+                    </b-col>
+                  </b-row>
+                </div>
+              </b-card>
+            </b-col>
+            <b-col cols="6" lg="3">
+              <b-card
+                img-src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/3.png?alt=media&token=eb90bddf-c4dc-4ecf-887e-c27b720a5b62"
+                img-alt="Image"
+                img-top
+                tag="article"
+                style="max-width: 20rem"
+                class="mb-2"
+              >
+                <div align="left">
+                  <div class="fonts"><b>ไดร์เป่าผม</b></div>
+
+                  <b-row>
+                    <b-col cols="6"
+                      ><div align="left">
+                        <h6>฿100</h6>
+                      </div>
+                    </b-col>
+                    <b-col cols="6">
+                      <div align="right">
+                        <b-icon
+                          icon="cart4"
+                          style="width: 20px; height: 20px"
+                          variant="success"
+                        ></b-icon>
+                      </div>
+                    </b-col>
+                  </b-row>
+                </div>
+              </b-card>
+            </b-col>
+          </b-row>
+        </div>
       </b-card>
-      <b-card align="left" style="margin: 35px;" title="Card title" sub-title="Card subtitle">
-        <b-card-text>
-          Some quick example text to build on the <em>card title</em> and make
-          up the bulk of the card's content.
-        </b-card-text>
+      <b-card align="left" style="margin: 35px" title="สินค้าขายดี">
+        <div align="right">ดูทั้งหมด...</div> 
+        <div align="center">
+          <b-row>
+            <b-col cols="6" lg="3">
+              <b-card
+                img-src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/1.png?alt=media&token=e0d3062d-2311-46f8-9ab6-90130e24d351"
+                img-alt="Image"
+                img-top
+                tag="article"
+                style="max-width: 20rem"
+                class="mb-2"
+              >
+                <div align="left">
+                  <div class="fonts"><b>กรรไกรตัดผม</b></div>
 
-        <b-card-text>A second paragraph of text in the card.</b-card-text>
+                  <b-row>
+                    <b-col cols="6"
+                      ><div align="left">
+                        <h6>฿100</h6>
+                      </div>
+                    </b-col>
+                    <b-col cols="6">
+                      <div align="right">
+                        <b-icon
+                          icon="cart4"
+                          style="width: 20px; height: 20px"
+                          variant="success"
+                        ></b-icon>
+                      </div>
+                    </b-col>
+                  </b-row>
+                </div>
+              </b-card>
+            </b-col>
+            <b-col cols="6" lg="3">
+              <b-card
+                img-src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/2.png?alt=media&token=f40ffb34-af16-4a16-81d9-780268ccaa76"
+                img-alt="Image"
+                img-top
+                tag="article"
+                style="max-width: 20rem"
+                class="mb-2"
+              >
+                <div align="left">
+                  <div class="fonts"><b>ชุดกรรไกรตัดผม</b></div>
 
-        <a href="#" class="card-link">Card link</a>
-        <b-link href="#" class="card-link">Another link</b-link>
-      </b-card>
-      <b-card align="left" style="margin: 35px;" title="Card title" sub-title="Card subtitle">
-        <b-card-text>
-          Some quick example text to build on the <em>card title</em> and make
-          up the bulk of the card's content.
-        </b-card-text>
+                  <b-row>
+                    <b-col cols="6"
+                      ><div align="left">
+                        <h6>฿100</h6>
+                      </div>
+                    </b-col>
+                    <b-col cols="6">
+                      <div align="right">
+                        <b-icon
+                          icon="cart4"
+                          style="width: 20px; height: 20px"
+                          variant="success"
+                        ></b-icon>
+                      </div>
+                    </b-col>
+                  </b-row>
+                </div>
+              </b-card>
+            </b-col>
+            <b-col cols="6" lg="3">
+              <b-card
+                img-src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/3.png?alt=media&token=eb90bddf-c4dc-4ecf-887e-c27b720a5b62"
+                img-alt="Image"
+                img-top
+                tag="article"
+                style="max-width: 20rem"
+                class="mb-2"
+              >
+                <div align="left">
+                  <div class="fonts"><b>ไดร์เป่าผม</b></div>
 
-        <b-card-text>A second paragraph of text in the card.</b-card-text>
+                  <b-row>
+                    <b-col cols="6"
+                      ><div align="left">
+                        <h6>฿100</h6>
+                      </div>
+                    </b-col>
+                    <b-col cols="6">
+                      <div align="right">
+                        <b-icon
+                          icon="cart4"
+                          style="width: 20px; height: 20px"
+                          variant="success"
+                        ></b-icon>
+                      </div>
+                    </b-col>
+                  </b-row>
+                </div>
+              </b-card>
+            </b-col>
+            <b-col cols="6" lg="3">
+              <b-card
+                img-src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/3.png?alt=media&token=eb90bddf-c4dc-4ecf-887e-c27b720a5b62"
+                img-alt="Image"
+                img-top
+                tag="article"
+                style="max-width: 20rem"
+                class="mb-2"
+              >
+                <div align="left">
+                  <div class="fonts"><b>ไดร์เป่าผม</b></div>
 
-        <a href="#" class="card-link">Card link</a>
-        <b-link href="#" class="card-link">Another link</b-link>
+                  <b-row>
+                    <b-col cols="6"
+                      ><div align="left">
+                        <h6>฿100</h6>
+                      </div>
+                    </b-col>
+                    <b-col cols="6">
+                      <div align="right">
+                        <b-icon
+                          icon="cart4"
+                          style="width: 20px; height: 20px"
+                          variant="success"
+                        ></b-icon>
+                      </div>
+                    </b-col>
+                  </b-row>
+                </div>
+              </b-card>
+            </b-col>
+          </b-row>
+        </div>
       </b-card>
     </div>
 
+   
     <div style="margin: 35px; margin-top: 50px" align="center">
+      <div align="left">สินค้าทั้งหมด</div>
       <b-row>
         <b-col cols="6" lg="3">
           <b-card
