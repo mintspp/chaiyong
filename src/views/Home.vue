@@ -7,28 +7,28 @@
     <div>
       <div style="margin-top: 10px">
         <b-row style="margin-right: 0px; margin-left: 0px">
-          <b-col cols="6" lg="3">
+          <b-col style="padding:5px" cols="12" lg="3">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/pink.jpg?alt=media&token=3c7cfbcf-4485-42b4-bf11-e3d8d1fe9114"
               alt="Image"
               width="100%"
             />
           </b-col>
-          <b-col cols="6" lg="3">
+          <b-col style="padding:5px" cols="12" lg="3">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/yellow.jpg?alt=media&token=096e4371-8217-478d-99a6-646cfccb5523"
               alt="Image"
               width="100%"
             />
           </b-col>
-          <b-col cols="6" lg="3">
+          <b-col style="padding:5px" cols="12" lg="3">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/green.jpg?alt=media&token=42d97550-77b7-4026-bbe2-daec70134236"
               alt="Image"
               width="100%"
             />
           </b-col>
-          <b-col cols="6" lg="3">
+          <b-col style="padding:5px" cols="12" lg="3">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/orange.jpg?alt=media&token=d2004a21-6c3b-403a-be96-274b99630b50"
               alt="Image"
