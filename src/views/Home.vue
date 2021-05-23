@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <b-navbar toggleable="lg" type="dark" variant="danger">
+      <b-navbar toggleable="lg" type="dark" style="background-color: #CC6699">
         <b-navbar-brand href="#">ชัยยงค์การช่าง</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -14,7 +14,6 @@
             <div style="font-size: 2rem">
               <b-icon icon="basket2-fill" variant="light"></b-icon>
             </div>
-
             <div style="font-size: 2rem">
               <b-icon icon="bell-fill" variant="light"></b-icon>
             </div>
@@ -33,19 +32,35 @@
     </div>
 
     <div>
-      <div style="margin-top: 50px">
-        <b-row style="    margin-right: 0px;margin-left: 0px">
-          <b-col cols="6" lg="3" >
-            <img alt="Vue logo" width="150px" src="../assets/logo.png" />
+      <div style="margin-top: 10px">
+        <b-row style="margin-right: 0px; margin-left: 0px">
+          <b-col cols="6" lg="3">
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/pink.jpg?alt=media&token=3c7cfbcf-4485-42b4-bf11-e3d8d1fe9114"
+              alt="Image"
+              width="300px;"
+            />
           </b-col>
           <b-col cols="6" lg="3">
-            <img alt="Vue logo" width="150px" src="../assets/logo.png" />
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/yellow.jpg?alt=media&token=096e4371-8217-478d-99a6-646cfccb5523"
+              alt="Image"
+              width="300px;"
+            />
           </b-col>
           <b-col cols="6" lg="3">
-            <img alt="Vue logo" width="150px" src="../assets/logo.png" />
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/green.jpg?alt=media&token=42d97550-77b7-4026-bbe2-daec70134236"
+              alt="Image"
+              width="300px;"
+            />
           </b-col>
           <b-col cols="6" lg="3">
-            <img alt="Vue logo" width="150px" src="../assets/logo.png" />
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/orange.jpg?alt=media&token=d2004a21-6c3b-403a-be96-274b99630b50"
+              alt="Image"
+              width="300px;"
+            />
           </b-col>
         </b-row>
       </div>
@@ -53,7 +68,7 @@
 
     <div>
       <b-card align="left" style="margin: 10px" title="สินค้าโปรโมชั่น">
-        <div align="right">ดูทั้งหมด...</div>
+        <div align="right" @click="gopromotion()"> <a href="">ดูทั้งหมด...</a> </div>
         <div align="center">
           <b-row>
             <b-col cols="6" lg="3">
@@ -64,6 +79,7 @@
                 tag="article"
                 style="max-width: 20rem"
                 class="mb-2"
+                @click="godetail()"
               >
                 <div align="left">
                   <div class="fonts" style="font-size: 15px">
@@ -191,8 +207,8 @@
           </b-row>
         </div>
       </b-card>
-      <b-card align="left" style="margin: 10px" title="สินค้าขายดี">
-        <div align="right">ดูทั้งหมด...</div>
+      <b-card align="left" style="margin: 20px" title="สินค้าขายดี">
+        <div align="right" @click="gobestsale()"> <a href="">ดูทั้งหมด...</a> </div>
         <div align="center">
           <b-row>
             <b-col cols="6" lg="3">
@@ -332,8 +348,8 @@
       </b-card>
     </div>
 
-    <div style="margin: 35px; margin-top: 50px" align="center">
-      <div align="left" style="font-size: 1.5rem;">สินค้าทั้งหมด</div>
+    <div style="margin: 20px; margin-top: 50px" align="center">
+      <div align="left" style="font-size: 1.5rem">สินค้าทั้งหมด</div>
       <b-row>
         <b-col cols="6" lg="3">
           <b-card
@@ -467,6 +483,22 @@
 </template>
 
 <script>
+export default {
+  data: () => ({}),
+  created() {},
+  mounted() {},
+  methods: {
+    godetail() {
+      this.$router.push({ path: "/detail" });
+    },
+    gopromotion() {
+      this.$router.push({ path: "/promotion" });
+    },
+    gobestsale(){
+      this.$router.push({ path: "/bestsale" });
+    }
+  },
+};
 </script>
 
 <style>
