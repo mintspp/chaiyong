@@ -35,7 +35,10 @@
                   <p style="margin-top: 7px;">0 ขายแล้ว</p>
                 </b-col>
                 <b-col cols="12" lg="12">
-                  <h1 style="color: #de4747">120 บาท</h1>
+                  <b-row>
+                  <b-col cols="6" lg="3"><h5 style="color: rgb(151 142 142);;text-decoration: line-through;">300 บาท</h5></b-col>
+                  <b-col cols="6" lg="9"> <h3 style="color: #de4747;">120 บาท</h3></b-col>
+                  </b-row>
                 </b-col>
                 <b-col cols="12" lg="12">
                   <label for="demo-sb">จำนวน</label>
