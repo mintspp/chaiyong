@@ -1,6 +1,6 @@
 <template>
      <div>
-      <b-navbar toggleable="lg" type="dark" style="background-color: #CC6699">
+      <b-navbar toggleable="lg" type="dark" style="background-color: #3a393b">
         <b-navbar-brand href="#">ชัยยงค์การช่าง</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>

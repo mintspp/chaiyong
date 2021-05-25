@@ -1,5 +1,5 @@
 <template>
-  <div style="background: #aa78d1">
+  <div style="background: #f1f1f1">
     <!-- --------------nav------------ -->
     <Nav />
     <!-- --------------nav------------ -->
@@ -40,7 +40,7 @@
     </div>
 
     <div>
-      <b-card align="left" style="margin: 10px" title="สินค้าโปรโมชั่น">
+      <b-card border-variant="light"  align="left" style="margin: 20px" title="สินค้าโปรโมชั่น">
         <div align="right" @click="gopromotion()">
           <a href="">ดูทั้งหมด...</a>
         </div>
@@ -182,7 +182,7 @@
           </b-row>
         </div>
       </b-card>
-      <b-card align="left" style="margin: 20px" title="สินค้าขายดี">
+      <b-card border-variant="light" align="left" style="margin: 20px" title="สินค้าขายดี">
         <div align="right" @click="gobestsale()">
           <a href="">ดูทั้งหมด...</a>
         </div>
@@ -336,6 +336,7 @@
             tag="article"
             style="max-width: 20rem"
             class="mb-2"
+            border-variant="light"
           >
             <div align="left">
               <div class="fonts" style="font-size: 15px">
@@ -369,6 +370,7 @@
             tag="article"
             style="max-width: 20rem"
             class="mb-2"
+            border-variant="light"
           >
             <div align="left">
               <div class="fonts" style="font-size: 15px"><b>ชุดกรรไกร</b></div>
@@ -400,6 +402,7 @@
             tag="article"
             style="max-width: 20rem"
             class="mb-2"
+            border-variant="light"
           >
             <div align="left">
               <div class="fonts" style="font-size: 15px"><b>ไดร์เป่าผม</b></div>
@@ -431,6 +434,7 @@
             tag="article"
             style="max-width: 20rem"
             class="mb-2"
+            border-variant="light"
           >
             <div align="left">
               <div class="fonts" style="font-size: 15px"><b>ไดร์เป่าผม</b></div>
@@ -524,7 +528,7 @@ export default {
   width: 100%;
   height: 60px;
   /* background-color: #99cc66; */
-  background: #cc6699;
+  background: #3a393b;
   color: white;
   text-align: center;
 }
