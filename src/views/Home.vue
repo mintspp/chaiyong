@@ -473,9 +473,7 @@
                 font-scale="1.5"
               ></b-icon>
             </div>
-            <p>
               <font color="#FFFFFF">สินค้า</font>
-            </p>
           </b-col>
 
           <b-col cols="6" @click="gocart()">
@@ -486,9 +484,7 @@
                 font-scale="1.5"
               ></b-icon>
             </div>
-            <p>
               <font color="#FFFFFF">รถเข็น</font>
-            </p>
           </b-col>
         </b-row>
       </b-container>
