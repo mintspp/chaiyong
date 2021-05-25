@@ -4,37 +4,60 @@
     <Nav />
     <!-- --------------nav------------ -->
 
-    <div style="margin: 50px">
+    <div style="margin: 30px">
       <div align="center">
         <b-card border-variant="light" class="text-center">
           <b-row>
             <b-col xl="6" lg="6" sm="12">
               <b-img
-                style="width: 400px"
+                style="width: 100%"
                 src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/4.png?alt=media&token=b9da41a4-dc4e-4982-8e1f-a1181821c7b9"
               >
               </b-img>
             </b-col>
             <b-col xl="6" lg="6" sm="12" align="left">
+              <div style="margin:10px">
               <h5>ไดร์ with</h5>
               <b-row>
-                <b-col cols="4">
-                  <b-icon icon="heart" scale="1" variant="dark"></b-icon>
+                <b-col cols="12" lg="4">
+                  <div>
+                    <b-form-rating
+                    style="border: 0px"
+                    variant="warning" 
+                      v-model="value"
+                      readonly
+                      show-value
+                      precision="2"
+                    ></b-form-rating>
+                  </div>
+                </b-col>
+                <b-col cols="12" lg="4">
+                  <p style="margin-top: 7px;">0 ขายแล้ว</p>
+                </b-col>
+                <b-col cols="12" lg="12">
+                  <h1 style="color: #de4747">120 บาท</h1>
+                </b-col>
+                <b-col cols="12" lg="12">
+                  <label for="demo-sb">จำนวน</label>
+                      <b-form-spinbutton
+                      style="border: 1px solid #ced4da;margin-left: 15px;"
+                        id="demo-sb"
+                        v-model="PRODUCT_AMOUNT"
+                        @change="PM"
+                        min="1"
+                        max="100"
+                        inline
+                      ></b-form-spinbutton>
                 </b-col>
               </b-row>
-              <b-col cols="8">
-                <p>ขายแล้ว</p>
-              </b-col>
+              </div>
             </b-col>
           </b-row>
-          <b-card-text
-            >Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit.</b-card-text
-          >
         </b-card>
       </div>
     </div>
     <!-- footer -->
+    <br /><br />
     <div class="footerr">
       <b-container class="bv-example-row">
         <b-row>
@@ -67,9 +90,7 @@
                 variant="light"
               ></b-icon>
             </div>
-            <p>
               <font color="#FFFFF">ซื้อสินค้า</font>
-            </p>
           </b-col>
         </b-row>
       </b-container>
@@ -83,6 +104,12 @@ export default {
   components: {
     Nav,
   },
+  data() {
+      return {
+        value: 3.555,
+        PRODUCT_AMOUNT: 1,
+      }
+    },
   methods: {
     backindex() {
       this.$router.push({ path: "/" });
