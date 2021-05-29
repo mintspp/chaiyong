@@ -186,5 +186,10 @@ export default {
   components: {
     Nav,
   },
+   methods: {
+    backindex() {
+      this.$router.push({ path: "/" });
+    },
+  },
   };
 </script>
