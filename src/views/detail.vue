@@ -45,7 +45,7 @@
                       <b-form-spinbutton
                       style="border: 1px solid #ced4da;margin-left: 15px;"
                         id="demo-sb"
-                        v-model="PRODUCT_AMOUNT"
+                        v-model="PRODUCT_AMOUNT" 
                         @change="PM"
                         min="1"
                         max="100"
