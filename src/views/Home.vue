@@ -5,6 +5,15 @@
     <!-- --------------nav------------ -->
 
     <div>
+      <b-input-group size="sm" class="mb-2">
+        <b-input-group-prepend is-text>
+          <b-icon icon="search"></b-icon>
+        </b-input-group-prepend>
+        <b-form-input type="search" placeholder="Search terms"></b-form-input>
+      </b-input-group>
+    </div>
+
+    <div>
       <div style="margin-top: 10px">
         <b-row style="margin-right: 0px; margin-left: 0px">
           <b-col style="padding: 10px" cols="12" lg="3">
@@ -40,7 +49,12 @@
     </div>
 
     <div>
-      <b-card border-variant="light"  align="left" style="margin: 20px" title="สินค้าโปรโมชั่น">
+      <b-card
+        border-variant="light"
+        align="left"
+        style="margin: 20px"
+        title="สินค้าโปรโมชั่น"
+      >
         <div align="right" @click="gopromotion()">
           <a href="">ดูทั้งหมด...</a>
         </div>
@@ -182,7 +196,12 @@
           </b-row>
         </div>
       </b-card>
-      <b-card border-variant="light" align="left" style="margin: 20px" title="สินค้าขายดี">
+      <b-card
+        border-variant="light"
+        align="left"
+        style="margin: 20px"
+        title="สินค้าขายดี"
+      >
         <div align="right" @click="gobestsale()">
           <a href="">ดูทั้งหมด...</a>
         </div>
@@ -473,7 +492,7 @@
                 font-scale="1.5"
               ></b-icon>
             </div>
-              <font color="#FFFFFF">สินค้า</font>
+            <font color="#FFFFFF">สินค้า</font>
           </b-col>
 
           <b-col cols="6" @click="gocart()">
@@ -484,7 +503,7 @@
                 font-scale="1.5"
               ></b-icon>
             </div>
-              <font color="#FFFFFF">รถเข็น</font>
+            <font color="#FFFFFF">รถเข็น</font>
           </b-col>
         </b-row>
       </b-container>
