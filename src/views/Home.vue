@@ -4,8 +4,8 @@
     <Nav />
     <!-- --------------nav------------ -->
 
-    <div>
-      <b-input-group size="sm" class="mb-2">
+    <div style="width: 40%; margin: 20px">
+      <b-input-group class="mb-2">
         <b-input-group-prepend is-text>
           <b-icon icon="search"></b-icon>
         </b-input-group-prepend>
@@ -14,30 +14,30 @@
     </div>
 
     <div>
-      <div style="margin-top: 10px">
+      <div style="margin: 20px">
         <b-row style="margin-right: 0px; margin-left: 0px">
-          <b-col style="padding: 10px" cols="12" lg="3">
+          <b-col style="padding: 5px" cols="12" lg="3">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/pink.jpg?alt=media&token=3c7cfbcf-4485-42b4-bf11-e3d8d1fe9114"
               alt="Image"
               width="100%"
             />
           </b-col>
-          <b-col style="padding: 10px" cols="12" lg="3">
+          <b-col style="padding: 5px" cols="12" lg="3">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/yellow.jpg?alt=media&token=096e4371-8217-478d-99a6-646cfccb5523"
               alt="Image"
               width="100%"
             />
           </b-col>
-          <b-col style="padding: 10px" cols="12" lg="3">
+          <b-col style="padding: 5px" cols="12" lg="3">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/green.jpg?alt=media&token=42d97550-77b7-4026-bbe2-daec70134236"
               alt="Image"
               width="100%"
             />
           </b-col>
-          <b-col style="padding: 10px" cols="12" lg="3">
+          <b-col style="padding: 5px" cols="12" lg="3">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/orange.jpg?alt=media&token=d2004a21-6c3b-403a-be96-274b99630b50"
               alt="Image"
@@ -84,9 +84,9 @@
                     <b-col cols="6">
                       <div align="right">
                         <b-icon
-                          icon="cart4"
+                          icon="heart"
                           style="width: 20px; height: 20px"
-                          variant="success"
+                          variant="danger"
                         ></b-icon>
                       </div>
                     </b-col>
@@ -117,9 +117,9 @@
                     <b-col cols="6">
                       <div align="right">
                         <b-icon
-                          icon="cart4"
+                          icon="heart"
                           style="width: 20px; height: 20px"
-                          variant="success"
+                          variant="danger"
                         ></b-icon>
                       </div>
                     </b-col>
@@ -150,9 +150,9 @@
                     <b-col cols="6">
                       <div align="right">
                         <b-icon
-                          icon="cart4"
+                          icon="heart"
                           style="width: 20px; height: 20px"
-                          variant="success"
+                          variant="danger"
                         ></b-icon>
                       </div>
                     </b-col>
@@ -183,9 +183,9 @@
                     <b-col cols="6">
                       <div align="right">
                         <b-icon
-                          icon="cart4"
+                          icon="heart"
                           style="width: 20px; height: 20px"
-                          variant="success"
+                          variant="danger"
                         ></b-icon>
                       </div>
                     </b-col>
@@ -230,9 +230,9 @@
                     <b-col cols="6">
                       <div align="right">
                         <b-icon
-                          icon="cart4"
+                          icon="heart"
                           style="width: 20px; height: 20px"
-                          variant="success"
+                          variant="danger"
                         ></b-icon>
                       </div>
                     </b-col>
@@ -263,9 +263,9 @@
                     <b-col cols="6">
                       <div align="right">
                         <b-icon
-                          icon="cart4"
+                          icon="heart"
                           style="width: 20px; height: 20px"
-                          variant="success"
+                          variant="danger"
                         ></b-icon>
                       </div>
                     </b-col>
@@ -296,9 +296,9 @@
                     <b-col cols="6">
                       <div align="right">
                         <b-icon
-                          icon="cart4"
+                          icon="heart"
                           style="width: 20px; height: 20px"
-                          variant="success"
+                          variant="danger"
                         ></b-icon>
                       </div>
                     </b-col>
@@ -329,9 +329,9 @@
                     <b-col cols="6">
                       <div align="right">
                         <b-icon
-                          icon="cart4"
+                          icon="heart"
                           style="width: 20px; height: 20px"
-                          variant="success"
+                          variant="danger"
                         ></b-icon>
                       </div>
                     </b-col>
@@ -371,9 +371,9 @@
                 <b-col cols="6">
                   <div align="right">
                     <b-icon
-                      icon="cart4"
+                      icon="heart"
                       style="width: 20px; height: 20px"
-                      variant="success"
+                      variant="danger"
                     ></b-icon>
                   </div>
                 </b-col>
@@ -403,9 +403,9 @@
                 <b-col cols="6">
                   <div align="right">
                     <b-icon
-                      icon="cart4"
+                      icon="heart"
                       style="width: 20px; height: 20px"
-                      variant="success"
+                      variant="danger"
                     ></b-icon>
                   </div>
                 </b-col>
@@ -435,9 +435,9 @@
                 <b-col cols="6">
                   <div align="right">
                     <b-icon
-                      icon="cart4"
+                      icon="heart"
                       style="width: 20px; height: 20px"
-                      variant="success"
+                      variant="danger"
                     ></b-icon>
                   </div>
                 </b-col>
@@ -467,9 +467,9 @@
                 <b-col cols="6">
                   <div align="right">
                     <b-icon
-                      icon="cart4"
+                      icon="heart"
                       style="width: 20px; height: 20px"
-                      variant="success"
+                      variant="danger"
                     ></b-icon>
                   </div>
                 </b-col>
@@ -484,7 +484,7 @@
     <div class="footerr">
       <b-container class="bv-example-row">
         <b-row>
-          <b-col cols="6">
+          <b-col cols="4">
             <div style="padding-top: 10px">
               <b-icon
                 icon="house-fill"
@@ -495,7 +495,18 @@
             <font color="#FFFFFF">สินค้า</font>
           </b-col>
 
-          <b-col cols="6" @click="gocart()">
+          <b-col cols="4">
+            <div style="padding-top: 10px">
+              <b-icon
+                icon="heart-fill"
+                variant="light"
+                font-scale="1.5"
+              ></b-icon>
+            </div>
+            <font color="#FFFFFF">ถูกใจ</font>
+          </b-col>
+
+          <b-col cols="4" @click="gocart()">
             <div style="padding-top: 10px">
               <b-icon
                 icon="basket-fill"

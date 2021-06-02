@@ -4,6 +4,15 @@
     <Nav />
     <!-- --------------nav------------ -->
 
+    <div style="width: 40%; margin: 20px">
+      <b-input-group class="mb-2">
+        <b-input-group-prepend is-text>
+          <b-icon icon="search"></b-icon>
+        </b-input-group-prepend>
+        <b-form-input type="search" placeholder="Search terms"></b-form-input>
+      </b-input-group>
+    </div>
+
     <div style="margin: 30px">
       <div align="center">
         <b-card border-variant="light" class="text-center">
@@ -16,46 +25,93 @@
               </b-img>
             </b-col>
             <b-col xl="6" lg="6" sm="12" align="left">
-              <div style="margin:10px">
-              <h5>ไดร์ with</h5>
-              <b-row>
-                <b-col cols="12" lg="4">
-                  <div>
+              <div style="margin: 10px">
+                <h5>ไดร์ with</h5>
+                <b-row>
+                  <b-col cols="12" lg="4">
+                    <div>
+                      <b-form-rating
+                        style="border: 0px"
+                        variant="warning"
+                        v-model="value"
+                        readonly
+                        show-value
+                        precision="2"
+                      ></b-form-rating>
+                    </div>
+                  </b-col>
+                  <b-col cols="12" lg="4">
+                    <p style="margin-top: 7px">0 ขายแล้ว</p>
+                  </b-col>
+                  <b-col cols="12" lg="12">
+                    <b-row>
+                      <b-col cols="6" lg="3"
+                        ><h5
+                          style="
+                            color: rgb(151 142 142);
+                            text-decoration: line-through;
+                          "
+                        >
+                          300 บาท
+                        </h5></b-col
+                      >
+                      <b-col cols="6" lg="9">
+                        <h3 style="color: #de4747">120 บาท</h3></b-col
+                      >
+                    </b-row>
+                  </b-col>
+                  <b-col cols="12" lg="12">
+                    <label for="demo-sb">จำนวน</label>
+                    <b-form-spinbutton
+                      style="border: 1px solid #ced4da; margin-left: 15px"
+                      id="demo-sb"
+                      v-model="PRODUCT_AMOUNT"
+                      @change="PM"
+                      min="1"
+                      max="100"
+                      inline
+                    ></b-form-spinbutton>
+                  </b-col>
+                </b-row>
+              </div>
+            </b-col>
+          </b-row>
+        </b-card>
+      </div>
+    </div>
+
+    <div style="margin: 30px">
+      <div align="center">
+        <b-card border-variant="light">
+          <div align="left" style="margin-top: 20px; margin-left: 10px">
+            <b>คะแนนของสินค้า</b>
+          </div>
+          <div style="margin-top: 15px; margin-left: 10px; margin-right: 10px">
+            <b-card border-variant="warning" style="background-color: #fff9e5">
+              <div>
+                <b-row>
+                  <b-col cols="3" lg="3">
                     <b-form-rating
-                    style="border: 0px"
-                    variant="warning" 
+                      style="border: 0px; background-color: #fff9e5"
+                      variant="warning"
                       v-model="value"
                       readonly
                       show-value
                       precision="2"
                     ></b-form-rating>
-                  </div>
-                </b-col>
-                <b-col cols="12" lg="4">
-                  <p style="margin-top: 7px;">0 ขายแล้ว</p>
-                </b-col>
-                <b-col cols="12" lg="12">
-                  <b-row>
-                  <b-col cols="6" lg="3"><h5 style="color: rgb(151 142 142);;text-decoration: line-through;">300 บาท</h5></b-col>
-                  <b-col cols="6" lg="9"> <h3 style="color: #de4747;">120 บาท</h3></b-col>
-                  </b-row>
-                </b-col>
-                <b-col cols="12" lg="12">
-                  <label for="demo-sb">จำนวน</label>
-                      <b-form-spinbutton
-                      style="border: 1px solid #ced4da;margin-left: 15px;"
-                        id="demo-sb"
-                        v-model="PRODUCT_AMOUNT" 
-                        @change="PM"
-                        min="1"
-                        max="100"
-                        inline
-                      ></b-form-spinbutton>
-                </b-col>
-              </b-row>
+                  </b-col>
+                  <b-col cols="3" lg="3">
+                    <b-button variant="outline-warning">ทั้งหมด</b-button>
+                  </b-col>
+                   <b-col cols="3" lg="3">
+                    <b-button variant="outline-warning">ความคิดเห็น</b-button>
+                  </b-col> <b-col cols="3" lg="3">
+                    <b-button variant="outline-warning">รูปภาพ/วิดีโอ</b-button>
+                  </b-col>
+                </b-row>
               </div>
-            </b-col>
-          </b-row>
+            </b-card>
+          </div>
         </b-card>
       </div>
     </div>
@@ -93,10 +149,9 @@
                 variant="light"
               ></b-icon>
             </div>
-              <font color="#FFFFF">ซื้อสินค้า</font>
+            <font color="#FFFFF">ซื้อสินค้า</font>
           </b-col>
         </b-row>
-         
       </b-container>
     </div>
     <!-- footer -->
@@ -109,11 +164,11 @@ export default {
     Nav,
   },
   data() {
-      return {
-        value: 3.555,
-        PRODUCT_AMOUNT: 1,
-      }
-    },
+    return {
+      value: 3.555,
+      PRODUCT_AMOUNT: 1,
+    };
+  },
   methods: {
     backindex() {
       this.$router.push({ path: "/" });

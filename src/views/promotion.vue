@@ -3,7 +3,17 @@
         <!-- --------------nav------------ -->
     <Nav />
     <!-- --------------nav------------ -->
-        <div style="margin: 20px; margin-top: 50px" align="center">
+
+     <div style="width:40%; margin:20px;">
+      <b-input-group  class="mb-2">
+        <b-input-group-prepend is-text>
+          <b-icon icon="search"></b-icon>
+        </b-input-group-prepend>
+        <b-form-input type="search" placeholder="ค้นหาสินค้า"></b-form-input>
+      </b-input-group>
+    </div>
+
+        <div style="margin: 20px; margin-top: 0px" align="center">
       <div align="left" style="font-size: 1.5rem">สินค้าโปรโมชั่น</div>
       <b-row>
         <b-col cols="6" lg="3">
@@ -30,9 +40,9 @@
                 <b-col cols="6">
                   <div align="right">
                     <b-icon
-                      icon="cart4"
+                      icon="heart"
                       style="width: 20px; height: 20px"
-                      variant="success"
+                      variant="danger"
                     ></b-icon>
                   </div>
                 </b-col>
@@ -62,9 +72,9 @@
                 <b-col cols="6">
                   <div align="right">
                     <b-icon
-                      icon="cart4"
+                      icon="heart"
                       style="width: 20px; height: 20px"
-                      variant="success"
+                      variant="danger"
                     ></b-icon>
                   </div>
                 </b-col>
@@ -94,9 +104,9 @@
                 <b-col cols="6">
                   <div align="right">
                     <b-icon
-                      icon="cart4"
+                       icon="heart"
                       style="width: 20px; height: 20px"
-                      variant="success"
+                      variant="danger"
                     ></b-icon>
                   </div>
                 </b-col>
@@ -126,9 +136,9 @@
                 <b-col cols="6">
                   <div align="right">
                     <b-icon
-                      icon="cart4"
+                      icon="heart"
                       style="width: 20px; height: 20px"
-                      variant="success"
+                      variant="danger"
                     ></b-icon>
                   </div>
                 </b-col>
