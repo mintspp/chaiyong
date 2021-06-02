@@ -45,4 +45,15 @@ export default {
 </script>
 
 <style>
+.navbar {
+    /* position: relative; */
+    position: fixed !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    z-index: 9999;
+}
 </style>

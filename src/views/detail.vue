@@ -4,16 +4,17 @@
     <Nav />
     <!-- --------------nav------------ -->
 
-    <div style="width: 40%; margin: 20px">
+    <!-- <div style="width: 40%; margin: 20px">
       <b-input-group class="mb-2">
         <b-input-group-prepend is-text>
           <b-icon icon="search"></b-icon>
         </b-input-group-prepend>
         <b-form-input type="search" placeholder="Search terms"></b-form-input>
       </b-input-group>
-    </div>
+    </div> -->
 
-    <div style="margin: 30px">
+    <div>
+      <br><br><br>
       <div align="center">
         <b-card border-variant="light" class="text-center">
           <b-row>
@@ -90,7 +91,7 @@
             <b-card border-variant="warning" style="background-color: #fff9e5">
               <div>
                 <b-row>
-                  <b-col cols="3" lg="3">
+                  <b-col cols="12" lg="3" style="margin-bottom: 5px;">
                     <b-form-rating
                       style="border: 0px; background-color: #fff9e5"
                       variant="warning"
@@ -100,12 +101,12 @@
                       precision="2"
                     ></b-form-rating>
                   </b-col>
-                  <b-col cols="3" lg="3">
+                  <b-col cols="4" lg="3" style="margin-bottom: 5px;">
                     <b-button variant="outline-warning">ทั้งหมด</b-button>
                   </b-col>
-                   <b-col cols="3" lg="3">
+                   <b-col cols="8" lg="3" style="margin-bottom: 5px;">
                     <b-button variant="outline-warning">ความคิดเห็น</b-button>
-                  </b-col> <b-col cols="3" lg="3">
+                  </b-col> <b-col cols="12" lg="3" style="margin-bottom: 5px;">
                     <b-button variant="outline-warning">รูปภาพ/วิดีโอ</b-button>
                   </b-col>
                 </b-row>

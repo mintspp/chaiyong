@@ -3,7 +3,7 @@
         <!-- --------------nav------------ -->
     <Nav />
     <!-- --------------nav------------ -->
-
+<!-- 
      <div style="width:40%; margin:20px;">
       <b-input-group  class="mb-2">
         <b-input-group-prepend is-text>
@@ -11,8 +11,8 @@
         </b-input-group-prepend>
         <b-form-input type="search" placeholder="ค้นหาสินค้า"></b-form-input>
       </b-input-group>
-    </div>
-
+    </div> -->
+<br><br><br>
         <div style="margin: 20px; margin-top: 0px" align="center">
       <div align="left" style="font-size: 1.5rem">สินค้าขายดี</div>
       <b-row>

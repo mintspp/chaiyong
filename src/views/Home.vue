@@ -4,17 +4,18 @@
     <Nav />
     <!-- --------------nav------------ -->
 
-    <div style="width: 40%; margin: 20px">
+    <!-- <div style="width: 40%; margin: 20px">
       <b-input-group class="mb-2">
         <b-input-group-prepend is-text>
           <b-icon icon="search"></b-icon>
         </b-input-group-prepend>
         <b-form-input type="search" placeholder="Search terms"></b-form-input>
       </b-input-group>
-    </div>
+    </div> -->
 
     <div>
-      <div style="margin: 20px">
+      <br><br><br>
+      <div>
         <b-row style="margin-right: 0px; margin-left: 0px">
           <b-col style="padding: 5px" cols="12" lg="3">
             <img
