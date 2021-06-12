@@ -1,6 +1,7 @@
 <template>
      <div>
-      <b-navbar toggleable="lg" type="dark" style="background-color: #3a393b">
+      <b-navbar toggleable="lg" type="dark" style="background-color: #434B5C">
+        <img src="../assets/4.png" alt="Vue 4" style="width: 50px; height: 50px">
         <b-navbar-brand href="#">ชัยยงค์การช่าง</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -9,8 +10,8 @@
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
             
-            <b-nav-item href="#">บริการ</b-nav-item>
-            <b-nav-item href="#" disabled>ติดต่อเรา</b-nav-item>
+            <b-nav-item href="/service">บริการ</b-nav-item>
+            <b-nav-item href="/contact">ติดต่อเรา</b-nav-item>
             
             <div style="font-size: 2rem" >
               <b-icon icon="bell-fill" style="width: 20px; height: 20px" variant="light" align="center"></b-icon>

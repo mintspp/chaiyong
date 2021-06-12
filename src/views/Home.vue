@@ -4,17 +4,21 @@
     <Nav />
     <!-- --------------nav------------ -->
 
-    <!-- <div style="width: 40%; margin: 20px">
+    
+
+    <div>
+    
+      <br><br><br>
+      <div>
+      <div style="width: 30%; margin: 20px">
       <b-input-group class="mb-2">
         <b-input-group-prepend is-text>
           <b-icon icon="search"></b-icon>
         </b-input-group-prepend>
-        <b-form-input type="search" placeholder="Search terms"></b-form-input>
+        <b-form-input type="search" placeholder="ค้นหาสินค้า"></b-form-input>
       </b-input-group>
-    </div> -->
-
-    <div>
-      <br><br><br>
+    </div>
+      </div>
       <div>
         <b-row style="margin-right: 0px; margin-left: 0px">
           <b-col style="padding: 5px" cols="12" lg="3">
@@ -555,7 +559,7 @@ export default {
   width: 100%;
   height: 60px;
   /* background-color: #99cc66; */
-  background: #3a393b;
+  background: #434B5C;
   color: white;
   text-align: center;
 }

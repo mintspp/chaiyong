@@ -4,6 +4,8 @@ import Home from '../views/Home.vue';
 import detail from '../views/detail.vue';
 import promotion from '../views/promotion.vue';
 import bestsale from '../views/bestsale.vue';
+import contact from '../views/contact.vue';
+import service from '../views/service.vue';
 Vue.use(VueRouter);
 
 const routes = [
@@ -26,6 +28,16 @@ const routes = [
     path: '/bestsale',
     name: 'bestsale',
     component: bestsale,
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: contact,
+  },
+  {
+    path: '/service',
+    name: 'service',
+    component: service,
   },
 ];
 
