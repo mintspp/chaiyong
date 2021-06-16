@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="background: #f1f1f1">
     <!-- --------------nav------------ -->
     <Nav />
     <!-- --------------nav------------ -->
@@ -8,7 +8,7 @@
       <b-row>
         <b-col cols="12" lg="6" style="margin-top: 10px">
           <div>
-            <b-card style="border-radius: 20px">
+            <b-card style="border-radius: 20px"  border-variant="light">
               <b-row>
                 <b-col cols="4" lg="5">
                   <img
@@ -51,9 +51,7 @@
             </b-card>
           </div>
         </b-col>
-      </b-row>
-      <b-row>
-        <b-col cols="12" lg="6" style="margin-top: 10px">
+         <b-col cols="12" lg="6" style="margin-top: 10px">
           <div>
             <b-card style="border-radius:20px">
               <b-row>
@@ -145,7 +143,7 @@
   </div>
 </template>
 <script>
-import Nav from "../components/Nav";
+import Nav from "../../components/Nav";
 export default {
   components: {
     Nav,

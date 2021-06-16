@@ -1,43 +1,51 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
-import detail from '../views/detail.vue';
-import promotion from '../views/promotion.vue';
-import bestsale from '../views/bestsale.vue';
-import contact from '../views/contact.vue';
-import service from '../views/service.vue';
+import userHome from '../views/user/Home.vue';
+import userdetail from '../views/user/detail.vue';
+import userpromotion from '../views/user/promotion.vue';
+import userbestsale from '../views/user/bestsale.vue';
+import usercontact from '../views/user/contact.vue';
+import userservice from '../views/user/service.vue';
+import usershopping from '../views/user/shopping.vue';
+
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home,
+    path: '/userHome',
+    name: 'user',
+    component: userHome
+
   },
   {
-    path: '/detail',
-    name: 'detail',
-    component: detail,
+    path: '/userdetail',
+    name: 'user',
+    component: userdetail
   },
   {
-    path: '/promotion',
-    name: 'promotion',
-    component: promotion,
+    path: '/userpromotion',
+    name: 'user',
+    component: userpromotion
   },
   {
-    path: '/bestsale',
-    name: 'bestsale',
-    component: bestsale,
+    path: '/userbestsale',
+    name: 'user',
+    component: userbestsale
   },
   {
-    path: '/contact',
-    name: 'contact',
-    component: contact,
+    path: '/usercontact',
+    name: 'user',
+    component: usercontact
   },
   {
-    path: '/service',
-    name: 'service',
-    component: service,
+    path: '/userservice',
+    name: 'user',
+    component: userservice
+  },
+  {
+    path: '/usershopping',
+    name: 'user',
+    component: usershopping
   },
 ];
 

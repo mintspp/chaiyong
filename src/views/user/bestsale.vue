@@ -3,8 +3,8 @@
         <!-- --------------nav------------ -->
     <Nav />
     <!-- --------------nav------------ -->
-
-     <!-- <div style="width:40%; margin:20px;">
+<!-- 
+     <div style="width:40%; margin:20px;">
       <b-input-group  class="mb-2">
         <b-input-group-prepend is-text>
           <b-icon icon="search"></b-icon>
@@ -14,7 +14,7 @@
     </div> -->
 <br><br><br>
         <div style="margin: 20px; margin-top: 0px" align="center">
-      <div align="left" style="font-size: 1.5rem">สินค้าโปรโมชั่น</div>
+      <div align="left" style="font-size: 1.5rem">สินค้าขายดี</div>
       <b-row>
         <b-col cols="6" lg="3">
           <b-card
@@ -104,7 +104,7 @@
                 <b-col cols="6">
                   <div align="right">
                     <b-icon
-                       icon="heart"
+                      icon="heart"
                       style="width: 20px; height: 20px"
                       variant="danger"
                     ></b-icon>
@@ -191,7 +191,7 @@
     </div>
 </template>
 <script>
-import Nav from "../components/Nav";
+import Nav from "../../components/Nav";
 export default {
   components: {
     Nav,

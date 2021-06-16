@@ -529,7 +529,7 @@
 </template>
 
 <script>
-import Nav from "../components/Nav";
+import Nav from "../../components/Nav";
 export default {
   components: {
     Nav,
@@ -539,13 +539,13 @@ export default {
   mounted() {},
   methods: {
     godetail() {
-      this.$router.push({ path: "/detail" });
+      this.$router.push({ path: "/userdetail" });
     },
     gopromotion() {
-      this.$router.push({ path: "/promotion" });
+      this.$router.push({ path: "/userpromotion" });
     },
     gobestsale() {
-      this.$router.push({ path: "/bestsale" });
+      this.$router.push({ path: "/userbestsale" });
     },
   },
 };
