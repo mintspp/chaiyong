@@ -10,8 +10,8 @@
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
             
-            <b-nav-item href="/service">บริการ</b-nav-item>
-            <b-nav-item href="/contact">ติดต่อเรา</b-nav-item>
+            <b-nav-item href="/userservice">บริการ</b-nav-item>
+            <b-nav-item href="/usercontact">ติดต่อเรา</b-nav-item>
             
             <div style="font-size: 2rem" >
               <b-icon icon="bell-fill" style="width: 20px; height: 20px" variant="light" align="center"></b-icon>
