@@ -4,10 +4,29 @@
     <Nav />
     <!-- --------------nav------------ -->
     <br /><br /><br />
-    <div>
+    <div
+      style="
+        background-color: yellow;
+        position: fixed !important;
+        width: 100%;
+        height: 50 px;
+        z-index: 9999 !important;
+        margin-top: -7 px;
+      "
+    >
       <b-card border-variant="light">
         <b-row>
-          <b-col cols="6" lg="6">
+           <b-col cols="1" lg="1">
+              <b-form-checkbox
+                id="checkbox-1"
+                v-model="status"
+                name="checkbox-1"
+                value="accepted"
+                unchecked-value="not_accepted"
+              >
+              </b-form-checkbox>
+            </b-col>
+          <b-col cols="5" lg="5">
             <div>
               <h6>ทั้งหมด ()</h6>
             </div>
@@ -18,9 +37,9 @@
         </b-row>
       </b-card>
     </div>
-    <div style="margin-top: 4px">
-      <div>
-        <b-card border-variant="light" >
+    <div style="margin-top: 70px">
+      <!-- <div>
+        <b-card border-variant="light">
           <b-row>
             <b-col cols="1" lg="1">
               <b-form-checkbox
@@ -37,10 +56,10 @@
             </b-col>
           </b-row>
         </b-card>
-      </div>
+      </div> -->
 
       <b-card border-variant="light" style="margin-top: 1px">
-        <div align="right" >
+        <div align="right">
           <b-button pill variant="danger" size="sm">ลบ</b-button>
         </div>
 
@@ -83,9 +102,9 @@
         </b-row>
       </b-card>
 
-       <b-card border-variant="light" style="margin-top: 1px">
-        <div align="right" >
-          <b-button pill  variant="danger" size="sm">ลบ</b-button>
+      <b-card border-variant="light" style="margin-top: 1px">
+        <div align="right">
+          <b-button pill variant="danger" size="sm">ลบ</b-button>
         </div>
 
         <b-row>
@@ -127,9 +146,9 @@
         </b-row>
       </b-card>
 
-       <b-card border-variant="light" style="margin-top: 1px">
-        <div align="right" >
-          <b-button pill  variant="danger" size="sm">ลบ</b-button>
+      <b-card border-variant="light" style="margin-top: 1px">
+        <div align="right">
+          <b-button pill variant="danger" size="sm">ลบ</b-button>
         </div>
 
         <b-row>
@@ -171,9 +190,9 @@
         </b-row>
       </b-card>
 
-       <b-card border-variant="light" style="margin-top: 1px">
-        <div align="right" >
-          <b-button pill  variant="danger" size="sm">ลบ</b-button>
+      <b-card border-variant="light" style="margin-top: 1px">
+        <div align="right">
+          <b-button pill variant="danger" size="sm">ลบ</b-button>
         </div>
 
         <b-row>
@@ -242,32 +261,32 @@
       </b-container>
     </div>
     footer -->
-<br /><br />
-    <div class="footerr" >
-      <b-container class="bv-example-row" >
+    <br /><br />
+    <div class="footerr">
+      <b-container class="bv-example-row">
         <b-row>
           <b-col cols="4" lg="3">
             <div style="padding-top: 10px">
-             <b-row>
-            <b-col cols="3" lg="2" >
-              <b-form-checkbox
-                id="checkbox-1"
-                v-model="status"
-                name="checkbox-1"
-                value="accepted"
-                unchecked-value="not_accepted"
-                align="left"
-                padding="0px"
-              >
-              </b-form-checkbox>
-            </b-col>
-            <b-col cols="9" lg="10">
-              <div align="left">
-               <font color="#FFFFFF">ทั้งหมด()</font></div>
-            </b-col>
-          </b-row>
+              <b-row>
+                <b-col cols="3" lg="2">
+                  <b-form-checkbox
+                    id="checkbox-1"
+                    v-model="status"
+                    name="checkbox-1"
+                    value="accepted"
+                    unchecked-value="not_accepted"
+                    align="left"
+                    padding="0px"
+                  >
+                  </b-form-checkbox>
+                </b-col>
+                <b-col cols="9" lg="10">
+                  <div align="left">
+                    <font color="#FFFFFF">ทั้งหมด()</font>
+                  </div>
+                </b-col>
+              </b-row>
             </div>
-            
           </b-col>
 
           <b-col cols="4" lg="3">
@@ -291,11 +310,9 @@
             </div>
             <font color="#FFFFFF">รถเข็น</font>
           </b-col>
-         
         </b-row>
       </b-container>
     </div>
-
   </div>
 </template>
 <script>
@@ -334,9 +351,9 @@ export default {
   width: 100%;
   height: 60px;
   /* background-color: #99cc66; */
-  background: rgb( 255 , 255, 255);
+  background: rgb(255, 255, 255);
   color: black;
   text-align: left;
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 </style>
