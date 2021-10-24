@@ -4,52 +4,48 @@
     <Nav />
     <!-- --------------nav------------ -->
 
-    
-
     <div>
-    
-      <br><br><br>
+      <br /><br /><br />
       <div>
-      <div style="width: 30%; margin: 20px">
-      <b-input-group class="mb-2">
-        <b-input-group-prepend is-text>
-          <b-icon icon="search"></b-icon>
-        </b-input-group-prepend>
-        <b-form-input type="search" placeholder="ค้นหาสินค้า"></b-form-input>
-      </b-input-group>
-    </div>
+        <div style="margin: 20px">
+          <b-row>
+            <b-col cols="12" lg="6"
+              ><b-input-group class="mb-2">
+                <b-input-group-prepend is-text>
+                  <b-icon icon="search"></b-icon>
+                </b-input-group-prepend>
+                <b-form-input
+                  type="search"
+                  placeholder="ค้นหาสินค้า"
+                ></b-form-input> </b-input-group
+            ></b-col>
+          </b-row>
+        </div>
       </div>
-      <div>
-        <b-row style="margin-right: 0px; margin-left: 0px">
-          <b-col style="padding: 5px" cols="12" lg="3">
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/pink.jpg?alt=media&token=3c7cfbcf-4485-42b4-bf11-e3d8d1fe9114"
-              alt="Image"
-              width="100%"
-            />
-          </b-col>
-          <b-col style="padding: 5px" cols="12" lg="3">
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/yellow.jpg?alt=media&token=096e4371-8217-478d-99a6-646cfccb5523"
-              alt="Image"
-              width="100%"
-            />
-          </b-col>
-          <b-col style="padding: 5px" cols="12" lg="3">
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/green.jpg?alt=media&token=42d97550-77b7-4026-bbe2-daec70134236"
-              alt="Image"
-              width="100%"
-            />
-          </b-col>
-          <b-col style="padding: 5px" cols="12" lg="3">
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/orange.jpg?alt=media&token=d2004a21-6c3b-403a-be96-274b99630b50"
-              alt="Image"
-              width="100%"
-            />
-          </b-col>
-        </b-row>
+
+      <div style="margin: 20px">
+      <b-row>
+        <b-col cols="12" lg="3">
+          <b-card>
+
+          </b-card>
+        </b-col>
+        <b-col cols="12" lg="3" style="margin-left=50px;">
+          <b-card>
+
+          </b-card>
+        </b-col>
+        <b-col cols="12" lg="3">
+          <b-card>
+
+          </b-card>
+        </b-col>
+        <b-col cols="12" lg="3">
+          <b-card>
+
+          </b-card>
+        </b-col>
+      </b-row>
       </div>
     </div>
 
@@ -511,7 +507,7 @@
             <font color="#FFFFFF">ถูกใจ</font>
           </b-col>
 
-          <b-col cols="4" @click="gocart()">
+          <b-col cols="4" @click="goshopping()">
             <div style="padding-top: 10px">
               <b-icon
                 icon="basket-fill"
@@ -547,6 +543,9 @@ export default {
     gobestsale() {
       this.$router.push({ path: "/userbestsale" });
     },
+     goshopping() {
+      this.$router.push({ path: "/usershopping" });
+    },
   },
 };
 </script>
@@ -559,7 +558,7 @@ export default {
   width: 100%;
   height: 60px;
   /* background-color: #99cc66; */
-  background: #434B5C;
+  background: rgb(60 74 103);
   color: white;
   text-align: center;
 }

@@ -30,11 +30,11 @@ const {
 } = require("./utilities/query_command")
 console.log("Server started...");
 var mysqlConnection = mysql.createConnection({
-  host: '128.199.214.155',
-  user: 'savemom',
-  port: '3306',
-  password: 'savemom@aclab1201',
-  database: 'line_bot',
+  host: '127.0.0.1',
+    user: 'root',
+    port: '3306',
+    password: '',
+  database: 'chaiyong',
   multipleStatements: true
 });
 app.post("/webhook", (req, res) => {
@@ -42,5 +42,24 @@ app.post("/webhook", (req, res) => {
   Promise
     .all(req.body.events.map(handleEvent))
     .then(result => res.json(result));
+});
+app.post('/insertMember', async (req, res) => {
+  const {
+    body
+  } = req;
+
+  var query = await query_command(`INSERT INTO MEMBER (NAME,LNAME,ADDRESS,PROVINCE,DISTRICT,SUBDISTRICT,ZIPCODE,EMAIL,PHONE_NUMBER,USERNAME,PASSWORD,IMG) 
+  values ('${body.NAME}','${body.LNAME}','${body.ADDRESS}','${body.PROVINCE}','${body.DISTRICT}','${body.SUBDISTRICT}','${body.ZIPCODE}','${body.EMAIL}','${body.PHONE_NUMBER}','${body.USERNAME}','${body.PASSWORD}','${body.IMG}')`);
+  console.log(query);
+  res.send(query)
+});
+app.post('/select', async (req, res) => {
+  const {
+    body
+  } = req;
+
+  var query = await query_command(``);
+  console.log(query);
+  res.send(query)
 });
 app.listen(port);

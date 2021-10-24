@@ -4,7 +4,7 @@
     <Nav />
     <!-- --------------nav------------ -->
     <div><br /><br /><br /></div>
-    <div style="margin-top: 50px">
+    <div style="margin: 20px; margin-top: 0px">
       <b-row>
         <b-col style="padding: 5px" cols="12" lg="3">
           <img

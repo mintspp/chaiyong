@@ -8,6 +8,10 @@ import usercontact from '../views/user/contact.vue';
 import userservice from '../views/user/service.vue';
 import usershopping from '../views/user/shopping.vue';
 
+import adminlogin from '../views/admin/login.vue';
+import adminsignup from '../views/admin/signup.vue';
+import admincustomer from '../views/admin/customer.vue';
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -46,6 +50,21 @@ const routes = [
     path: '/usershopping',
     name: 'user',
     component: usershopping
+  },
+  {
+    path: '/adminlogin',
+    name: 'admin',
+    component: adminlogin
+  },
+  {
+    path: '/adminsignup',
+    name: 'admin',
+    component: adminsignup
+  },
+  {
+    path: '/admincustomer',
+    name: 'admin',
+    component: admincustomer
   },
 ];
 

@@ -2,11 +2,11 @@ const mysql = require('mysql');
 
 var query_command = function query_command(query) {
     const mysqlConnection = {
-        host: '128.199.214.155',
-        user: 'savemom',
+        host: '127.0.0.1',
+        user: 'root',
         port: '3306',
-        password: 'savemom@aclab1201',
-        database: 'line_bot',
+        password: '',
+        database: 'chaiyong',
         timezone: "ict",
         multipleStatements: true
     };

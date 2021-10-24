@@ -14,18 +14,18 @@
     </div> -->
 
     <div>
-      <br><br><br>
-      <div align="center">
+      <br /><br /><br />
+      <div align="center" style="margin-top: px">
         <b-card border-variant="light" class="text-center">
           <b-row>
-            <b-col xl="6" lg="6" sm="12">
+            <b-col xl="5" lg="5" sm="12">
               <b-img
                 style="width: 100%"
                 src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/4.png?alt=media&token=b9da41a4-dc4e-4982-8e1f-a1181821c7b9"
               >
               </b-img>
             </b-col>
-            <b-col xl="6" lg="6" sm="12" align="left">
+            <b-col xl="7" lg="7" sm="12" align="left">
               <div style="margin: 10px">
                 <h5>ไดร์ with</h5>
                 <b-row>
@@ -46,7 +46,7 @@
                   </b-col>
                   <b-col cols="12" lg="12">
                     <b-row>
-                      <b-col cols="6" lg="3"
+                      <b-col cols="4" lg="2"
                         ><h5
                           style="
                             color: rgb(151 142 142);
@@ -56,7 +56,7 @@
                           300 บาท
                         </h5></b-col
                       >
-                      <b-col cols="6" lg="9">
+                      <b-col cols="8" lg="10">
                         <h3 style="color: #de4747">120 บาท</h3></b-col
                       >
                     </b-row>
@@ -81,17 +81,21 @@
       </div>
     </div>
 
-    <div style="margin: 30px">
+    <div style="margin-top: 10px">
       <div align="center">
         <b-card border-variant="light">
-          <div align="left" style="margin-top: 20px; margin-left: 10px">
+          <div align="left" style="margin-top: 20px; margin-left: 3px">
             <b>คะแนนของสินค้า</b>
           </div>
-          <div style="margin-top: 15px; margin-left: 10px; margin-right: 10px">
-            <b-card border-variant="warning" style="background-color: #fff9e5">
+          <div style="margin-top: 15px">
+            <b-card
+              border-variant="warning"
+              style="background-color: #fff9e5; padding: 0px"
+              class="card-body"
+            >
               <div>
                 <b-row>
-                  <b-col cols="12" lg="3" style="margin-bottom: 5px;">
+                  <b-col cols="12" lg="3" style="margin-bottom: 5px">
                     <b-form-rating
                       style="border: 0px; background-color: #fff9e5"
                       variant="warning"
@@ -101,13 +105,31 @@
                       precision="2"
                     ></b-form-rating>
                   </b-col>
-                  <b-col cols="4" lg="3" style="margin-bottom: 5px;">
-                    <b-button variant="outline-warning">ทั้งหมด</b-button>
+                  <b-col cols="3" lg="3" style="margin-bottom: 0px">
+                    <b-button variant="outline-warning" style="width: 60px">
+                      <b style="font-size: 11px">ทั้งหมด</b></b-button
+                    >
                   </b-col>
-                   <b-col cols="8" lg="3" style="margin-bottom: 5px;">
-                    <b-button variant="outline-warning">ความคิดเห็น</b-button>
-                  </b-col> <b-col cols="12" lg="3" style="margin-bottom: 5px;">
-                    <b-button variant="outline-warning">รูปภาพ/วิดีโอ</b-button>
+                  <b-col
+                    cols="5"
+                    lg="3"
+                    style="margin-bottom: 0px; margin-right: -15px"
+                  >
+                    <b-button
+                      variant="outline-warning"
+                      style="width: 80px"
+                      align="right"
+                    >
+                      <b style="font-size: 11px"> ความคิดเห็น </b></b-button
+                    >
+                  </b-col>
+                  <b-col cols="4" lg="3" style="margin-bottom: 0px">
+                    <b-button
+                      variant="outline-warning"
+                      style="width: 85px"
+                      align="right"
+                      ><b style="font-size: 11px"> รูปภาพ/วิดีโอ </b></b-button
+                    >
                   </b-col>
                 </b-row>
               </div>
@@ -115,6 +137,60 @@
           </div>
         </b-card>
       </div>
+    </div>
+
+    <div style="margin-top: 3px">
+      <b-card border-variant="light">
+        <b-row>
+          <b-col cols="3" lg="2">
+            <b-img
+              rounded="circle"
+              style="width: 60px"
+              src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/4.png?alt=media&token=b9da41a4-dc4e-4982-8e1f-a1181821c7b9"
+            >
+            </b-img>
+          </b-col>
+          <b-col cols="9" lg="10">
+            <h6 align="left">supaporn</h6>
+            <b-form-rating
+              style="
+                border: 0px;
+                width: 10px;
+                padding-left: 0px;
+                margin-top: 3px;
+              "
+              variant="warning"
+              v-model="value"
+              readonly
+              show-value
+              precision="2"
+              align="left"
+            ></b-form-rating>
+            <br />
+            <div>
+              <h6 align="left">comment</h6>
+            </div>
+
+          
+            <div >
+              <b-row>
+                <b-col cols="12">
+                  <b-img v-bind="mainProps" rounded   
+               style="width: 100px"
+               align="left"
+              src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/4.png?alt=media&token=b9da41a4-dc4e-4982-8e1f-a1181821c7b9">
+              </b-img>
+                </b-col>
+              </b-row>
+              
+            </div>
+        
+            <div  align="right">
+              วันที่
+            </div>
+          </b-col>
+        </b-row>
+      </b-card>
     </div>
     <!-- footer -->
     <br /><br />
@@ -177,3 +253,10 @@ export default {
   },
 };
 </script>
+<style>
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1rem;
+}
+</style>
