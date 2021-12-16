@@ -1,13 +1,59 @@
 <template>
-  <div style="background: #f1f1f1">
+  <div style="background:  	#f9f9fb">
     <!-- --------------nav------------ -->
     <Nav />
     <!-- --------------nav------------ -->
 
+    <!-- <div
+      style="
+        background: rgb(60 74 103) !important;
+        position: fixed !important;
+        width: 100%;
+        height: 100px;
+        z-index: 9999 !important;
+      "
+    >
+      <div class="headd" style="margin-top: 20px">
+        ชัยยงค์การช่าง
+        <div align="center">
+          <b-row align="center">
+            <b-nav small align="center">
+              <b-col cols="3" lg="3">
+                <b-nav-item active>บริการ</b-nav-item>
+              </b-col>
+              <b-col cols="3" lg="3">
+                 <b-nav-item>ติดต่อเรา</b-nav-item>
+              </b-col>
+              <b-col cols="2" lg="2">
+                <b-nav-item
+                ><b-icon
+                  icon="bell-fill"
+                  style="width: 20px; height: 20px"
+                  variant="light"
+                ></b-icon>
+              </b-nav-item>
+              </b-col>
+              <b-col cols="2" lg="2">
+                 <b-nav-item disabled>Disabled</b-nav-item>
+              </b-col>
+              <b-col cols="2" lg="2">
+                  <b-nav-item-dropdown text="Lang" right>
+                <b-dropdown-item href="#">EN</b-dropdown-item>
+                <b-dropdown-item href="#">ES</b-dropdown-item>
+                <b-dropdown-item href="#">RU</b-dropdown-item>
+                <b-dropdown-item href="#">FA</b-dropdown-item>
+              </b-nav-item-dropdown>
+              </b-col>
+            </b-nav>
+          </b-row>
+        </div>
+      </div>
+    </div> -->
+
     <div>
       <br /><br /><br />
       <div>
-        <div style="margin: 20px">
+        <div style="margin: 10px; margin-top: 50px">
           <b-row>
             <b-col cols="12" lg="6"
               ><b-input-group class="mb-2">
@@ -23,29 +69,22 @@
         </div>
       </div>
 
-      <div style="margin: 20px">
-      <b-row>
-        <b-col cols="12" lg="3">
-          <b-card>
-
-          </b-card>
-        </b-col>
-        <b-col cols="12" lg="3" style="margin-left=50px;">
-          <b-card>
-
-          </b-card>
-        </b-col>
-        <b-col cols="12" lg="3">
-          <b-card>
-
-          </b-card>
-        </b-col>
-        <b-col cols="12" lg="3">
-          <b-card>
-
-          </b-card>
-        </b-col>
-      </b-row>
+      <div style="margin: 10px">
+        <b-row>
+          <b-col cols="12" lg="3">
+          <button class="button1"> <div>  </div>
+           </button>
+          </b-col>
+          <b-col cols="12" lg="3" style="margin-left=50px;">
+           <button class="button2">  </button>
+          </b-col>
+          <b-col cols="12" lg="3">
+           <button class="button3">  </button>
+          </b-col>
+          <b-col cols="12" lg="3">
+           <button class="button4">  </button>
+          </b-col>
+        </b-row>
       </div>
     </div>
 
@@ -53,7 +92,7 @@
       <b-card
         border-variant="light"
         align="left"
-        style="margin: 20px"
+        style="margin-top: 20px"
         title="สินค้าโปรโมชั่น"
       >
         <div align="right" @click="gopromotion()">
@@ -200,7 +239,7 @@
       <b-card
         border-variant="light"
         align="left"
-        style="margin: 20px"
+        style="margin-top: 20px"
         title="สินค้าขายดี"
       >
         <div align="right" @click="gobestsale()">
@@ -345,8 +384,10 @@
       </b-card>
     </div>
 
-    <div style="margin: 20px; margin-top: 50px" align="center">
-      <div align="left" style="font-size: 1.5rem">สินค้าทั้งหมด</div>
+    <div style="margin: 10px; margin-top: 30px" align="center">
+      <div align="left" style="font-size: 1.5rem; margin-left: 10px">
+        สินค้าทั้งหมด
+      </div>
       <b-row>
         <b-col cols="6" lg="3">
           <b-card
@@ -354,7 +395,7 @@
             img-alt="Image"
             img-top
             tag="article"
-            style="max-width: 20rem"
+            style="max-width: 25rem"
             class="mb-2"
             border-variant="light"
           >
@@ -388,7 +429,7 @@
             img-alt="Image"
             img-top
             tag="article"
-            style="max-width: 20rem"
+            style="max-width: 25rem"
             class="mb-2"
             border-variant="light"
           >
@@ -420,7 +461,7 @@
             img-alt="Image"
             img-top
             tag="article"
-            style="max-width: 20rem"
+            style="max-width: 25rem"
             class="mb-2"
             border-variant="light"
           >
@@ -452,7 +493,7 @@
             img-alt="Image"
             img-top
             tag="article"
-            style="max-width: 20rem"
+            style="max-width: 25rem"
             class="mb-2"
             border-variant="light"
           >
@@ -543,7 +584,7 @@ export default {
     gobestsale() {
       this.$router.push({ path: "/userbestsale" });
     },
-     goshopping() {
+    goshopping() {
       this.$router.push({ path: "/usershopping" });
     },
   },
@@ -558,8 +599,77 @@ export default {
   width: 100%;
   height: 60px;
   /* background-color: #99cc66; */
-  background: rgb(60 74 103);
+  background: rgb(52, 86, 139);
   color: white;
   text-align: center;
+}
+.headd {
+  text-align: center;
+  color: white;
+}
+.button1 {
+  background-color: #f0c1d6;
+  border: none;
+  color: white;
+  padding: 130px 180px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius:15px;
+}
+.button1:hover {
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.crad1 {border-radius: 50%;}
+.button2 {
+  background-color:  #dce8ca;
+  border: none;
+  color: white;
+  padding: 130px 180px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius:15px;
+}
+.button2:hover {
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.button3 {
+  background-color: #dccfe2;
+  border: 1px solid #bebebe;
+  color: white;
+  padding: 130px 180px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius:15px;
+}
+.button3:hover {
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.button4 {
+  background-color: #fbebb6;
+  border: none;
+  color: white;
+  padding: 130px 180px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius:15px;
+}
+.button4:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 </style>

@@ -7,10 +7,13 @@ import userbestsale from '../views/user/bestsale.vue';
 import usercontact from '../views/user/contact.vue';
 import userservice from '../views/user/service.vue';
 import usershopping from '../views/user/shopping.vue';
+import usercart from '../views/user/cart.vue';
 
 import adminlogin from '../views/admin/login.vue';
 import adminsignup from '../views/admin/signup.vue';
 import admincustomer from '../views/admin/customer.vue';
+import adminproduct from '../views/admin/product.vue';
+import adminorder from '../views/admin/order.vue';
 
 Vue.use(VueRouter);
 
@@ -52,6 +55,11 @@ const routes = [
     component: usershopping
   },
   {
+    path: '/usercart',
+    name: 'user',
+    component: usercart
+  },
+  {
     path: '/adminlogin',
     name: 'admin',
     component: adminlogin
@@ -65,6 +73,16 @@ const routes = [
     path: '/admincustomer',
     name: 'admin',
     component: admincustomer
+  },
+  {
+    path: '/adminproduct',
+    name: 'admin',
+    component: adminproduct
+  },
+  {
+    path: '/adminorder',
+    name: 'admin',
+    component: adminorder
   },
 ];
 
