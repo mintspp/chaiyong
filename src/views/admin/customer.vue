@@ -248,7 +248,7 @@
               <b-row>
                 <b-col lg="3" cols="3" style="padding: 0px">
                   <b-img
-                    v-bind="mainProps"
+                  
                     rounded="circle"
                     style="width: 70px"
                     src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/selfie.png?alt=media&token=37b192db-e5d7-4398-a52b-35c86258fde9"
@@ -281,7 +281,7 @@
               <b-row>
                 <b-col lg="3" cols="3" style="padding: 0px; margin-top: 0px">
                   <b-img
-                    v-bind="mainProps"
+                  
                     rounded="circle"
                     style="width: 70px"
                     src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/selfie.png?alt=media&token=37b192db-e5d7-4398-a52b-35c86258fde9"
@@ -349,7 +349,7 @@
               <b-row>
                 <b-col lg="3" cols="3" style="padding: 0px">
                   <b-img
-                    v-bind="mainProps"
+                  
                     rounded="circle"
                     style="width: 80px"
                     src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/selfie.png?alt=media&token=37b192db-e5d7-4398-a52b-35c86258fde9"

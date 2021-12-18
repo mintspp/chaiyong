@@ -53,6 +53,47 @@ app.post('/insertMember', async (req, res) => {
   console.log(query);
   res.send(query)
 });
+
+app.post('/selectproduct3', async (req, res) => {
+  const {
+    body
+  } = req;
+
+  var query = await query_command(`SELECT * FROM product WHERE STATUS = '3' LIMIT 4  `);
+  console.log(query);
+  res.send(query)
+});
+
+app.post('/selectproduct2', async (req, res) => {
+  const {
+    body
+  } = req;
+
+  var query = await query_command(`SELECT * FROM product WHERE STATUS = '2' LIMIT 4 `);
+  console.log(query);
+  res.send(query)
+});
+
+app.post('/selectproduct', async (req, res) => {
+  const {
+    body
+  } = req;
+
+  var query = await query_command(`SELECT * FROM product WHERE STATUS = '1' `);
+  console.log(query);
+  res.send(query)
+});
+
+app.post('/selectproductDetail', async (req, res) => {
+  const {
+    body
+  } = req;
+
+  var query = await query_command(`SELECT * FROM product WHERE PRODUCT_ID = '${body.PRODUCT_ID}' `);
+  console.log(query);
+  res.send(query)
+});
+
 app.post('/select', async (req, res) => {
   const {
     body

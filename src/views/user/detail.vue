@@ -21,13 +21,13 @@
             <b-col xl="5" lg="5" sm="12">
               <b-img
                 style="width: 100%"
-                src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/4.png?alt=media&token=b9da41a4-dc4e-4982-8e1f-a1181821c7b9"
+                :src="productDetail.IMG"
               >
               </b-img>
             </b-col>
             <b-col xl="7" lg="7" sm="12" align="left">
               <div style="margin: 10px">
-                <h5>ไดร์ with</h5>
+                <h5>{{productDetail.PRODUCT_NAME}}</h5>
                 <b-row>
                   <b-col cols="12" lg="4">
                     <div>
@@ -46,25 +46,25 @@
                   </b-col>
                   <b-col cols="12" lg="12">
                     <b-row>
-                      <b-col cols="4" lg="2"
-                        ><h5
+                      <!-- <b-col cols="4" lg="2"> -->
+                        <!-- <h5
                           style="
                             color: rgb(151 142 142);
                             text-decoration: line-through;
                           "
                         >
                           300 บาท
-                        </h5></b-col
-                      >
+                        </h5> -->
+                        <!-- </b-col> -->
                       <b-col cols="8" lg="10">
-                        <h3 style="color: #de4747">120 บาท</h3></b-col
+                        <h3 style="color: #de4747">{{productDetail.PRICE}} บาท</h3></b-col
                       >
                     </b-row>
                   </b-col>
                   <b-col cols="12" lg="12">
-                    <label for="demo-sb">จำนวน</label>
+                    <b>จำนวน</b>
                     <b-form-spinbutton
-                      style="border: 1px solid #ced4da; margin-left: 15px"
+                      style="border: 1px solid #ced4da; margin-left: 15px;margin-right: 15px"
                       id="demo-sb"
                       v-model="PRODUCT_AMOUNT"
                       @change="PM()"
@@ -72,6 +72,15 @@
                       max="100"
                       inline
                     ></b-form-spinbutton>
+                    <b>ชิ้น</b>
+                  </b-col>
+                  <b-col cols="12" lg="12" style="margin-top:10px">
+                    <b>สินค้าคงเหลือ</b> <br>
+                    {{productDetail.STOCK}} ชิ้น
+                  </b-col>
+                  <b-col cols="12" lg="12" style="margin-top:10px">
+                    <b>รายละเอียด</b> <br>
+                    {{productDetail.DETAIL}}
                   </b-col>
                 </b-row>
               </div>
@@ -171,23 +180,21 @@
               <h6 align="left">comment</h6>
             </div>
 
-          
-            <div >
+            <div>
               <b-row>
                 <b-col cols="12">
-                  <b-img v-bind="mainProps" rounded   
-               style="width: 100px"
-               align="left"
-              src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/4.png?alt=media&token=b9da41a4-dc4e-4982-8e1f-a1181821c7b9">
-              </b-img>
+                  <b-img
+                    rounded
+                    style="width: 100px"
+                    align="left"
+                    src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/4.png?alt=media&token=b9da41a4-dc4e-4982-8e1f-a1181821c7b9"
+                  >
+                  </b-img>
                 </b-col>
               </b-row>
-              
             </div>
-        
-            <div  align="right">
-              วันที่
-            </div>
+
+            <div align="right">วันที่</div>
           </b-col>
         </b-row>
       </b-card>
@@ -236,6 +243,9 @@
 </template>
 <script>
 import Nav from "../../components/Nav";
+import axios from "axios";
+import firebase from "firebase";
+const api_url = require("../../../utilities/api");
 export default {
   components: {
     Nav,
@@ -244,11 +254,25 @@ export default {
     return {
       value: 3.555,
       PRODUCT_AMOUNT: 1,
+      productDetail:null,
     };
   },
+    mounted() {
+      this.showDetail();
+       axios.post(`${api_url.api_url}/selectproductDetail`,{
+         PRODUCT_ID:this.$store.getters["Detail/PRODUCT_ID"]
+       }).then((response) => {
+      console.log(response.data);
+      this.productDetail = response.data[0];
+    });
+    },
   methods: {
     backindex() {
       this.$router.push({ path: "/" });
+    },
+    showDetail() {
+      console.log(this.$store.getters["Detail/PRODUCT_ID"]);
+      return this.$store.getters["Detail/PRODUCT_ID"];
     },
   },
 };
