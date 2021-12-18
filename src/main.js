@@ -2,10 +2,11 @@ import Vue from 'vue';
 import { BootstrapVue, IconsPlugin , BootstrapVueIcons} from 'bootstrap-vue';
 import 'vue-thailand-address/dist/vue-thailand-address.css';
 import VueThailandAddress from 'vue-thailand-address';
+import store from './views/store/store';
 import firebase from 'firebase'
 import App from './App.vue';
 import router from './router';
-import store from './store';
+
 
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
