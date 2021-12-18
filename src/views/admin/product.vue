@@ -128,6 +128,7 @@
             >สถานะการทำงาน</b-button
           >
         </template>
+        
       </b-table>
     </div>
   </div>
@@ -146,6 +147,8 @@ export default {
       //   { key: "ย", label: "รูปภาพ", class: "text-center" },
       //   { key: "55665", label: "สต็อก", class: "text-center" },
       // ],
+      
+      
       items: [
         { PRODUCT_CODE: 40, MEMBER_NAME: "Dickerson", FIX_STATUS: "Macdonald" },
       ],
@@ -160,12 +163,12 @@ export default {
           class: "text-center",
           formatter: "format_datetime",
         },
-        { key: "FIX_STATUS", label: "ยี่ห้อ", class: "text-center" },
-        { key: "detail", label: "ประเภท", class: "text-center" },
         { key: "fixstatus", label: "ราคา", class: "text-center" },
          { key: "status", label: "รูปภาพ", class: "text-center" },
           { key: "fix", label: "สต็อก", class: "text-center" },
+          { key: "detail", label: "จัดการ", class: "text-center" },
       ],
+      value: 0
     };
   },
   methods: {
