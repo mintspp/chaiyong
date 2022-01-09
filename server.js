@@ -64,6 +64,16 @@ app.post('/selectproduct3', async (req, res) => {
   res.send(query)
 });
 
+app.post('/selectproducts', async (req, res) => {
+  const {
+    body
+  } = req;
+  console.log('bkk')
+  var query = await query_command(`SELECT * FROM product WHERE STATUS = '3'`);
+  console.log(query);
+  res.send(query)
+});
+
 app.post('/selectproduct2', async (req, res) => {
   const {
     body

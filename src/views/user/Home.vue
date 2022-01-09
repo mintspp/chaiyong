@@ -1,5 +1,5 @@
 <template>
-  <div style="background: #f9f9fb">
+  <div style="background: #f9fafb">
     <!-- --------------nav------------ -->
     <Nav />
     <!-- --------------nav------------ -->
@@ -7,7 +7,8 @@
     <div>
       <br /><br /><br />
       <div>
-        <div style="margin: 10px; margin-top: 50px">
+        <br />
+        <div style="margin-top: 0px; margin-right: 5px; margin-left: 5px">
           <b-row>
             <b-col cols="12" lg="6"
               ><b-input-group class="mb-2">
@@ -23,34 +24,53 @@
         </div>
       </div>
 
-      <div style="margin: 10px">
+      <div style="margin-right: 20px; margin-left: 20px; margin-top: 10px">
         <b-row>
-          <b-col cols="12" lg="3">
-            <button class="button1"><div></div></button>
+          <b-col cols="12" lg="3" style="padding: 0px">
+            <b-card
+              class="card1"
+              style="background-color: #faebef; border: 0px; border-radius: 0px"
+            >
+              <div align="left">
+                <b class="less" style="color: #000">ครีมเปลี่ยนสีผม </b>
+                <h6>ครีมเปลี่ยนสีผม / ผงฟอกสี / น้ำยาดัดผม / น้ำยายืดผม</h6>
+              </div>
+            </b-card>
           </b-col>
-          <b-col cols="12" lg="3" style="margin-left=50px;">
+          <b-col cols="12" lg="3" style="padding: 0px">
+            <b-card class="card1"> <b> ครีมเปลี่ยนสีผม </b> </b-card>
+          </b-col>
+          <b-col cols="12" lg="3" style="padding: 0px">
+            <b-card class="card1"> <b> ครีมเปลี่ยนสีผม </b> </b-card>
+          </b-col>
+          <b-col cols="12" lg="3" style="padding: 0px">
+            <b-card class="card1"> <b> ครีมเปลี่ยนสีผม </b> </b-card>
+          </b-col>
+          <!-- <b-col cols="12" lg="3" style="padding: 0px">
             <button class="button2"></button>
           </b-col>
-          <b-col cols="12" lg="3">
+          <b-col cols="12" lg="3" style="padding: 0px">
             <button class="button3"></button>
           </b-col>
-          <b-col cols="12" lg="3">
+          <b-col cols="12" lg="3" style="padding: 0px">
             <button class="button4"></button>
-          </b-col>
+          </b-col> -->
         </b-row>
       </div>
     </div>
 
-    <div>
-      <b-card
-        border-variant="light"
-        align="left"
-        style="margin-top: 20px"
-        title="สินค้าโปรโมชั่น"
-      >
-        <div align="right" @click="gopromotion()">
-          <a href="">ดูทั้งหมด...</a>
-        </div>
+    <div style="margin-right: 5px; margin-left: 5px">
+      <b-card border-variant="light" align="left" style="margin-top: 20px">
+        <b-row>
+          <b-col cols="6" lg="6"
+            ><b style="color: #f5365c">สินค้าโปรโมชั่น </b></b-col
+          >
+          <b-col cols="6" lg="6" align="right">
+            <button class="buttonP" @click="gopromotion()">ทั้งหมด</button>
+          </b-col>
+        </b-row>
+        <hr class="style7" />
+        <br />
         <div align="center">
           <b-row>
             <b-col
@@ -58,50 +78,63 @@
               :key="item.PRODUCT_ID"
               cols="6"
               lg="3"
+              style="padding: 5px"
             >
-              <b-card
+              <b-card-group
+                deck
+                img-top
                 tag="article"
-                style="max-width: 25rem;"
+                style="max-width: 20rem"
                 class="mb-2"
                 border-variant="light"
                 @click="godetail(item)"
               >
-               <b-card-img :src="item.IMG"> </b-card-img>
-                <div align="left">
-                  <div class="fonts" style="font-size: 15px">
-                    <b>{{ item.PRODUCT_NAME }}</b>
-                  </div>
-                  <b-row>
-                    <b-col cols="6"
-                      ><div align="left">
-                        <h6 style="font-size: 12px">฿{{ item.PRICE }}</h6>
+                <b-card :img-src="item.IMG" img-top>
+                  <b-card-text class="text1">
+                    <div align="left">
+                      <div style="line-height: 0.7">
+                        <b style="font-size: 12px">{{ item.PRODUCT_NAME }}</b>
                       </div>
-                    </b-col>
-                    <b-col cols="6">
-                      <div align="right">
-                        <b-icon
-                          icon="heart"
-                          style="width: 20px; height: 20px"
-                          variant="danger"
-                        ></b-icon>
-                      </div>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-card>
+                    </div>
+                    <div style="margin-top: 15px">
+                      <b-row>
+                        <b-col cols="6">
+                          <div align="left">
+                            <div style="line-height: 1.8">
+                              <h6 style="font-size: 18px">฿{{ item.PRICE }}</h6>
+                            </div>
+                          </div>
+                        </b-col>
+                        <b-col cols="6">
+                          <div align="right">
+                            <b-icon
+                              icon="heart"
+                              style="width: 20px; height: 20px"
+                              variant="danger"
+                            ></b-icon>
+                          </div>
+                        </b-col>
+                      </b-row>
+                    </div>
+                  </b-card-text>
+                </b-card>
+              </b-card-group>
             </b-col>
           </b-row>
         </div>
       </b-card>
-      <b-card
-        border-variant="light"
-        align="left"
-        style="margin-top: 20px"
-        title="สินค้าขายดี"
-      >
-        <div align="right" @click="gobestsale()">
-          <a href="">ดูทั้งหมด...</a>
-        </div>
+      <b-card border-variant="light" align="left" style="margin-top: 20px">
+        <b-row>
+          <b-col cols="6" lg="6"
+            ><b style="color: #f5365c">สินค้าขายดี </b></b-col
+          >
+          <b-col cols="6" lg="6" align="right">
+            <button class="buttonP" @click="gobestsale()">ทั้งหมด</button>
+          </b-col>
+        </b-row>
+
+        <hr class="style7" />
+        <br />
         <div align="center">
           <b-row>
             <b-col
@@ -109,19 +142,68 @@
               :key="item.PRODUCT_ID"
               cols="6"
               lg="3"
+              style="padding: 5px"
             >
-              <b-card
-                
+              <b-card-group
+                deck
+                img-top
                 tag="article"
-                style="max-width: 25rem"
+                style="max-width: 20rem"
                 class="mb-2"
                 border-variant="light"
                 @click="godetail(item)"
               >
-               <b-card-img :src="item.IMG"> </b-card-img>
+                <b-card :img-src="item.IMG" img-top>
+                  <b-card-text>
+                    <div align="left">
+                      <div class="fonts" style="font-size: 15px">
+                        <b>{{ item.PRODUCT_NAME }}</b>
+                      </div>
+                      <b-row>
+                        <b-col cols="6"
+                          ><div align="left">
+                            <h6 style="font-size: 12px">฿{{ item.PRICE }}</h6>
+                          </div>
+                        </b-col>
+                        <b-col cols="6">
+                          <div align="right">
+                            <b-icon
+                              icon="heart"
+                              style="width: 20px; height: 20px"
+                              variant="danger"
+                            ></b-icon>
+                          </div>
+                        </b-col>
+                      </b-row>
+                    </div>
+                  </b-card-text>
+                </b-card>
+              </b-card-group>
+            </b-col>
+          </b-row>
+        </div>
+      </b-card>
+    </div>
+
+    <div align="left" style="font-size: 1.2rem; margin-top: 10px;margin-right: 10px; margin-left: 10px">
+        <b>สินค้าทั้งหมด</b>
+      </div>
+    <div style="margin-right: 20px; margin-left: 20px">
+      
+      <b-row>
+        <b-col
+          v-for="item in product3"
+          :key="item.PRODUCT_ID"
+          cols="6"
+          lg="2"
+          style="padding: 5px"
+        >
+          <b-card-group deck style="max-width: 20rem" @click="godetail(item)">
+            <b-card :img-src="item.IMG" img-top>
+              <b-card-text>
                 <div align="left">
                   <div class="fonts" style="font-size: 15px">
-                    <b>{{ item.PRODUCT_NAME }}</b>
+                    <p>{{ item.PRODUCT_NAME }}</p>
                   </div>
                   <b-row>
                     <b-col cols="6"
@@ -140,52 +222,13 @@
                     </b-col>
                   </b-row>
                 </div>
-              </b-card>
-            </b-col>
-          </b-row>
-        </div>
-      </b-card>
-    </div>
-
-    <div style="margin: 10px; margin-top: 30px" align="center">
-      <div align="left" style="font-size: 1.5rem; margin-left: 10px">
-        สินค้าทั้งหมด
-      </div>
-      <b-row>
-        <b-col v-for="item in product3" :key="item.PRODUCT_ID" cols="6" lg="3">
-          <b-card
-            tag="article"
-            style="max-width: 25rem"
-            class="mb-2"
-            border-variant="light"
-            @click="godetail(item)"
-          >
-           <b-card-img :src="item.IMG"> </b-card-img>
-            <div align="left">
-              <div class="fonts" style="font-size: 15px">
-                <b>{{ item.PRODUCT_NAME }}</b>
-              </div>
-              <b-row>
-                <b-col cols="6"
-                  ><div align="left">
-                    <h6 style="font-size: 12px">฿{{ item.PRICE }}</h6>
-                  </div>
-                </b-col>
-                <b-col cols="6">
-                  <div align="right">
-                    <b-icon
-                      icon="heart"
-                      style="width: 20px; height: 20px"
-                      variant="danger"
-                    ></b-icon>
-                  </div>
-                </b-col>
-              </b-row>
-            </div>
-          </b-card>
+              </b-card-text>
+            </b-card>
+          </b-card-group>
         </b-col>
       </b-row>
     </div>
+
     <!-- footer -->
     <br /><br />
     <div class="footerr">
@@ -296,18 +339,18 @@ export default {
   text-align: center;
   color: white;
 }
-.button1 {
-  background-color: #f0c1d6;
+.card1 {
   border: none;
-  color: white;
-  padding: 130px 180px;
-  text-align: center;
+  color: rgb(85, 85, 85);
+
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 15px;
+
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(253, 253, 253, 0.19);
 }
 .button1:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -316,7 +359,7 @@ export default {
   border-radius: 50%;
 }
 .button2 {
-  background-color: #dce8ca;
+  background-color: #e8efdc;
   border: none;
   color: white;
   padding: 130px 180px;
@@ -327,12 +370,14 @@ export default {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 15px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(224, 224, 224, 0.19);
 }
 .button2:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .button3 {
-  background-color: #dccfe2;
+  background-color: #faf1d1;
   border: 1px solid #bebebe;
   color: white;
   padding: 130px 180px;
@@ -343,12 +388,14 @@ export default {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 15px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(224, 224, 224, 0.19);
 }
 .button3:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .button4 {
-  background-color: #fbebb6;
+  background-color: #f7e1d4;
   border: none;
   color: white;
   padding: 130px 180px;
@@ -359,8 +406,51 @@ export default {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 15px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(224, 224, 224, 0.19);
 }
 .button4:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.style7 {
+  border-top: 1px solid #e4e4e4;
+  border-bottom: 0px solid #fff;
+}
+.buttonP {
+  padding: 4px 9px;
+  font-size: 12px;
+  margin: 0px;
+  border-radius: 0.375rem;
+  border: none;
+  background-color: #f5365c;
+  color: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(224, 224, 224, 0.19);
+}
+
+.buttonP:hover {
+  transform: translateY(-1px);
+}
+/* CSS */
+
+.buttonP:focus {
+  background-color: #f5365c;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.buttonP:active {
+  background-color: #bd3543;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  transform: translateY(0);
+}
+.less {
+  letter-spacing: 2px;
+  line-height: 30pt;
+}
+.text1 {
+  text-overflow: ellipsis;
+}
+.b1 {
+  line-height: 0.2;
 }
 </style>

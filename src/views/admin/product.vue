@@ -38,18 +38,16 @@
       <br /><br /><br />
 
       <div style="padding: 10px">
-        <div><b style="font-size: 16px">ข้อมูลสินค้า </b></div>
-        <br />
+        <div ><b style="font-size: 16px">ข้อมูลสินค้า </b></div>
+       <div align="right">
+         <b-button  pill variant="warning" @click="showModal" style=" border-radius: 10 px;">
+              <b style="font-size: 14px">เพิ่มสินค้า</b>
+            </b-button>
+         </div> 
+
+       
         <div>
-          <b-button pill variant="warning" @click="showModal">
-            <b style="font-size: 14px">เพิ่มสินค้า</b>
-          </b-button>
-          <b-modal
-            ref="my-modal"
-            size="lg"
-            hide-footer
-            title="เพิ่มสินค้า"
-          >
+          <b-modal ref="my-modal" size="lg" hide-footer title="เพิ่มสินค้า">
             <div style="margin-left: 0px">
               <label for="input-default">ชื่อสินค้า</label>
               <b-form-input
@@ -59,40 +57,52 @@
 
               <label for="input-default">รายละเอียด</label>
               <b-form-textarea
-        id="textarea-default"
-        placeholder="Default textarea"
-      ></b-form-textarea>
-            <b-row>
-              <b-col cols="6" lg="6">
-                <label for="input-default">ประเภท</label>
-               <b-form-select v-model="selected" :options="options"></b-form-select>
-              </b-col>
-              <b-col cols="6" lg="6">
-              <label for="input-default">ยี่ห้อ</label>
-               <b-form-select v-model="selected" :options="options"></b-form-select>
-              </b-col>
-            </b-row>
-    
-             <b-row>
-              <b-col cols="6" lg="6">
-                <label for="input-default">ราคา</label>
-               <b-form-select v-model="selected" :options="options"></b-form-select>
-              </b-col>
-              <b-col cols="6" lg="6">
-              <label for="input-default">สต็อก</label>
-               <b-form-select v-model="selected" :options="options"></b-form-select>
-              </b-col>
-            </b-row>
+                id="textarea-default"
+                placeholder="Default textarea"
+              ></b-form-textarea>
+              <b-row>
+                <b-col cols="6" lg="6">
+                  <label for="input-default">ประเภท</label>
+                  <b-form-select
+                    v-model="selected"
+                    :options="options"
+                  ></b-form-select>
+                </b-col>
+                <b-col cols="6" lg="6">
+                  <label for="input-default">ยี่ห้อ</label>
+                  <b-form-select
+                    v-model="selected"
+                    :options="options"
+                  ></b-form-select>
+                </b-col>
+              </b-row>
 
-            <label for="input-default">รูปภาพ</label>
-              <b-form-file multiple :file-name-formatter="formatNames"></b-form-file>
+              <b-row>
+                <b-col cols="6" lg="6">
+                  <label for="input-default">ราคา</label>
+                  <b-form-select
+                    v-model="selected"
+                    :options="options"
+                  ></b-form-select>
+                </b-col>
+                <b-col cols="6" lg="6">
+                  <label for="input-default">สต็อก</label>
+                  <b-form-select
+                    v-model="selected"
+                    :options="options"
+                  ></b-form-select>
+                </b-col>
+              </b-row>
 
-              <div style="margin-top:10px">
-  <b-button block variant="success">บันทึก</b-button>
-</div>
-             
-              
-  
+              <label for="input-default">รูปภาพ</label>
+              <b-form-file
+                multiple
+                :file-name-formatter="formatNames"
+              ></b-form-file>
+
+              <div style="margin-top: 10px">
+                <b-button block variant="success">บันทึก</b-button>
+              </div>
             </div>
           </b-modal>
         </div>
@@ -128,7 +138,6 @@
             >สถานะการทำงาน</b-button
           >
         </template>
-        
       </b-table>
     </div>
   </div>
@@ -147,8 +156,7 @@ export default {
       //   { key: "ย", label: "รูปภาพ", class: "text-center" },
       //   { key: "55665", label: "สต็อก", class: "text-center" },
       // ],
-      
-      
+
       items: [
         { PRODUCT_CODE: 40, MEMBER_NAME: "Dickerson", FIX_STATUS: "Macdonald" },
       ],
@@ -164,11 +172,11 @@ export default {
           formatter: "format_datetime",
         },
         { key: "fixstatus", label: "ราคา", class: "text-center" },
-         { key: "status", label: "รูปภาพ", class: "text-center" },
-          { key: "fix", label: "สต็อก", class: "text-center" },
-          { key: "detail", label: "จัดการ", class: "text-center" },
+        { key: "status", label: "รูปภาพ", class: "text-center" },
+        { key: "fix", label: "สต็อก", class: "text-center" },
+        { key: "detail", label: "จัดการ", class: "text-center" },
       ],
-      value: 0
+      value: 0,
     };
   },
   methods: {
@@ -186,4 +194,5 @@ export default {
 };
 </script>
 <style>
+
 </style>
