@@ -69,56 +69,25 @@
               <b-form-textarea
                 id="textarea-default"
                 placeholder="Default textarea"
-<<<<<<< HEAD
                 v-model="DETAIL"
-=======
->>>>>>> b60eae105edc905c0ff07499003f3b6a8808ab02
               ></b-form-textarea>
               <b-row>
                 <b-col cols="6" lg="6">
                   <label for="input-default">ประเภท</label>
                   <b-form-select
-<<<<<<< HEAD
                     v-model="TYPE"
                     :options="types"
-=======
-                    v-model="selected"
-                    :options="options"
->>>>>>> b60eae105edc905c0ff07499003f3b6a8808ab02
                   ></b-form-select>
                 </b-col>
                 <b-col cols="6" lg="6">
                   <label for="input-default">ยี่ห้อ</label>
                   <b-form-select
-<<<<<<< HEAD
                     v-model="BRAND"
                     :options="brends"
-=======
-                    v-model="selected"
-                    :options="options"
                   ></b-form-select>
                 </b-col>
               </b-row>
 
-              <b-row>
-                <b-col cols="6" lg="6">
-                  <label for="input-default">ราคา</label>
-                  <b-form-select
-                    v-model="selected"
-                    :options="options"
-                  ></b-form-select>
-                </b-col>
-                <b-col cols="6" lg="6">
-                  <label for="input-default">สต็อก</label>
-                  <b-form-select
-                    v-model="selected"
-                    :options="options"
->>>>>>> b60eae105edc905c0ff07499003f3b6a8808ab02
-                  ></b-form-select>
-                </b-col>
-              </b-row>
-
-<<<<<<< HEAD
               <b-row>
                 <b-col cols="6" lg="6">
                   <label for="input-default">ราคา</label>
@@ -149,16 +118,6 @@
                 <b-button @click="addPRODUCT" block variant="success"
                   >บันทึก</b-button
                 >
-=======
-              <label for="input-default">รูปภาพ</label>
-              <b-form-file
-                multiple
-                :file-name-formatter="formatNames"
-              ></b-form-file>
-
-              <div style="margin-top: 10px">
-                <b-button block variant="success">บันทึก</b-button>
->>>>>>> b60eae105edc905c0ff07499003f3b6a8808ab02
               </div>
             </div>
           </b-modal>
@@ -355,7 +314,6 @@ const api_url = require("../../../utilities/api");
 export default {
   data() {
     return {
-<<<<<<< HEAD
       PRODUCT_NAME: "",
       DETAIL: "",
       PRICE: "",
@@ -403,39 +361,6 @@ export default {
         title: "",
         content: "",
       },
-=======
-      // fields: [
-      //   { key: "านานา", label: "รหัสสินค้า", class: "text-center" },
-      //   { key: "้ร้ร้ร้ร้ร้", label: "ชื่อสินค้า", class: "text-center" },
-      //   { key: "มสมสม", label: "รายละเอียด", class: "text-center" },
-      //   { key: "่า", label: "ประเภท", class: "text-center" },
-      //   { key: "ส", label: "ยี่ห้อ", class: "text-center" },
-      //   { key: "่สน่ส่ส", label: "ราคา", class: "text-center" },
-      //   { key: "ย", label: "รูปภาพ", class: "text-center" },
-      //   { key: "55665", label: "สต็อก", class: "text-center" },
-      // ],
-
-      items: [
-        { PRODUCT_CODE: 40, MEMBER_NAME: "Dickerson", FIX_STATUS: "Macdonald" },
-      ],
-
-      fields: [
-        // { key: "FIX_ID", label: "ลำดับ", class: "text-center" },
-        { key: "PRODUCT_CODE", label: "รหัสสินค้า", class: "text-center" },
-        { key: "MEMBER_NAME", label: "ชื่อสินค้า", class: "text-center" },
-        {
-          key: "DATE",
-          label: "รายละเอียด",
-          class: "text-center",
-          formatter: "format_datetime",
-        },
-        { key: "fixstatus", label: "ราคา", class: "text-center" },
-        { key: "status", label: "รูปภาพ", class: "text-center" },
-        { key: "fix", label: "สต็อก", class: "text-center" },
-        { key: "detail", label: "จัดการ", class: "text-center" },
-      ],
-      value: 0,
->>>>>>> b60eae105edc905c0ff07499003f3b6a8808ab02
     };
   },
   created() {
