@@ -8,6 +8,7 @@ import usercontact from '../views/user/contact.vue';
 import userservice from '../views/user/service.vue';
 import usershopping from '../views/user/shopping.vue';
 import usercart from '../views/user/cart.vue';
+import userlike from '../views/user/like.vue';
 
 import adminlogin from '../views/admin/login.vue';
 import adminsignup from '../views/admin/signup.vue';
@@ -58,6 +59,11 @@ const routes = [
     path: '/usercart',
     name: 'user',
     component: usercart
+  },
+  {
+    path: '/userlike',
+    name: 'user',
+    component: userlike
   },
   {
     path: '/adminlogin',

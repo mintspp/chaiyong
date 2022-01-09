@@ -1,10 +1,10 @@
 <template>
-    <div style="background: #f5f5f5">
-        <!-- --------------nav------------ -->
+  <div style="background: #f5f5f5">
+    <!-- --------------nav------------ -->
     <Nav />
     <!-- --------------nav------------ -->
 
-     <!-- <div style="width:40%; margin:20px;">
+    <!-- <div style="width:40%; margin:20px;">
       <b-input-group  class="mb-2">
         <b-input-group-prepend is-text>
           <b-icon icon="search"></b-icon>
@@ -12,143 +12,81 @@
         <b-form-input type="search" placeholder="ค้นหาสินค้า"></b-form-input>
       </b-input-group>
     </div> -->
-<br><br><br>
-        <div style="margin: 20px; margin-top: 0px" align="center">
-      <div align="left" style="font-size: 1.5rem">สินค้าโปรโมชั่น</div>
+    <br /><br /><br />
+    <br />
+    <div style="margin-top: 0px; margin-right: 10px; margin-left: 10px">
       <b-row>
-        <b-col cols="6" lg="3">
-          <b-card
-            img-src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/1.png?alt=media&token=e0d3062d-2311-46f8-9ab6-90130e24d351"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem"
-            class="mb-2"
-            border-variant="light"
-          >
-            <div align="left">
-              <div class="fonts" style="font-size: 15px">
-                <b>กรรไกรตัดผม</b>
-              </div>
+        <b-col cols="12" lg="6"
+          ><b-input-group class="mb-2">
+            <b-input-group-prepend is-text>
+              <b-icon icon="search"></b-icon>
+            </b-input-group-prepend>
+            <b-form-input
+              type="search"
+              placeholder="ค้นหาสินค้า"
+            ></b-form-input> </b-input-group
+        ></b-col>
+      </b-row>
+      <div align="left" style="font-size: 1.2rem; margin-top: 10px">
+        <b>สินค้าโปรโมชั่น</b>
+      </div>
+    </div>
 
-              <b-row>
-                <b-col cols="6"
-                  ><div align="left">
-                    <h6 style="font-size: 12px">฿100</h6>
-                  </div>
-                </b-col>
-                <b-col cols="6">
-                  <div align="right">
-                    <b-icon
-                      icon="heart"
-                      style="width: 20px; height: 20px"
-                      variant="danger"
-                    ></b-icon>
-                  </div>
-                </b-col>
-              </b-row>
-            </div>
-          </b-card>
-        </b-col>
-        <b-col cols="6" lg="3">
-          <b-card
-            img-src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/2.png?alt=media&token=f40ffb34-af16-4a16-81d9-780268ccaa76"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem"
-            class="mb-2"
-            border-variant="light"
-          >
-            <div align="left">
-              <div class="fonts" style="font-size: 15px"><b>ชุดกรรไกร</b></div>
+    <div
+     
+      style="
+        
+        margin-top: 0px;
+        margin-right: 20px;
+        margin-left: 20px;
+      "
+    >
+     
 
-              <b-row>
-                <b-col cols="6"
-                  ><div align="left">
-                    <h6 style="font-size: 12px">฿100</h6>
+      <b-row>
+        <b-col
+          v-for="item in product1"
+          :key="item.PRODUCT_ID"
+          cols="6"
+          lg="2"
+          style="padding: 5px"
+        >
+          <b-card-group deck style="max-width: 20rem" @click="godetail(item)">
+            <b-card :img-src="item.IMG" img-top>
+              <b-card-text class="text1">
+                <div align="left">
+                  <div style="line-height: 0.7">
+                    <b style="font-size: 12px">{{ item.PRODUCT_NAME }}</b>
                   </div>
-                </b-col>
-                <b-col cols="6">
-                  <div align="right">
-                    <b-icon
-                      icon="heart"
-                      style="width: 20px; height: 20px"
-                      variant="danger"
-                    ></b-icon>
-                  </div>
-                </b-col>
-              </b-row>
-            </div>
-          </b-card>
-        </b-col>
-        <b-col cols="6" lg="3">
-          <b-card
-            img-src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/3.png?alt=media&token=eb90bddf-c4dc-4ecf-887e-c27b720a5b62"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem"
-            class="mb-2"
-            border-variant="light"
-          >
-            <div align="left">
-              <div class="fonts" style="font-size: 15px"><b>ไดร์เป่าผม</b></div>
-
-              <b-row>
-                <b-col cols="6"
-                  ><div align="left">
-                    <h6 style="font-size: 12px">฿100</h6>
-                  </div>
-                </b-col>
-                <b-col cols="6">
-                  <div align="right">
-                    <b-icon
-                       icon="heart"
-                      style="width: 20px; height: 20px"
-                      variant="danger"
-                    ></b-icon>
-                  </div>
-                </b-col>
-              </b-row>
-            </div>
-          </b-card>
-        </b-col>
-        <b-col cols="6" lg="3">
-          <b-card
-            img-src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/3.png?alt=media&token=eb90bddf-c4dc-4ecf-887e-c27b720a5b62"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem"
-            class="mb-2"
-            border-variant="light"
-          >
-            <div align="left">
-              <div class="fonts" style="font-size: 15px"><b>ไดร์เป่าผม</b></div>
-
-              <b-row>
-                <b-col cols="6"
-                  ><div align="left">
-                    <h6 style="font-size: 12px">฿100</h6>
-                  </div>
-                </b-col>
-                <b-col cols="6">
-                  <div align="right">
-                    <b-icon
-                      icon="heart"
-                      style="width: 20px; height: 20px"
-                      variant="danger"
-                    ></b-icon>
-                  </div>
-                </b-col>
-              </b-row>
-            </div>
-          </b-card>
+                </div>
+                <div style="margin-top: 15px">
+                  <b-row>
+                    <b-col cols="6">
+                      <div align="left">
+                        <div style="line-height: 1.8">
+                          <h6 style="font-size: 18px">฿{{ item.PRICE }}</h6>
+                        </div>
+                      </div>
+                    </b-col>
+                    <b-col cols="6">
+                      <div align="right">
+                        <b-icon
+                          icon="heart"
+                          style="width: 20px; height: 20px"
+                          variant="danger"
+                        ></b-icon>
+                      </div>
+                    </b-col>
+                  </b-row>
+                </div>
+              </b-card-text>
+            </b-card>
+          </b-card-group>
         </b-col>
       </b-row>
     </div>
-        <!-- footer -->
+
+    <!-- footer -->
     <br /><br />
     <div class="footerr">
       <b-container class="bv-example-row">
@@ -182,24 +120,37 @@
                 variant="light"
               ></b-icon>
             </div>
-              <font color="#FFFFF">ซื้อสินค้า</font>
+            <font color="#FFFFF">ซื้อสินค้า</font>
           </b-col>
         </b-row>
       </b-container>
     </div>
     <!-- footer -->
-    </div>
+  </div>
 </template>
 <script>
 import Nav from "../../components/Nav";
+import axios from "axios";
+import firebase from "firebase";
+const api_url = require("../../../utilities/api");
 export default {
   components: {
     Nav,
   },
-   methods: {
+  data: () => ({
+    product1: null,
+  }),
+  created() {
+    // สินค้าโปรโมชั่น
+    axios.post(`${api_url.api_url}/selectproducts`).then((response) => {
+      console.log(response.data);
+      this.product1 = response.data;
+    });
+  },
+  methods: {
     backindex() {
       this.$router.push({ path: "/" });
     },
   },
-  };
+};
 </script>

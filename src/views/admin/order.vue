@@ -55,7 +55,41 @@
         :filterIncludedFields="filterOn"
         :head-variant="dark">
 
+        <template v-slot:cell(detail)="row">
+            <!-- แก้ไข -->
+            <b-icon
+              style="width: 25px; height: 25px"
+              @click="info1(row.item, row.index, $event.target)"
+              icon="file-earmark-text"
+              variant="danger"
+            ></b-icon>
+             </template>
+          <template v-slot:cell(status)="row">
+            <!-- รอการตอบรับ -->
+            <b-button
+              class="mr-2"
+              variant="warning"
+              @click="info3(row.item, row.index, $event.target)"
+              >สถานะการทำงาน</b-button
+            >
+          </template>
+
       </b-table>
+
+       <b-modal :id="infoModal1.id"   ref="modal-1" hide-footer>
+          <b-container fluid>
+            <div align="center">
+              <b><h4>รายละเอียด</h4></b>
+            </div>
+            <p>รหัสครุภัณฑ์ : </p>
+            <p>ยี่ห้อ : </p>
+            <p>รุ่น : </p>
+            <p>
+              วันที่เเจ้งซ่อม : 
+            </p>
+            <p>ปัญหาการเเจ้งซ่อม : </p>
+          </b-container>
+        </b-modal>
 
     </div>
     </div>
@@ -71,19 +105,27 @@ export default {
       fields: [
         // { key: "FIX_ID", label: "ลำดับ", class: "text-center" },
         { key: "PRODUCT_CODE", label: "เลขออเดอร์", class: "text-center" },
-        { key: "MEMBER_NAME", label: "ชื่อสินค้า", class: "text-center" },
+        { key: "MEMBER_NAME", label: "ชื่อลูกค้า", class: "text-center" },
         {
           key: "DATE",
-          label: "รูปภาพ",
+          label: "วันที่",
           class: "text-center",
           formatter: "format_datetime",
         },
-        { key: "FIX_STATUS", label: "ราคา", class: "text-center" },
-        { key: "detail", label: "ชื่อลูกค้า", class: "text-center" },
-        { key: "fixstatus", label: "ที่อยู่ลูกค้า", class: "text-center" },
+        { key: "detail", label: "รายละเอียด", class: "text-center" },
          { key: "status", label: "ปุ่มเปลี่ยนสถานะ", class: "text-center" },
          
       ],
+
+       methods: {
+         info1(item, index, button) {
+     
+    
+      this.infoModal1.title = item.name;
+      this.infoModal1.content = JSON.stringify(item, null, 2);
+      this.$root.$emit("bv::show::modal", this.infoModal1.id, button);
+    },
+       }
     }
   }
 }
