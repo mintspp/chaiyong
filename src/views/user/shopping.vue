@@ -240,7 +240,7 @@
     footer -->
     <br /><br />
     <div class="footerr" style="z-index: 9999 !important">
-      <b-container class="bv-example-row">
+     
         <b-row>
           <b-col cols="3" lg="3">
             <div @click="backindex()" style="padding-top: 10px">
@@ -270,7 +270,7 @@
             </b-row>
           </b-col>
         </b-row>
-      </b-container>
+     
     </div>
   </div>
 </template>

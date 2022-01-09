@@ -202,7 +202,7 @@
     <!-- footer -->
     <br /><br />
     <div class="footerr">
-      <b-container class="bv-example-row">
+     
         <b-row>
           <b-col cols="4">
             <div @click="backindex()" style="padding-top: 10px">
@@ -236,7 +236,7 @@
             <font color="#FFFFF">ซื้อสินค้า</font>
           </b-col>
         </b-row>
-      </b-container>
+     
     </div>
     <!-- footer -->
   </div>
