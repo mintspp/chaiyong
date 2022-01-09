@@ -153,7 +153,7 @@
         :filterIncludedFields="filterOn"
         :head-variant="dark"
       >
-        <template v-slot:cell(detail)="row">
+      <template v-slot:cell(detail)="row">
           <!-- รายละเอียด -->
           <b-button
             variant="warning"
@@ -161,6 +161,8 @@
             class="mr-2"
             >รายละเอียด</b-button
           >
+        </template>
+        <template v-slot:cell(edit)="row">
           <!-- แก้ไข -->
           <b-button
             variant="info"
@@ -328,7 +330,8 @@ export default {
       fields: [
         { key: "PRODUCT_ID", label: "รหัสสินค้า", class: "text-center" },
         { key: "PRODUCT_NAME", label: "ชื่อสินค้า", class: "text-center" },
-        { key: "detail", label: "จัดการข้อมูล", class: "text-center" },
+         { key: "detail", label: "รายละเอียด", class: "text-center" },
+        { key: "edit", label: "จัดการข้อมูล", class: "text-center" },
       ],
       types: [
         { value: "ครีมเปลี่ยนสีผม", text: "ครีมเปลี่ยนสีผม" },
@@ -563,5 +566,6 @@ export default {
 };
 </script>
 <style>
+
 
 </style>

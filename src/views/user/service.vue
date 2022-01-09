@@ -102,7 +102,7 @@
     <!-- footer -->
     <br /><br />
     <div class="footerr">
-      <b-container class="bv-example-row">
+     
         <b-row>
           <b-col cols="4">
             <div style="padding-top: 10px">
@@ -137,7 +137,7 @@
             <font color="#FFFFFF">รถเข็น</font>
           </b-col>
         </b-row>
-      </b-container>
+     
     </div>
     <!-- footer -->
   </div>
