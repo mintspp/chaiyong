@@ -228,4 +228,6 @@ export default {
   border-bottom: 0px solid #fff;
 }
 
+
+
 </style>

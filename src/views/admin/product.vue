@@ -398,10 +398,14 @@ export default {
         .then((response) => {
           console.log(response.data);
           this.$refs["modal-2"].hide();
-          axios.post(`${api_url.api_url}/selectproductALL`).then((response) => {
-            console.log(response.data);
-            this.items = response.data;
-          });
+          axios
+            .post(`${api_url.api_url}/selectproductALL`, {
+              search: this.search,
+            })
+            .then((response) => {
+              console.log(response.data);
+              this.items = response.data;
+            });
         });
       this.$refs["modal-3"].hide();
     },
@@ -445,7 +449,9 @@ export default {
                 console.log(response.data);
                 this.$refs["my-modal"].hide();
                 axios
-                  .post(`${api_url.api_url}/selectproductALL`)
+                  .post(`${api_url.api_url}/selectproductALL`, {
+                    search: this.search,
+                  })
                   .then((response) => {
                     console.log(response.data);
                     this.items = response.data;
@@ -494,7 +500,9 @@ export default {
                   console.log(response.data);
                   this.$refs["modal-2"].hide();
                   axios
-                    .post(`${api_url.api_url}/selectproductALL`)
+                    .post(`${api_url.api_url}/selectproductALL`, {
+                      search: this.search,
+                    })
                     .then((response) => {
                       console.log(response.data);
                       this.items = response.data;
@@ -520,7 +528,9 @@ export default {
             console.log(response.data);
             this.$refs["modal-2"].hide();
             axios
-              .post(`${api_url.api_url}/selectproductALL`)
+              .post(`${api_url.api_url}/selectproductALL`, {
+                search: this.search,
+              })
               .then((response) => {
                 console.log(response.data);
                 this.items = response.data;
@@ -563,5 +573,4 @@ export default {
 };
 </script>
 <style>
-
 </style>
