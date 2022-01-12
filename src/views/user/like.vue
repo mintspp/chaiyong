@@ -1,8 +1,31 @@
 <template>
   <div style="background: #f9fafb">
     <!-- --------------nav------------ -->
-    <Nav />
+    <!-- <Nav /> -->
     <!-- --------------nav------------ -->
+  
+  <div >
+    <b-nav style="background-color: rgb(52, 86, 139)">
+      <b-col lg="3" cols="4" style="padding: 0px">
+       <b-nav-item > <p class="text-light">ชัยยงค์การช่าง</p></b-nav-item>
+    </b-col>
+    <b-col lg="3" cols="6">
+   <b-nav-item >  <p class="text-light" >Active</p></b-nav-item>
+     </b-col> 
+   <b-col lg="3" cols="6">
+   <b-nav-item >  <p class="text-light" >Active</p></b-nav-item>
+     </b-col> 
+      
+   <b-col lg="3" cols="6">
+      <b-nav-item >  <p class="text-light" >Active</p></b-nav-item></b-col> 
+    <b-col lg="3" cols="6">
+      <b-nav-item disabled> <p class="text-muted" > Disabled</p></b-nav-item>
+      </b-col>
+   
+    
+  </b-nav>
+  </div>
+
     <br /><br /><br />
     <br />
     <div>
@@ -216,8 +239,27 @@ heartDOM.addEventListener('animationend', (event) => {
 }
 
 
-
-
+.nav {
+    /* position: relative; */
+    position: fixed !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.2rem 0rem;
+    width: 100%;
+    
+    z-index: 9999;
+ 
+}
+.nav-link {
+    display: block;
+    padding: 0.5rem 0.5rem !important;
+}
+p {
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
+}
 
 
 

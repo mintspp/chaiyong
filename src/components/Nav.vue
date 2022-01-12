@@ -1,7 +1,7 @@
 <template>
      <div>
       <b-navbar toggleable="lg" type="dark" style="background-color: rgb(52, 86, 139)">
-        <img src="../assets/4.png" alt="Vue 4" style="width: 50px; height: 50px">
+        
         <b-navbar-brand href="/">ชัยยงค์การช่าง
         </b-navbar-brand>
         
