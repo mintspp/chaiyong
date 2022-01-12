@@ -3,31 +3,17 @@
     <!-- --------------nav------------ -->
     <Nav />
     <!-- --------------nav------------ -->
-
-    <!-- <div style="width: 40%; margin: 20px">
-      <b-input-group class="mb-2">
-        <b-input-group-prepend is-text>
-          <b-icon icon="search"></b-icon>
-        </b-input-group-prepend>
-        <b-form-input type="search" placeholder="Search terms"></b-form-input>
-      </b-input-group>
-    </div> -->
-
     <div>
       <br /><br /><br />
       <div align="center" style="margin-top: px">
         <b-card border-variant="light" class="text-center">
           <b-row>
             <b-col xl="5" lg="5" sm="12">
-              <b-img
-                style="width: 100%"
-                :src="productDetail.IMG"
-              >
-              </b-img>
+              <b-img style="width: 100%" :src="productDetail.IMG"> </b-img>
             </b-col>
             <b-col xl="7" lg="7" sm="12" align="left">
               <div style="margin: 10px">
-                <h5>{{productDetail.PRODUCT_NAME}}</h5>
+                <h5>{{ productDetail.PRODUCT_NAME }}</h5>
                 <b-row>
                   <b-col cols="12" lg="4">
                     <div>
@@ -46,25 +32,21 @@
                   </b-col>
                   <b-col cols="12" lg="12">
                     <b-row>
-                      <!-- <b-col cols="4" lg="2"> -->
-                        <!-- <h5
-                          style="
-                            color: rgb(151 142 142);
-                            text-decoration: line-through;
-                          "
-                        >
-                          300 บาท
-                        </h5> -->
-                        <!-- </b-col> -->
                       <b-col cols="8" lg="10">
-                        <h3 style="color: #de4747">{{productDetail.PRICE}} บาท</h3></b-col
+                        <h3 style="color: #de4747">
+                          {{ productDetail.PRICE }} บาท
+                        </h3></b-col
                       >
                     </b-row>
                   </b-col>
                   <b-col cols="12" lg="12">
                     <b>จำนวน</b>
                     <b-form-spinbutton
-                      style="border: 1px solid #ced4da; margin-left: 15px;margin-right: 15px"
+                      style="
+                        border: 1px solid #ced4da;
+                        margin-left: 15px;
+                        margin-right: 15px;
+                      "
                       id="demo-sb"
                       v-model="PRODUCT_AMOUNT"
                       @change="PM()"
@@ -74,13 +56,13 @@
                     ></b-form-spinbutton>
                     <b>ชิ้น</b>
                   </b-col>
-                  <b-col cols="12" lg="12" style="margin-top:10px">
-                    <b>สินค้าคงเหลือ</b> <br>
-                    {{productDetail.STOCK}} ชิ้น
+                  <b-col cols="12" lg="12" style="margin-top: 10px">
+                    <b>สินค้าคงเหลือ</b> <br />
+                    {{ productDetail.STOCK }} ชิ้น
                   </b-col>
-                  <b-col cols="12" lg="12" style="margin-top:10px">
-                    <b>รายละเอียด</b> <br>
-                    {{productDetail.DETAIL}}
+                  <b-col cols="12" lg="12" style="margin-top: 10px">
+                    <b>รายละเอียด</b> <br />
+                    {{ productDetail.DETAIL }}
                   </b-col>
                 </b-row>
               </div>
@@ -200,43 +182,49 @@
       </b-card>
     </div>
     <!-- footer -->
+     <b-modal ref="my-modal1" centered hide-footer >
+      <div class="d-block text-center">
+        <h3>กรุณาเข้าสู่ระบบก่อนสั่งซื้อสินค้า</h3>
+      </div>
+      <b-button class="mt-3" variant="outline-success" block @click="hideModal">ตกลง</b-button>
+    </b-modal>
+     <b-modal ref="my-modal2" centered hide-footer >
+      <div class="d-block text-center">
+        <h3>เพิ่มสินค้าในรถเข็นเเล้ว</h3>
+      </div>
+      <b-button class="mt-3" variant="outline-success" block @click="hideModal">ตกลง</b-button>
+    </b-modal>
     <br /><br />
     <div class="footerr">
-     
-        <b-row>
-          <b-col cols="4">
-            <div @click="backindex()" style="padding-top: 10px">
-              <b-icon
-                icon="chevron-left"
-                variant="light"
-                font-scale="1.5"
-              ></b-icon>
-            </div>
-            <font color="#FFFFF">ย้อนกลับ</font>
-          </b-col>
-          <b-col cols="4">
-            <div @click="gocart()" style="padding-top: 10px">
-              <b-icon
-                icon="basket-fill"
-                variant="light"
-                font-scale="1.5"
-              ></b-icon>
-            </div>
-            <font color="#FFFFF">รถเข็น</font>
-          </b-col>
+      <b-row>
+        <b-col cols="4">
+          <div @click="backindex()" style="padding-top: 10px">
+            <b-icon
+              icon="chevron-left"
+              variant="light"
+              font-scale="1.5"
+            ></b-icon>
+          </div>
+          <font color="#FFFFF">ย้อนกลับ</font>
+        </b-col>
+        <b-col cols="4">
+          <div @click="goshopping()" style="padding-top: 10px">
+            <b-icon
+              icon="basket-fill"
+              variant="light"
+              font-scale="1.5"
+            ></b-icon>
+          </div>
+          <font color="#FFFFF">รถเข็น</font>
+        </b-col>
 
-          <b-col cols="4">
-            <div style="padding-top: 10px">
-              <b-icon
-                icon="cart-plus"
-                font-scale="1.5"
-                variant="light"
-              ></b-icon>
-            </div>
-            <font color="#FFFFF">ซื้อสินค้า</font>
-          </b-col>
-        </b-row>
-     
+        <b-col cols="4" @click="shopping_cart()">
+          <div style="padding-top: 10px" >
+            <b-icon icon="cart-plus" font-scale="1.5" variant="light"></b-icon>
+          </div>
+          <font color="#FFFFF">ซื้อสินค้า</font>
+        </b-col>
+      </b-row>
     </div>
     <!-- footer -->
   </div>
@@ -254,26 +242,48 @@ export default {
     return {
       value: 3.555,
       PRODUCT_AMOUNT: 1,
-      productDetail:null,
+      productDetail: null,
+      checklogin:"",
     };
   },
-    mounted() {
-      this.showDetail();
-       axios.post(`${api_url.api_url}/selectproductDetail`,{
-         PRODUCT_ID:this.$store.getters["Detail/PRODUCT_ID"]
-       }).then((response) => {
-      console.log(response.data);
-      this.productDetail = response.data[0];
-    });
-    },
+  mounted() {
+     this.checklogin = localStorage.getItem("login")
+    axios
+      .post(`${api_url.api_url}/selectproductDetail`, {
+        PRODUCT_ID: localStorage.getItem("IDPRODUCT"),
+      })
+      .then((response) => {
+        console.log(response.data);
+        this.productDetail = response.data[0];
+      });
+  },
   methods: {
+     goshopping() {
+      this.$router.push({ path: "/usershopping" });
+    },
     backindex() {
       this.$router.push({ path: "/" });
     },
-    showDetail() {
-      console.log(this.$store.getters["Detail/PRODUCT_ID"]);
-      return this.$store.getters["Detail/PRODUCT_ID"];
+    async shopping_cart() {
+      if (this.checklogin == 1) {
+         axios
+        .post(`${api_url.api_url}/Shoppingcart`, {
+          MEMBER_ID:localStorage.getItem("IDMEMBER"),
+          PRODUCT_ID: localStorage.getItem("IDPRODUCT"),
+          TOTAL: this.PRODUCT_AMOUNT
+        })
+        .then((response) => {
+          console.log(response.data);
+           this.$refs['my-modal2'].show()
+        });
+      }else{
+        this.$refs['my-modal1'].show()
+      }
     },
+     hideModal() {
+        this.$refs['my-modal1'].hide()
+        this.$refs['my-modal2'].hide()
+      },
   },
 };
 </script>

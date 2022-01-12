@@ -3,15 +3,6 @@
     <!-- --------------nav------------ -->
     <Nav />
     <!-- --------------nav------------ -->
-
-    <!-- <div style="width:40%; margin:20px;">
-      <b-input-group  class="mb-2">
-        <b-input-group-prepend is-text>
-          <b-icon icon="search"></b-icon>
-        </b-input-group-prepend>
-        <b-form-input type="search" placeholder="ค้นหาสินค้า"></b-form-input>
-      </b-input-group>
-    </div> -->
     <br /><br /><br />
     <br />
     <div style="margin-top: 0px; margin-right: 10px; margin-left: 10px">
@@ -23,7 +14,9 @@
             </b-input-group-prepend>
             <b-form-input
               type="search"
-              placeholder="ค้นหาสินค้า"
+              v-model="search"
+              @keyup="serchProduct()"
+              placeholder="ค้นหา"
             ></b-form-input> </b-input-group
         ></b-col>
       </b-row>
@@ -31,18 +24,7 @@
         <b>สินค้าโปรโมชั่น</b>
       </div>
     </div>
-
-    <div
-     
-      style="
-        
-        margin-top: 0px;
-        margin-right: 20px;
-        margin-left: 20px;
-      "
-    >
-     
-
+    <div style="margin-top: 0px; margin-right: 20px; margin-left: 20px">
       <b-row>
         <b-col
           v-for="item in product1"
@@ -89,41 +71,28 @@
     <!-- footer -->
     <br /><br />
     <div class="footerr">
-      <b-container class="bv-example-row">
-        <b-row>
-          <b-col cols="4">
-            <div @click="backindex()" style="padding-top: 10px">
-              <b-icon
-                icon="chevron-left"
-                variant="light"
-                font-scale="1.5"
-              ></b-icon>
-            </div>
-            <font color="#FFFFF">ย้อนกลับ</font>
-          </b-col>
-          <b-col cols="4">
-            <div @click="gocart()" style="padding-top: 10px">
-              <b-icon
-                icon="basket-fill"
-                variant="light"
-                font-scale="1.5"
-              ></b-icon>
-            </div>
-            <font color="#FFFFF">รถเข็น</font>
-          </b-col>
-
-          <b-col cols="4">
-            <div style="padding-top: 10px">
-              <b-icon
-                icon="cart-plus"
-                font-scale="1.5"
-                variant="light"
-              ></b-icon>
-            </div>
-            <font color="#FFFFF">ซื้อสินค้า</font>
-          </b-col>
-        </b-row>
-      </b-container>
+      <b-row>
+        <b-col cols="6">
+          <div @click="backindex()" style="padding-top: 10px">
+            <b-icon
+              icon="chevron-left"
+              variant="light"
+              font-scale="1.5"
+            ></b-icon>
+          </div>
+          <font color="#FFFFF">ย้อนกลับ</font>
+        </b-col>
+        <b-col cols="6">
+          <div @click="gocart()" style="padding-top: 10px">
+            <b-icon
+              icon="basket-fill"
+              variant="light"
+              font-scale="1.5"
+            ></b-icon>
+          </div>
+          <font color="#FFFFF">รถเข็น</font>
+        </b-col>
+      </b-row>
     </div>
     <!-- footer -->
   </div>
@@ -139,17 +108,37 @@ export default {
   },
   data: () => ({
     product1: null,
+    search: "",
   }),
   created() {
     // สินค้าโปรโมชั่น
-    axios.post(`${api_url.api_url}/selectproducts`).then((response) => {
-      console.log(response.data);
-      this.product1 = response.data;
-    });
+    axios
+      .post(`${api_url.api_url}/selectproduct3s`, {
+        search: this.search,
+      })
+      .then((response) => {
+        console.log(response.data);
+        this.product1 = response.data;
+      });
   },
   methods: {
+    serchProduct() {
+      // สินค้า;
+      axios
+        .post(`${api_url.api_url}/selectproduct3s`, {
+          search: this.search,
+        })
+        .then((response) => {
+          console.log(response.data);
+          this.product1 = response.data;
+        });
+    },
     backindex() {
       this.$router.push({ path: "/" });
+    },
+    godetail(item) {
+       localStorage.setItem("IDPRODUCT", item.PRODUCT_ID);
+      this.$router.push({ path: "/userdetail" });
     },
   },
 };

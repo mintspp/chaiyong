@@ -17,12 +17,18 @@
             <b-nav-item-dropdown right>
               <!-- Using 'button-content' slot -->
               <template #button-content>
-                 <b-icon icon="person-fill" font-scale="2" variant="light" align="center"></b-icon>
+                 <b-icon v-if="checklogin != 1" icon="person-fill" font-scale="2" variant="light" align="center"></b-icon>
+                 <b-img v-if="checklogin == 1"
+                    rounded="circle"
+                    style="width: 40px"
+                    :src="img"
+                  ></b-img>
               </template>
-              <b-dropdown-item @click="goRegister()">สมัครสมาชิก</b-dropdown-item>
-              <b-dropdown-item @click="gologin()">เข้าสู่ระบบ</b-dropdown-item>
-              <b-dropdown-item href="#">ข้อมูลส่วนตัว</b-dropdown-item>
-              <b-dropdown-item href="#">ออกจากระบบ</b-dropdown-item>
+              <b-dropdown-item v-if="checklogin == 1">ชื่อผู้ใช้ : {{NAMEUSER}}</b-dropdown-item>
+              <b-dropdown-item v-if="checklogin != 1" @click="goRegister()">สมัครสมาชิก</b-dropdown-item>
+              <b-dropdown-item v-if="checklogin != 1" @click="gologin()">เข้าสู่ระบบ</b-dropdown-item>
+              <b-dropdown-item v-if="checklogin == 1" @click="goprofile()">ข้อมูลส่วนตัว</b-dropdown-item>
+              <b-dropdown-item  v-if="checklogin == 1" @click="logouts">ออกจากระบบ</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>
@@ -34,13 +40,26 @@
     </div>
 </template>
 <script>
-// import axios from "axios";
+import axios from "axios";
+const api_url = require("../../utilities/api");
 export default {
   name: "Nav",
   data: () => ({
+    NAMEUSER:"",
+    checklogin: "",
+    img:""
   }),
   mounted() {
-
+ this.NAMEUSER = localStorage.getItem("USER")
+ this.checklogin = localStorage.getItem("login")
+  axios
+      .post(`${api_url.api_url}/checkmember`, {
+        MEMBER_ID: localStorage.getItem("IDMEMBER")
+      })
+      .then((response) => {
+        console.log(response.data);
+        this.img = response.data[0].IMG;
+      });
   },
   methods: {
    goRegister(){
@@ -48,7 +67,16 @@ export default {
    },
     gologin(){
       this.$router.push({ path: "/adminlogin" });
-   }
+   },
+   goprofile(){
+      this.$router.push({ path: "/userprofile" });
+   },
+    logouts() {
+      console.log('logout');
+      this.$router.push({ path: "/" });
+      localStorage.clear();
+      location.reload();
+    },
   },
 };
 </script>

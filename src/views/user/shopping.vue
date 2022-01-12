@@ -3,287 +3,168 @@
     <!-- --------------nav------------ -->
     <Nav />
     <!-- --------------nav------------ -->
-    <br /><br /><br />
-    <div
-      style="
-        position: fixed !important;
-        width: 100%;
-        z-index: 9999 !important;
-        margin-top: -7px !important;
-      "
-    >
-      <b-card border-variant="light">
-        <b-row>
-          <b-col cols="1" lg="1">
-            <b-form-checkbox
-              id="checkbox-1"
-              v-model="status"
-              name="checkbox-1"
-              value="accepted"
-              unchecked-value="not_accepted"
-            >
-            </b-form-checkbox>
-          </b-col>
-          <b-col cols="6" lg="6">
-            <div align="left">สินค้าท้ังหมด</div>
-          </b-col>
-        </b-row>
-      </b-card>
-    </div>
+    <br />
     <div style="margin-top: 60px">
-      <!-- <div>
-        
-      </div> -->
-
-      <b-card border-variant="light" style="margin-top: 1px">
-        <div align="right">
-          <b-button pill variant="outline-danger" size="sm">ลบ</b-button>
-        </div>
-
-        <b-row>
-          <b-col cols="5" lg="2">
-            <b-row>
-              <b-col cols="2" lg="6">
-                <b-form-checkbox
-                  id="checkbox-1"
-                  v-model="status"
-                  name="checkbox-1"
-                  value="accepted"
-                  unchecked-value="not_accepted"
-                >
-                </b-form-checkbox>
-              </b-col>
-              <b-col cols="8" lg="6">
-                <b-img
-                  rounded="0"
-                  style="width: 100px"
-                  src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/4.png?alt=media&token=b9da41a4-dc4e-4982-8e1f-a1181821c7b9"
-                >
-                </b-img>
-              </b-col>
-            </b-row>
-          </b-col>
-
-          <b-col cols="7" lg="10">
-            <b-row>
-              <b-col cols="12" lg="6">
-                <div align="left" style="margin-left: 0px">ชื่อสินค้า</div>
-              </b-col>
-              <b-col cols="12" lg="2">
-                <div align="left">ราคาต่อชิ้น</div>
-              </b-col>
-              <b-col cols="12" lg="2"> <div align="left">จำนวน</div> </b-col>
-              <b-col cols="12" lg="2"> <div align="left">ราคารวม</div> </b-col>
-            </b-row>
-          </b-col>
-        </b-row>
-      </b-card>
-
-      <b-card border-variant="light" style="margin-top: 1px">
-        <div align="right">
-          <b-button pill variant="outline-danger" size="sm">ลบ</b-button>
-        </div>
-
-        <b-row>
-          <b-col cols="5" lg="2">
-            <b-row>
-              <b-col cols="2" lg="6">
-                <b-form-checkbox
-                  id="checkbox-1"
-                  v-model="status"
-                  name="checkbox-1"
-                  value="accepted"
-                  unchecked-value="not_accepted"
-                >
-                </b-form-checkbox>
-              </b-col>
-              <b-col cols="8" lg="6">
-                <b-img
-                  rounded="0"
-                  style="width: 100px"
-                  src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/4.png?alt=media&token=b9da41a4-dc4e-4982-8e1f-a1181821c7b9"
-                >
-                </b-img>
-              </b-col>
-            </b-row>
-          </b-col>
-
-          <b-col cols="7" lg="10">
-            <b-row>
-              <b-col cols="12" lg="6">
-                <div align="left" style="margin-left: 0px">ชื่อสินค้า</div>
-              </b-col>
-              <b-col cols="12" lg="2">
-                <div align="left">ราคาต่อชิ้น</div>
-              </b-col>
-              <b-col cols="12" lg="2"> <div align="left">จำนวน</div> </b-col>
-              <b-col cols="12" lg="2"> <div align="left">ราคารวม</div> </b-col>
-            </b-row>
-          </b-col>
-        </b-row>
-      </b-card>
-
-      <b-card border-variant="light" style="margin-top: 1px">
-        <div align="right">
-          <b-button pill variant="outline-danger" size="sm">ลบ</b-button>
-        </div>
-
-        <b-row>
-          <b-col cols="5" lg="2">
-            <b-row>
-              <b-col cols="2" lg="6">
-                <b-form-checkbox
-                  id="checkbox-1"
-                  v-model="status"
-                  name="checkbox-1"
-                  value="accepted"
-                  unchecked-value="not_accepted"
-                >
-                </b-form-checkbox>
-              </b-col>
-              <b-col cols="8" lg="6">
-                <b-img
-                  rounded="0"
-                  style="width: 100px"
-                  src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/4.png?alt=media&token=b9da41a4-dc4e-4982-8e1f-a1181821c7b9"
-                >
-                </b-img>
-              </b-col>
-            </b-row>
-          </b-col>
-
-          <b-col cols="7" lg="10">
-            <b-row>
-              <b-col cols="12" lg="6">
-                <div align="left" style="margin-left: 0px">ชื่อสินค้า</div>
-              </b-col>
-              <b-col cols="12" lg="2">
-                <div align="left">ราคาต่อชิ้น</div>
-              </b-col>
-              <b-col cols="12" lg="2"> <div align="left">จำนวน</div> </b-col>
-              <b-col cols="12" lg="2"> <div align="left">ราคารวม</div> </b-col>
-            </b-row>
-          </b-col>
-        </b-row>
-      </b-card>
-
-      <b-card border-variant="light" style="margin-top: 1px">
-        <div align="right">
-          <b-button pill variant="outline-danger" size="sm">ลบ</b-button>
-        </div>
-
-        <b-row>
-          <b-col cols="5" lg="2">
-            <b-row>
-              <b-col cols="2" lg="6">
-                <b-form-checkbox
-                  id="checkbox-1"
-                  v-model="status"
-                  name="checkbox-1"
-                  value="accepted"
-                  unchecked-value="not_accepted"
-                >
-                </b-form-checkbox>
-              </b-col>
-              <b-col cols="8" lg="6">
-                <b-img
-                  rounded="0"
-                  style="width: 100px"
-                  src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/4.png?alt=media&token=b9da41a4-dc4e-4982-8e1f-a1181821c7b9"
-                >
-                </b-img>
-              </b-col>
-            </b-row>
-          </b-col>
-
-          <b-col cols="7" lg="10">
-            <b-row>
-              <b-col cols="12" lg="6">
-                <div align="left" style="margin-left: 0px">ชื่อสินค้า</div>
-              </b-col>
-              <b-col cols="12" lg="2">
-                <div align="left">ราคาต่อชิ้น</div>
-              </b-col>
-              <b-col cols="12" lg="2"> <div align="left">จำนวน</div> </b-col>
-              <b-col cols="12" lg="2"> <div align="left">ราคารวม</div> </b-col>
-            </b-row>
-          </b-col>
-        </b-row>
-      </b-card>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>
+              <label class="form-checkbox">
+                <input
+                  type="checkbox"
+                  :checked="selectAll"
+                  @change="selectAllProducts"
+                />
+                <i class="form-icon"></i>
+              </label>
+            </th>
+            <th>สินค้าทั้งหมด</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="i in items" :key="i.PRODUCT_ID">
+            <td>
+              <label class="form-checkbox">
+                <input
+                  type="checkbox"
+                  v-model="selected"
+                  :value="i"
+                  @change="select(i)"
+                />
+                <i class="form-icon"></i>
+              </label>
+            </td>
+            <td>
+              <b-img rounded="0" style="width: 100px" :src="i.IMG"></b-img>
+            </td>
+            <td>
+              <div align="right">
+                <b-button pill variant="outline-danger" size="sm">ลบ</b-button>
+              </div>
+              <b-row>
+                <b-col cols="12" lg="6">
+                  <div align="left" style="margin-left: 0px">
+                    ชื่อสินค้า {{ i.PRODUCT_NAME }}
+                  </div>
+                </b-col>
+                <b-col cols="12" lg="3">
+                  <div align="left">
+                    ราคาต่อชิ้น <b>{{ i.PRICE }}</b> บาท
+                  </div>
+                </b-col>
+                <b-col cols="12" lg="3">
+                  <div align="left">
+                    จำนวน <b>{{ i.TOTAL }}</b> ชิ้น
+                  </div>
+                </b-col>
+              </b-row>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <!-- footer -->
-    <!-- <br /><br />
-    <div class="shop">
-      <b-container class="bv-example-row">
-         <div>
-        <b-card border-variant="light" style="padding: 0px">
-          <b-row>
-            <b-col cols="1" lg="1">
-              <b-form-checkbox
-                id="checkbox-1"
-                v-model="status"
-                name="checkbox-1"
-                value="accepted"
-                unchecked-value="not_accepted"
-              >
-              </b-form-checkbox>
-            </b-col>
-            <b-col cols="11" lg="11">
-              <div align="left">สินค้าท้ังหมด</div>
-            </b-col>
-          </b-row>
-        </b-card>
-      </div>
-      </b-container>
-    </div>
-    footer -->
     <br /><br />
     <div class="footerr" style="z-index: 9999 !important">
-     
-        <b-row>
-          <b-col cols="3" lg="3">
-            <div @click="backindex()" style="padding-top: 10px">
-              <b-icon
-                icon="chevron-left"
-                variant="light"
-                font-scale="1.5"
-              ></b-icon>
-            </div>
-            <font color="#FFFFF">ย้อนกลับ</font>
-          </b-col>
+      <b-row>
+        <b-col cols="3" lg="3">
+          <div @click="backindex()" style="padding-top: 10px">
+            <b-icon
+              icon="chevron-left"
+              variant="light"
+              font-scale="1.5"
+            ></b-icon>
+          </div>
+          <font color="#FFFFF">ย้อนกลับ</font>
+        </b-col>
 
-          <b-col cols="9" lg="9">
-            <b-row>
-              <b-col cols="7" lg="10">
-                <div align="right" style="padding-top: 10px">
-                  รวมทั้งหมด:
-                  <div>฿000</div>
-                </div>
-              </b-col>
-              <b-col cols="5" lg="2" @click="gocart()">
-                <div style="padding-top: 10px">
-                   <b-button style="background-color: rgb(205, 33, 42)  " block >สั่งซื้อ</b-button>
-                 
-                </div>
-              </b-col>
-            </b-row>
-          </b-col>
-        </b-row>
-     
+        <b-col cols="9" lg="9">
+          <b-row>
+            <b-col cols="7" lg="10">
+              <div align="right" style="padding-top: 10px">
+                รวมทั้งหมด:
+                <div>฿{{ sumprice }}</div>
+              </div>
+            </b-col>
+            <b-col cols="5" lg="2" @click="gocart()">
+              <div style="padding-top: 10px">
+                <b-button style="background-color: rgb(205, 33, 42)" block
+                  >สั่งซื้อ</b-button
+                >
+              </div>
+            </b-col>
+          </b-row>
+        </b-col>
+      </b-row>
     </div>
   </div>
 </template>
 <script>
 import Nav from "../../components/Nav";
+import axios from "axios";
+import firebase from "firebase";
+const api_url = require("../../../utilities/api");
 export default {
   components: {
     Nav,
   },
-  data: () => ({}),
-  created() {},
+  data: () => ({
+    items: null,
+    // selectAll: false,
+    // selected: [],
+    selectAll: false,
+    selected: [],
+    sumprice: 0,
+  }),
+  created() {
+    axios
+      .post(`${api_url.api_url}/selectshoppinguser`, {
+        MEMBER_ID: localStorage.getItem("IDMEMBER"),
+      })
+      .then((response) => {
+        console.log(response.data);
+        this.items = response.data;
+      });
+  },
+
   mounted() {},
   methods: {
+    selectAllProducts() {
+      if (this.selectAll) {
+        this.selected = [];
+        this.sumprice = 0;
+        this.selectAll = false;
+      } else {
+        this.selected = [];
+        for (var i in this.items) {
+          this.selected.push(this.items[i]);
+        }
+        this.selectAll = true;
+      }
+      console.log(this.selected);
+      for (let index = 0; index < this.selected.length; index++) {
+        const element = this.selected[index];
+        console.log(parseInt(element.PRICE));
+        this.sumprice += parseInt(element.PRICE) * parseInt(element.TOTAL)
+      }
+      console.log(this.sumprice);
+    },
+    select() {
+      this.sumprice = 0;
+      if (this.selected.length !== this.items.length) {
+        this.selectAll = false;
+      } else {
+        this.selectAll = true;
+      }
+      console.log(this.selected);
+       for (let index = 0; index < this.selected.length; index++) {
+        const element = this.selected[index];
+        console.log(parseInt(element.PRICE));
+        this.sumprice += parseInt(element.PRICE) * parseInt(element.TOTAL)
+      }
+      console.log(this.sumprice);
+    },
     backindex() {
       this.$router.push({ path: "/" });
     },
@@ -315,8 +196,4 @@ export default {
   text-align: left;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
-
-
-
 </style>

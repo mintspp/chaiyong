@@ -8,9 +8,9 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <b-nav-item href="#" disabled>ข้อมูลลูกค้า</b-nav-item>
-            <b-nav-item href="#">ข้อมูลสินค้า</b-nav-item>
-            <b-nav-item href="#">ออเดอร์สินค้า</b-nav-item>
+            <b-nav-item @click="costomer()" disabled>ข้อมูลลูกค้า</b-nav-item>
+            <b-nav-item @click="product()">ข้อมูลสินค้า</b-nav-item>
+            <b-nav-item @click="order()">ออเดอร์สินค้า</b-nav-item>
             <b-nav-item-dropdown text="ประวัติ" right>
               <b-dropdown-item href="#">ประวัติการสั่งซื้อ</b-dropdown-item>
               <b-dropdown-item href="#"
@@ -25,10 +25,10 @@
             <b-nav-item-dropdown right>
               <!-- Using 'button-content' slot -->
               <template #button-content>
-                <em>ชื่อผู้ใช้</em>
+                <em>{{ NAMEUSER }}</em>
               </template>
-              <b-dropdown-item href="#">โปรไฟล์</b-dropdown-item>
-              <b-dropdown-item href="#">ออกจากระบบ</b-dropdown-item>
+              <!-- <b-dropdown-item href="#">โปรไฟล์</b-dropdown-item> -->
+              <b-dropdown-item @click="logouts">ออกจากระบบ</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>
@@ -41,256 +41,44 @@
       <br />
       <b-row>
         <b-col cols="8" lg="6">
-          <b-form-group label-for="input-lazy" class="mb-0">
+          <b-input-group class="mb-2">
+            <b-input-group-prepend is-text>
+              <b-icon icon="search"></b-icon>
+            </b-input-group-prepend>
             <b-form-input
-              id="input-lazy"
-              v-model="text2"
+              type="search"
+              v-model="search"
+              @keyup="serchProduct()"
               placeholder="ค้นหา"
-              lazy-formatter
-              :formatter="formatter"
             ></b-form-input>
-          </b-form-group>
+          </b-input-group>
         </b-col>
         <b-col cols="4" lg="6">
-          <div align="right"><b style="font-size: 12px">ทั้งหมด: คน</b></div>
+          <div align="right">
+            <b style="font-size: 15px">ทั้งหมด: {{ num }} คน</b>
+          </div>
         </b-col>
       </b-row>
 
       <div style="margin-top: 10px">
         <b-row>
-          <b-col lg="4" cols="12">
-            <b-card>
+          <b-col v-for="item in items" :key="item.MEMBER_ID" lg="4" cols="12" style="margin-top:5px;">
+            <b-card >
               <div align="right">
-                <b-icon
-                  icon="file-earmark-text"
-                  id="show-btn"
-                  @click="showModal"
-                  variant="success"
-                ></b-icon>
-                <b-icon
-                  icon="pencil-square "
-                  id="toggle-btn"
-                  @click="toggleModal"
-                  variant="warning"
-                  style="margin-left: 5px"
-                ></b-icon>
-                <div>
-                  <b-modal ref="my-modal" hide-footer title="ที่อยู่ของลูกค้า">
-                    <div style="margin-left: 0px" >
-                     <b-row>
-                        <b-col cols="4" lg="3" sm="3" align="right">
-                          <h6>ที่อยู่:</h6>
-                        </b-col>
-                        <b-col cols="8" lg="9" sm="9"  >
-                          
-                        </b-col>
-                        <b-col cols="4" lg="3" sm="3"  align="right">
-                          <h6>ถนน:</h6>
-                        </b-col>
-                        <b-col cols="8" lg="9" sm="9" >
-                          
-                        </b-col>
-                        <b-col cols="4" lg="3" sm="3" align="right">
-                          <h6>ตำบล:</h6>
-                        </b-col>
-                        <b-col cols="8" lg="9" sm="9">
-                          
-                        </b-col>
-                        <b-col cols="4" lg="3" sm="3"  align="right">
-                          <h6>อำเภอ:</h6>
-                        </b-col>
-                        <b-col cols="8" lg="9" sm="9">
-                          
-                        </b-col>
-                        <b-col cols="4"  lg="3" sm="3" align="right">
-                          <h6>จังหวัด:</h6>
-                        </b-col>
-                        <b-col cols="8" lg="9" sm="9">
-                          
-                        </b-col>
-                        <b-col cols="4" lg="3" sm="3" align="right"> 
-                          <h6>รหัสไปรษณีย์:</h6>
-                        </b-col>
-                        <b-col cols="8" lg="9" sm="9">
-                          
-                        </b-col> 
-                        </b-row> 
-                    </div>
-                  </b-modal>
-                  <b-modal
-                    ref="my-modal2"
-                    hide-footer
-                    title="แก้ไขข้อมูลลูกค้า"
-                  >
-                    <div style="padding: 0px">
-                      <b-row class="my-1">
-                        <b-col sm="3" cols="4" lg="3" align="right">
-                          <label for="input-default" >ชื่อ:</label>
-                        </b-col>
-                        <b-col sm="9" cols="8" lg="9">
-                          <b-form-input
-                            id="input-default"
-                            placeholder="Enter your name"
-                          ></b-form-input>
-                        </b-col>
-                      </b-row>
-                    </div>
-
-                    <b-row class="my-1">
-                      <b-col sm="3"  cols="4" lg="3" align="right">
-                        <label for="input-default">ที่อยู่:</label>
-                      </b-col>
-                      <b-col sm="9"  cols="8" lg="9">
-                        <b-form-input
-                          id="input-default"
-                          placeholder="Enter your name"
-                        ></b-form-input>
-                      </b-col>
-                    </b-row>
-                    <b-row class="my-1">
-                      <b-col sm="3"  cols="4" lg="3" align="right">
-                        <label for="input-default">ถนน:</label>
-                      </b-col>
-                      <b-col sm="9"  cols="8" lg="9" align="right">
-                        <b-form-input
-                          id="input-default"
-                          placeholder="Enter your name"
-                        ></b-form-input>
-                      </b-col>
-                    </b-row>
-                    <b-row class="my-1">
-                      <b-col sm="3" cols="4" lg="3" align="right">
-                        <label for="input-default">ตำบล:</label>
-                      </b-col>
-                      <b-col sm="9" cols="8" lg="9">
-                        <b-form-input
-                          id="input-default"
-                          placeholder="Enter your name"
-                        ></b-form-input>
-                      </b-col>
-                    </b-row>
-                    <b-row class="my-1">
-                      <b-col sm="3" cols="4" lg="3" align="right">
-                        <label for="input-default">อำเภอ:</label>
-                      </b-col>
-                      <b-col sm="9" cols="8" lg="9">
-                        <b-form-input
-                          id="input-default"
-                          placeholder="Enter your name"
-                        ></b-form-input>
-                      </b-col>
-                    </b-row>
-                    <b-row class="my-1">
-                      <b-col sm="3" cols="4" lg="3" align="right">
-                        <label for="input-default">จังหวัด:</label>
-                      </b-col>
-                      <b-col sm="9" cols="8" lg="9">
-                        <b-form-input
-                          id="input-default"
-                          placeholder="Enter your name"
-                        ></b-form-input>
-                      </b-col>
-                    </b-row>
-                    <b-row class="my-1" >
-                      <b-col sm="3" cols="4" lg="3" align="right">
-                        <label for="input-default">รหัสไปรษณีย์:</label>
-                      </b-col>
-                      <b-col sm="9" cols="8" lg="9">
-                        <b-form-input
-                          id="input-default"
-                          placeholder="Enter your name"
-                        ></b-form-input>
-                      </b-col>
-                    </b-row>
-                    <b-row class="my-1">
-                      <b-col sm="3" cols="4" lg="3" align="right">
-                        <label for="input-default">เบอร์โทร:</label>
-                      </b-col>
-                      <b-col sm="9" cols="8" lg="9">
-                        <b-form-input
-                          id="input-default"
-                          placeholder="Enter your name"
-                        ></b-form-input>
-                      </b-col>
-                    </b-row>
-                    <b-row class="my-1">
-                      <b-col sm="3" cols="4" lg="3" align="right">
-                        <label for="input-default">อีเมล:</label>
-                      </b-col>
-                      <b-col sm="9" cols="8" lg="9">
-                        <b-form-input
-                          id="input-small" size="sm" 
-                          placeholder="Enter your name"
-                        ></b-form-input>
-                      </b-col>
-                    </b-row>
-                    <b-row class="my-1">
-                      <b-col sm="3" cols="4" lg="3" align="right">
-                        <label for="input-small">รหัสผ่าน:</label>
-                      </b-col>
-                      <b-col sm="9"  cols="8" lg="9">
-                        <b-form-input
-                          id="input-small" size="sm" 
-                          placeholder="Enter your name"
-                        ></b-form-input>
-                      </b-col>
-                    </b-row>
-                    <b-button
-                      class="mt-2"
-                      variant="outline-warning"
-                      block
-                      @click="toggleModal"
-                      >บันทึก</b-button
-                    >
-                  </b-modal>
-                </div>
-              </div>
-              <b-row>
-                <b-col lg="3" cols="3" style="padding: 0px">
-                  <b-img
-                  
-                    rounded="circle"
-                    style="width: 70px"
-                    src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/selfie.png?alt=media&token=37b192db-e5d7-4398-a52b-35c86258fde9"
-                  ></b-img>
-                  <b> username</b>
-                </b-col>
-                <b-col lg="9" cols="9" style="padding: 0px">
-                  <div align="left" style="margin-left: 10px; font-size: 14px">
-                    ชื่อ ดาวนภา เฉลิมทรานุวัฒน์ <br />
-                    <b-row
-                      align="left"
-                      style="margin-left: 0px; margin-top: 5px"
-                    >
-                    </b-row>
-                    <div style="font-size: 14px">เบอร์โทร</div>
-
-                    <div style="font-size: 14px">อีเมล</div>
-
-                    <div style="font-size: 14px">รหัสผ่าน</div>
-                  </div>
-                </b-col>
-              </b-row>
-            </b-card>
-          </b-col>
-          <b-col lg="4" cols="12">
-            <b-card>
-              <div align="right">
-                <b-icon icon="pencil-square" variant="warning"></b-icon>
+                <b-icon icon="pencil-square" style="font-size: 23px !important;" variant="warning" @click="edit(item)"></b-icon>
               </div>
               <b-row>
                 <b-col lg="3" cols="3" style="padding: 0px; margin-top: 0px">
                   <b-img
-                  
                     rounded="circle"
                     style="width: 70px"
-                    src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/selfie.png?alt=media&token=37b192db-e5d7-4398-a52b-35c86258fde9"
-                  ></b-img>
-                  <b> username</b>
+                    :src="item.IMG"
+                  ></b-img> <br>
+                  <b> {{ item.USERNAME }}</b>
                 </b-col>
                 <b-col lg="9" cols="9" style="padding: 0px">
                   <div align="left" style="margin-left: 10px; font-size: 14px">
-                    ชื่อ ดาวนภา เฉลิมทรานุวัฒน์ <br />
+                    ชื่อ {{ item.NAME }} {{ item.LNAME }} <br />
                     <b-row
                       align="left"
                       style="margin-left: 0px; margin-top: 10px"
@@ -299,95 +87,323 @@
                         cols="5"
                         lg="6"
                         style="font-size: 12px; padding: 0px"
-                        >298</b-col
-                      >
-                      <b-col
-                        cols="7"
-                        lg="6"
-                        style="font-size: 12px; padding: 0px"
-                        >ถนน มูลเมือง</b-col
+                        >ที่อยู่ {{ item.ADDRESS }}</b-col
                       >
                       <b-col
                         cols="5"
                         lg="6"
                         style="font-size: 12px; padding: 0px"
-                        >ตำบล ศรีภูมิ</b-col
+                        >ตำบล {{ item.SUBDISTRICT }}</b-col
                       >
 
                       <b-col
                         cols="7"
                         lg="6"
                         style="font-size: 12px; padding: 0px"
-                        >อำเภอ เมืองเชียงใหม่</b-col
+                        >อำเภอ {{ item.DISTRICT }}</b-col
                       >
                       <b-col
                         cols="5"
                         lg="6"
                         style="font-size: 12px; padding: 0px"
-                        >จังหวัด ประจวบคีรีขันธ์
+                        >จังหวัด {{ item.PROVINCE }}
                       </b-col>
                       <b-col
                         sm="2"
                         cols="7"
                         lg="6"
                         style="font-size: 12px; padding: 0px"
-                        >50000</b-col
+                        >รหัสไปรษณีย์ {{ item.ZIPCODE }}</b-col
                       >
                     </b-row>
-                    <div style="font-size: 12px">เบอร์โทร</div>
+                    <div style="font-size: 12px">
+                      เบอร์โทร {{ item.PHONE_NUMBER }}
+                    </div>
 
-                    <div style="font-size: 12px">อีเมล</div>
-
-                    <div style="font-size: 12px">รหัสผ่าน</div>
+                    <div style="font-size: 12px">อีเมล {{ item.EMAIL }}</div>
                   </div>
                 </b-col>
               </b-row>
             </b-card>
           </b-col>
-          <b-col lg="4" cols="12">
-            <b-card>
-              <b-row>
-                <b-col lg="3" cols="3" style="padding: 0px">
-                  <b-img
-                  
-                    rounded="circle"
-                    style="width: 80px"
-                    src="https://firebasestorage.googleapis.com/v0/b/chaiyongimg.appspot.com/o/selfie.png?alt=media&token=37b192db-e5d7-4398-a52b-35c86258fde9"
-                  ></b-img>
-                  <b> username</b>
-                </b-col>
-                <b-col lg="9" cols="9" style="padding: 0px">
-                  <div align="left" style="margin-left: 10px">ชื่อ-นามสกุล</div>
-                </b-col>
-              </b-row>
-            </b-card>
-          </b-col>
         </b-row>
+        <b-modal ref="my-modal" size="lg" hide-footer title="เเก้ไขข้อมุล">
+          <b-row>
+            <b-col cols="12" lg="6" style="margin-top: 20px">
+              <b-form-input
+                id="input-default"
+                placeholder="ชื่อ*"
+                v-model="NAME"
+              ></b-form-input>
+            </b-col>
+            <b-col cols="12" lg="6" style="margin-top: 20px">
+              <b-form-input
+                id="input-default"
+                placeholder="นามสกุล*"
+                v-model="LNAME"
+              ></b-form-input>
+            </b-col>
+            <b-col cols="12" lg="6" style="margin-top: 20px">
+              <b-form-input
+                id="input-default"
+                placeholder="เบอร์โทร*"
+                v-model="PHONE_NUMBER"
+              ></b-form-input>
+            </b-col>
+            <b-col cols="12" lg="6" style="margin-top: 20px">
+              <b-form-input
+                id="input-default"
+                placeholder="อีเมล"
+                v-model="EMAIL"
+              ></b-form-input>
+            </b-col>
+            <b-col cols="12" lg="6" style="margin-top: 20px">
+              <b-form-input
+                id="input-default"
+                placeholder="ชื่อผู้ใช้*"
+                v-model="USERNAME"
+              ></b-form-input>
+            </b-col>
+            <b-col cols="12" lg="6" style="margin-top: 20px">
+              <b-form-input
+                id="input-default"
+                placeholder="รหัสผ่าน*"
+                v-model="PASSWORD"
+                type="password"
+              ></b-form-input>
+            </b-col>
+            <b-col cols="12" style="margin-top: 20px">
+              <b-form-input
+                id="input-default"
+                placeholder="ที่อยู่*"
+                v-model="ADDRESS"
+              ></b-form-input>
+            </b-col>
+          </b-row>
+          <b-row>
+            <!-- รหัสไปรษณีย์ -->
+            <b-col cols="6" lg="6" style="margin-top: 20px">
+              <div class="address">
+                <addressinput-zipcode v-model="ZIPCODE" />
+              </div>
+            </b-col>
+            <!--ตำบล/แขวง -->
+            <b-col cols="6" lg="6" style="margin-top: 20px">
+              <div class="address">
+                <addressinput-subdistrict v-model="SUBDISTRICT" />
+              </div>
+            </b-col>
+            <!-- อำเภอ/เขต -->
+            <b-col cols="6" lg="6" style="margin-top: 10px">
+              <div class="address">
+                <addressinput-district v-model="DISTRICT" />
+              </div>
+            </b-col>
+            <!-- จังหวัด -->
+            <b-col cols="6" lg="6" style="margin-top: 10px">
+              <div class="address">
+                <addressinput-province v-model="PROVINCE" />
+              </div>
+            </b-col>
+          </b-row>
+          <b-row>
+            <b-col cols="12" style="margin-top: 20px">
+              <b-form-file
+                @change="previewImage"
+                v-model="IMG"
+                accept="image/*"
+                placeholder="อัพโหลดโปรไฟล์"
+                align="center"
+                drop-placeholder="Drop file here..."
+              ></b-form-file>
+            </b-col>
+          </b-row>
+          <b-button
+            class="mt-3"
+            variant="outline-warning"
+            block
+            @click="update(member)"
+            >เเก้ไข</b-button
+          >
+        </b-modal>
       </div>
     </div>
   </div>
 </template>
 <script>
+import axios from "axios";
+import firebase from "firebase";
+const api_url = require("../../../utilities/api");
 export default {
   data() {
     return {
-      text2: "",
+      NAMEUSER: "",
+      items: null,
+      member: null,
+      num: 0,
+      search: "",
+      NAME: "",
+      LNAME: "",
+      PHONE_NUMBER: "",
+      EMAIL: "",
+      USERNAME: "",
+      PASSWORD: "",
+      ADDRESS: "",
+      ZIPCODE: "",
+      SUBDISTRICT: "",
+      DISTRICT: "",
+      PROVINCE: "",
+      IMG: "",
     };
   },
+  created() {
+    this.NAMEUSER = localStorage.getItem("USER");
+    // สินค้า
+    axios
+      .post(`${api_url.api_url}/selectmemberALL`, {
+        search: this.search,
+      })
+      .then((response) => {
+        console.log(response.data);
+        this.num = response.data.length;
+        this.items = response.data;
+      });
+  },
   methods: {
-    formatter(value) {
-      return value.toLowerCase();
+    // nav
+    costomer() {
+      this.$router.push({ path: "/admincustomer" });
     },
-    showModal() {
-      this.$refs["my-modal"].show();
+    product() {
+      this.$router.push({ path: "/adminproduct" });
     },
-    hideModal() {
+    order() {
+      this.$router.push({ path: "/adminorder" });
+    },
+    logouts() {
+      console.log("logout");
+      this.$router.push({ path: "/" });
+      localStorage.clear();
+    },
+    // nav
+     serchProduct() {
+      // สินค้า
+      axios
+        .post(`${api_url.api_url}/selectmemberALL`, {
+          search: this.search,
+        })
+        .then((response) => {
+          console.log(response.data);
+           this.num = response.data.length;
+          this.items = response.data;
+        });
+    },
+    edit(x) {
+      console.log(x);
+      (this.member = x),
+        (this.NAME = x.NAME),
+        (this.LNAME = x.LNAME),
+        (this.PHONE_NUMBER = x.PHONE_NUMBER),
+        (this.EMAIL = x.EMAIL),
+        (this.USERNAME = x.USERNAME),
+        (this.PASSWORD = x.PASSWORD),
+        (this.ADDRESS = x.ADDRESS),
+        (this.ZIPCODE = x.ZIPCODE),
+        (this.SUBDISTRICT = x.SUBDISTRICT),
+        (this.DISTRICT = x.DISTRICT),
+        (this.PROVINCE = x.PROVINCE),
+        (this.IMG = x.IMG),
+        this.$refs["my-modal"].show();
+    },
+    previewImage(event) {
+      this.uploadValue = 0;
+      this.picture = null;
+      this.imageData = event.target.files[0];
+    },
+    update(x) {
+      console.log(x);
+      if (this.IMG != "") {
+        this.picture = null;
+        const storageRef = firebase
+          .storage()
+          .ref(`${this.imageData.name}`)
+          .put(this.imageData);
+        storageRef.on(
+          `state_changed`,
+          (snapshot) => {
+            this.uploadValue =
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          },
+          (error) => {
+            // console.log(error.message);
+          },
+          () => {
+            this.uploadValue = 100;
+            storageRef.snapshot.ref.getDownloadURL().then((url) => {
+              this.picture = url;
+              console.log(url);
+              axios
+                .post(`${api_url.api_url}/updateMember`, {
+                  NAME: this.NAME,
+                  LNAME: this.LNAME,
+                  PHONE_NUMBER: this.PHONE_NUMBER,
+                  EMAIL: this.EMAIL,
+                  USERNAME: this.USERNAME,
+                  PASSWORD: this.PASSWORD,
+                  ADDRESS: this.ADDRESS,
+                  ZIPCODE: this.ZIPCODE,
+                  SUBDISTRICT: this.SUBDISTRICT,
+                  DISTRICT: this.DISTRICT,
+                  PROVINCE: this.PROVINCE,
+                  IMG: url,
+                  MEMBER_ID: x.MEMBER_ID,
+                })
+                .then((response) => {
+                  console.log(response.data);
+                  axios
+                    .post(`${api_url.api_url}/selectmemberALL`, {
+                      search: this.search,
+                    })
+                    .then((response) => {
+                      console.log(response.data);
+                       this.num = response.data.length;
+                      this.items = response.data;
+                    });
+                });
+            });
+          }
+        );
+      } else {
+        axios
+          .post(`${api_url.api_url}/updateMember`, {
+            NAME: this.NAME,
+            LNAME: this.LNAME,
+            PHONE_NUMBER: this.PHONE_NUMBER,
+            EMAIL: this.EMAIL,
+            USERNAME: this.USERNAME,
+            PASSWORD: this.PASSWORD,
+            ADDRESS: this.ADDRESS,
+            ZIPCODE: this.ZIPCODE,
+            SUBDISTRICT: this.SUBDISTRICT,
+            DISTRICT: this.DISTRICT,
+            PROVINCE: this.PROVINCE,
+            IMG: x.IMG,
+            MEMBER_ID: x.MEMBER_ID,
+          })
+          .then((response) => {
+            console.log(response.data);
+            axios
+              .post(`${api_url.api_url}/selectmemberALL`, {
+                search: this.search,
+              })
+              .then((response) => {
+                console.log(response.data);
+                 this.num = response.data.length;
+                this.items = response.data;
+              });
+          });
+      }
       this.$refs["my-modal"].hide();
-    },
-    toggleModal() {
-      // We pass the ID of the button that we want to return focus to
-      // when the modal has hidden
-      this.$refs["my-modal2"].toggle("#toggle-btn");
     },
   },
 };

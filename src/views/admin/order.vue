@@ -1,40 +1,40 @@
 <template>
     <div>
         <div style="background: #f5f5f5">
-      <div>
-        <b-navbar toggleable="lg" type="dark" variant="info" style="z-index: 1">
-          <b-navbar-brand href="#">ChaiYang</b-navbar-brand>
+    <div>
+      <b-navbar toggleable="lg" type="dark" variant="info" style="z-index: 1">
+        <b-navbar-brand href="#">ChaiYang</b-navbar-brand>
 
-          <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-          <b-collapse id="nav-collapse" is-nav>
-            <b-navbar-nav>
-              <b-nav-item @click="gocustomer">ข้อมูลลูกค้า</b-nav-item>
-              <b-nav-item href="#" disabled>ข้อมูลสินค้า</b-nav-item>
-              <b-nav-item href="#">ออเดอร์สินค้า</b-nav-item>
-              <b-nav-item-dropdown text="ประวัติ" right>
-                <b-dropdown-item href="#">ประวัติการสั่งซื้อ</b-dropdown-item>
-                <b-dropdown-item href="#"
-                  >ประวัติการยกเลิกออเดอร์</b-dropdown-item
-                >
-              </b-nav-item-dropdown>
-              <b-nav-item href="#">dashboard</b-nav-item>
-            </b-navbar-nav>
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <b-nav-item @click="costomer()" >ข้อมูลลูกค้า</b-nav-item>
+            <b-nav-item @click="product()">ข้อมูลสินค้า</b-nav-item>
+            <b-nav-item @click="order()" disabled>ออเดอร์สินค้า</b-nav-item>
+            <b-nav-item-dropdown text="ประวัติ" right>
+              <b-dropdown-item href="#">ประวัติการสั่งซื้อ</b-dropdown-item>
+              <b-dropdown-item href="#"
+                >ประวัติการยกเลิกออเดอร์</b-dropdown-item
+              >
+            </b-nav-item-dropdown>
+            <b-nav-item href="#">dashboard</b-nav-item>
+          </b-navbar-nav>
 
-            <!-- Right aligned nav items -->
-            <b-navbar-nav class="ml-auto">
-              <b-nav-item-dropdown right>
-                <!-- Using 'button-content' slot -->
-                <template #button-content>
-                  <em>ชื่อผู้ใช้</em>
-                </template>
-                <b-dropdown-item href="#">โปรไฟล์</b-dropdown-item>
-                <b-dropdown-item href="#">ออกจากระบบ</b-dropdown-item>
-              </b-nav-item-dropdown>
-            </b-navbar-nav>
-          </b-collapse>
-        </b-navbar>
-      </div>
+          <!-- Right aligned nav items -->
+          <b-navbar-nav class="ml-auto">
+            <b-nav-item-dropdown right>
+              <!-- Using 'button-content' slot -->
+              <template #button-content>
+                <em>{{NAMEUSER}}</em>
+              </template>
+              <!-- <b-dropdown-item href="#">โปรไฟล์</b-dropdown-item> -->
+              <b-dropdown-item  @click="logouts">ออกจากระบบ</b-dropdown-item>
+            </b-nav-item-dropdown>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+    </div>
       <br /><br /><br />
 
       <div style="padding: 10px">
@@ -76,7 +76,7 @@
 
       </b-table>
 
-       <b-modal :id="infoModal1.id"   ref="modal-1" hide-footer>
+       <!-- <b-modal :id="infoModal1.id"   ref="modal-1" hide-footer>
           <b-container fluid>
             <div align="center">
               <b><h4>รายละเอียด</h4></b>
@@ -89,7 +89,7 @@
             </p>
             <p>ปัญหาการเเจ้งซ่อม : </p>
           </b-container>
-        </b-modal>
+        </b-modal> -->
 
     </div>
     </div>
@@ -98,6 +98,7 @@
 export default {
   data() { 
     return {
+        NAMEUSER:'',
       items: [
         { PRODUCT_CODE: 40, MEMBER_NAME: "Dickerson", FIX_STATUS: "Macdonald" },
       ],
@@ -127,6 +128,27 @@ export default {
     },
        }
     }
-  }
+  },
+  created() {
+     this.NAMEUSER = localStorage.getItem("USER")
+   },
+   methods:{
+      // nav
+    costomer(){
+      this.$router.push({ path: "/admincustomer" });
+    },
+    product(){
+      this.$router.push({ path: "/adminproduct" });
+    },
+    order(){
+      this.$router.push({ path: "/adminorder" });
+    },
+    logouts() {
+      console.log('logout');
+      this.$router.push({ path: "/" });
+       localStorage.clear();
+    },
+    // nav
+   }
 }
 </script>

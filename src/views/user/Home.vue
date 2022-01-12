@@ -10,43 +10,51 @@
         <br />
         <div style="margin-top: 0px; margin-right: 5px; margin-left: 5px">
           <b-row>
-            <b-col cols="12" lg="6"
-              ><b-input-group class="mb-2">
+            <b-col cols="12" lg="6">
+              <b-input-group class="mb-2">
                 <b-input-group-prepend is-text>
                   <b-icon icon="search"></b-icon>
                 </b-input-group-prepend>
                 <b-form-input
                   type="search"
-                  placeholder="ค้นหาสินค้า"
-                ></b-form-input> </b-input-group
-            ></b-col>
+                  v-model="search"
+                  @keyup="serchProduct()"
+                  placeholder="ค้นหา"
+                ></b-form-input>
+              </b-input-group>
+            </b-col>
           </b-row>
         </div>
       </div>
 
-      <div style="margin-right: 20px; margin-left: 20px; margin-top: 10px">
-        <b-row>
-          <b-col cols="12" lg="3" style="padding: 0px">
-            <b-card
-              class="card1"
-              style="background-color: #faebef; border: 0px; border-radius: 0px"
-            >
-              <div align="left">
-                <b class="less" style="color: #000">ครีมเปลี่ยนสีผม </b>
-                <h6>ครีมเปลี่ยนสีผม / ผงฟอกสี / น้ำยาดัดผม / น้ำยายืดผม</h6>
-              </div>
-            </b-card>
-          </b-col>
-          <b-col cols="12" lg="3" style="padding: 0px">
-            <b-card class="card1"> <b> ครีมเปลี่ยนสีผม </b> </b-card>
-          </b-col>
-          <b-col cols="12" lg="3" style="padding: 0px">
-            <b-card class="card1"> <b> ครีมเปลี่ยนสีผม </b> </b-card>
-          </b-col>
-          <b-col cols="12" lg="3" style="padding: 0px">
-            <b-card class="card1"> <b> ครีมเปลี่ยนสีผม </b> </b-card>
-          </b-col>
-          <!-- <b-col cols="12" lg="3" style="padding: 0px">
+      <div v-if="divS == 1">
+        <div style="margin-right: 20px; margin-left: 20px; margin-top: 10px">
+          <b-row>
+            <b-col cols="12" lg="3" style="padding: 0px">
+              <b-card
+                class="card1"
+                style="
+                  background-color: #faebef;
+                  border: 0px;
+                  border-radius: 0px;
+                "
+              >
+                <div align="left">
+                  <b class="less" style="color: #000">ครีมเปลี่ยนสีผม </b>
+                  <h6>ครีมเปลี่ยนสีผม / ผงฟอกสี / น้ำยาดัดผม / น้ำยายืดผม</h6>
+                </div>
+              </b-card>
+            </b-col>
+            <b-col cols="12" lg="3" style="padding: 0px">
+              <b-card class="card1"> <b> ครีมเปลี่ยนสีผม </b> </b-card>
+            </b-col>
+            <b-col cols="12" lg="3" style="padding: 0px">
+              <b-card class="card1"> <b> ครีมเปลี่ยนสีผม </b> </b-card>
+            </b-col>
+            <b-col cols="12" lg="3" style="padding: 0px">
+              <b-card class="card1"> <b> ครีมเปลี่ยนสีผม </b> </b-card>
+            </b-col>
+            <!-- <b-col cols="12" lg="3" style="padding: 0px">
             <button class="button2"></button>
           </b-col>
           <b-col cols="12" lg="3" style="padding: 0px">
@@ -55,109 +63,171 @@
           <b-col cols="12" lg="3" style="padding: 0px">
             <button class="button4"></button>
           </b-col> -->
-        </b-row>
-      </div>
-    </div>
-
-    <div style="margin-right: 5px; margin-left: 5px">
-      <b-card border-variant="light" align="left" style="margin-top: 20px">
-        <b-row>
-          <b-col cols="6" lg="6"
-            ><b style="color: #f5365c">สินค้าโปรโมชั่น </b></b-col
-          >
-          <b-col cols="6" lg="6" align="right">
-            <button class="buttonP" @click="gopromotion()">ทั้งหมด</button>
-          </b-col>
-        </b-row>
-        <hr class="style7" />
-        <br />
-        <div align="center">
-          <b-row>
-            <b-col
-              v-for="item in product1"
-              :key="item.PRODUCT_ID"
-              cols="6"
-              lg="3"
-              style="padding: 5px"
-            >
-              <b-card-group
-                deck
-                img-top
-                tag="article"
-                style="max-width: 20rem"
-                class="mb-2"
-                border-variant="light"
-                @click="godetail(item)"
-              >
-                <b-card :img-src="item.IMG" img-top>
-                  <b-card-text class="text1">
-                    <div align="left">
-                      <div style="line-height: 0.7">
-                        <b style="font-size: 12px">{{ item.PRODUCT_NAME }}</b>
-                      </div>
-                    </div>
-                    <div style="margin-top: 15px">
-                      <b-row>
-                        <b-col cols="6">
-                          <div align="left">
-                            <div style="line-height: 1.8">
-                              <h6 style="font-size: 18px">฿{{ item.PRICE }}</h6>
-                            </div>
-                          </div>
-                        </b-col>
-                        <b-col cols="6">
-                          <div align="right">
-                            <b-icon
-                              icon="heart"
-                              style="width: 20px; height: 20px"
-                              variant="danger"
-                            ></b-icon>
-                          </div>
-                        </b-col>
-                      </b-row>
-                    </div>
-                  </b-card-text>
-                </b-card>
-              </b-card-group>
-            </b-col>
           </b-row>
         </div>
-      </b-card>
-      <b-card border-variant="light" align="left" style="margin-top: 20px">
-        <b-row>
-          <b-col cols="6" lg="6"
-            ><b style="color: #f5365c">สินค้าขายดี </b></b-col
-          >
-          <b-col cols="6" lg="6" align="right">
-            <button class="buttonP" @click="gobestsale()">ทั้งหมด</button>
-          </b-col>
-        </b-row>
 
-        <hr class="style7" />
-        <br />
-        <div align="center">
+        <div style="margin-right: 5px; margin-left: 5px">
+          <b-card border-variant="light" align="left" style="margin-top: 20px">
+            <b-row>
+              <b-col cols="6" lg="6"
+                ><b style="color: #f5365c">สินค้าโปรโมชั่น </b></b-col
+              >
+              <b-col cols="6" lg="6" align="right">
+                <button class="buttonP" @click="gopromotion()">ทั้งหมด</button>
+              </b-col>
+            </b-row>
+            <hr class="style7" />
+            <br />
+            <div align="center">
+              <b-row>
+                <b-col
+                  v-for="item in product1"
+                  :key="item.PRODUCT_ID"
+                  cols="6"
+                  lg="3"
+                  style="padding: 5px"
+                >
+                  <b-card-group
+                    deck
+                    img-top
+                    tag="article"
+                    style="max-width: 20rem"
+                    class="mb-2"
+                    border-variant="light"
+                    @click="godetail(item)"
+                  >
+                    <b-card :img-src="item.IMG" img-top>
+                      <b-card-text class="text1">
+                        <div align="left">
+                          <div style="line-height: 0.7">
+                            <b style="font-size: 12px">{{
+                              item.PRODUCT_NAME
+                            }}</b>
+                          </div>
+                        </div>
+                        <div style="margin-top: 15px">
+                          <b-row>
+                            <b-col cols="6">
+                              <div align="left">
+                                <div style="line-height: 1.8">
+                                  <h6 style="font-size: 18px">
+                                    ฿{{ item.PRICE }}
+                                  </h6>
+                                </div>
+                              </div>
+                            </b-col>
+                            <b-col cols="6">
+                              <div align="right">
+                                <b-icon
+                                  icon="heart"
+                                  style="width: 20px; height: 20px"
+                                  variant="danger"
+                                ></b-icon>
+                              </div>
+                            </b-col>
+                          </b-row>
+                        </div>
+                      </b-card-text>
+                    </b-card>
+                  </b-card-group>
+                </b-col>
+              </b-row>
+            </div>
+          </b-card>
+          <b-card border-variant="light" align="left" style="margin-top: 20px">
+            <b-row>
+              <b-col cols="6" lg="6"
+                ><b style="color: #f5365c">สินค้าขายดี </b></b-col
+              >
+              <b-col cols="6" lg="6" align="right">
+                <button class="buttonP" @click="gobestsale()">ทั้งหมด</button>
+              </b-col>
+            </b-row>
+
+            <hr class="style7" />
+            <br />
+            <div align="center">
+              <b-row>
+                <b-col
+                  v-for="item in product2"
+                  :key="item.PRODUCT_ID"
+                  cols="6"
+                  lg="3"
+                  style="padding: 5px"
+                >
+                  <b-card-group
+                    deck
+                    img-top
+                    tag="article"
+                    style="max-width: 20rem"
+                    class="mb-2"
+                    border-variant="light"
+                    @click="godetail(item)"
+                  >
+                    <b-card :img-src="item.IMG" img-top>
+                      <b-card-text>
+                        <div align="left">
+                          <div class="fonts" style="font-size: 15px">
+                            <b>{{ item.PRODUCT_NAME }}</b>
+                          </div>
+                          <b-row>
+                            <b-col cols="6"
+                              ><div align="left">
+                                <h6 style="font-size: 12px">
+                                  ฿{{ item.PRICE }}
+                                </h6>
+                              </div>
+                            </b-col>
+                            <b-col cols="6">
+                              <div align="right">
+                                <b-icon
+                                  icon="heart"
+                                  style="width: 20px; height: 20px"
+                                  variant="danger"
+                                ></b-icon>
+                              </div>
+                            </b-col>
+                          </b-row>
+                        </div>
+                      </b-card-text>
+                    </b-card>
+                  </b-card-group>
+                </b-col>
+              </b-row>
+            </div>
+          </b-card>
+        </div>
+
+        <div
+          align="left"
+          style="
+            font-size: 1.2rem;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-left: 10px;
+          "
+        >
+          <b>สินค้าทั้งหมด</b>
+        </div>
+        <div style="margin-right: 20px; margin-left: 20px">
           <b-row>
             <b-col
-              v-for="item in product2"
+              v-for="item in product3"
               :key="item.PRODUCT_ID"
               cols="6"
-              lg="3"
+              lg="2"
               style="padding: 5px"
             >
               <b-card-group
                 deck
-                img-top
-                tag="article"
                 style="max-width: 20rem"
-                class="mb-2"
-                border-variant="light"
                 @click="godetail(item)"
               >
                 <b-card :img-src="item.IMG" img-top>
                   <b-card-text>
                     <div align="left">
                       <div class="fonts" style="font-size: 15px">
-                        <b>{{ item.PRODUCT_NAME }}</b>
+                        <p>{{ item.PRODUCT_NAME }}</p>
                       </div>
                       <b-row>
                         <b-col cols="6"
@@ -182,92 +252,79 @@
             </b-col>
           </b-row>
         </div>
-      </b-card>
-    </div>
-
-    <div align="left" style="font-size: 1.2rem; margin-top: 10px;margin-right: 10px; margin-left: 10px">
-        <b>สินค้าทั้งหมด</b>
       </div>
-    <div style="margin-right: 20px; margin-left: 20px">
-      
-      <b-row>
-        <b-col
-          v-for="item in product3"
-          :key="item.PRODUCT_ID"
-          cols="6"
-          lg="2"
-          style="padding: 5px"
-        >
-          <b-card-group deck style="max-width: 20rem" @click="godetail(item)">
-            <b-card :img-src="item.IMG" img-top>
-              <b-card-text>
-                <div align="left">
-                  <div class="fonts" style="font-size: 15px">
-                    <p>{{ item.PRODUCT_NAME }}</p>
-                  </div>
-                  <b-row>
-                    <b-col cols="6"
-                      ><div align="left">
-                        <h6 style="font-size: 12px">฿{{ item.PRICE }}</h6>
-                      </div>
-                    </b-col>
-                    <b-col cols="6">
-                      <div align="right">
-                        <b-icon
-                          icon="heart"
-                          style="width: 20px; height: 20px"
-                          variant="danger"
-                        ></b-icon>
-                      </div>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-card-text>
-            </b-card>
-          </b-card-group>
-        </b-col>
-      </b-row>
     </div>
 
+    <div v-if="divS == 2">
+      <div style="margin-right: 20px; margin-left: 20px">
+        <b-row>
+          <b-col
+            v-for="item in productall"
+            :key="item.PRODUCT_ID"
+            cols="6"
+            lg="2"
+            style="padding: 5px"
+          >
+            <b-card-group deck style="max-width: 20rem" @click="godetail(item)">
+              <b-card :img-src="item.IMG" img-top>
+                <b-card-text>
+                  <div align="left">
+                    <div class="fonts" style="font-size: 15px">
+                      <p>{{ item.PRODUCT_NAME }}</p>
+                    </div>
+                    <b-row>
+                      <b-col cols="6"
+                        ><div align="left">
+                          <h6 style="font-size: 12px">฿{{ item.PRICE }}</h6>
+                        </div>
+                      </b-col>
+                      <b-col cols="6">
+                        <div align="right">
+                          <b-icon
+                            icon="heart"
+                            style="width: 20px; height: 20px"
+                            variant="danger"
+                          ></b-icon>
+                        </div>
+                      </b-col>
+                    </b-row>
+                  </div>
+                </b-card-text>
+              </b-card>
+            </b-card-group>
+          </b-col>
+        </b-row>
+      </div>
+    </div>
     <!-- footer -->
     <br /><br />
     <div class="footerr">
-      
-        <b-row>
-          <b-col cols="4">
-            <div style="padding-top: 10px">
-              <b-icon
-                icon="house-fill"
-                variant="light"
-                font-scale="1.5"
-              ></b-icon>
-            </div>
-            <font color="#FFFFFF">สินค้า</font>
-          </b-col>
+      <b-row>
+        <b-col cols="4">
+          <div style="padding-top: 10px">
+            <b-icon icon="house-fill" variant="light" font-scale="1.5"></b-icon>
+          </div>
+          <font color="#FFFFFF">สินค้า</font>
+        </b-col>
 
-          <b-col cols="4">
-            <div style="padding-top: 10px">
-              <b-icon
-                icon="heart-fill"
-                variant="light"
-                font-scale="1.5"
-              ></b-icon>
-            </div>
-            <font color="#FFFFFF">ถูกใจ</font>
-          </b-col>
+        <b-col cols="4">
+          <div style="padding-top: 10px">
+            <b-icon icon="heart-fill" variant="light" font-scale="1.5"></b-icon>
+          </div>
+          <font color="#FFFFFF">ถูกใจ</font>
+        </b-col>
 
-          <b-col cols="4" @click="goshopping()">
-            <div style="padding-top: 10px">
-              <b-icon
-                icon="basket-fill"
-                variant="light"
-                font-scale="1.5"
-              ></b-icon>
-            </div>
-            <font color="#FFFFFF">รถเข็น</font>
-          </b-col>
-        </b-row>
-    
+        <b-col cols="4" @click="goshopping()">
+          <div style="padding-top: 10px">
+            <b-icon
+              icon="basket-fill"
+              variant="light"
+              font-scale="1.5"
+            ></b-icon>
+          </div>
+          <font color="#FFFFFF">รถเข็น</font>
+        </b-col>
+      </b-row>
     </div>
     <!-- footer -->
   </div>
@@ -286,6 +343,8 @@ export default {
     product1: null,
     product2: null,
     product3: null,
+    productall: null,
+    divS: 1,
   }),
   created() {
     // สินค้าโปรโมชั่น
@@ -306,8 +365,25 @@ export default {
   },
   mounted() {},
   methods: {
+    serchProduct() {
+      // สินค้า
+      console.log(this.search.length);
+      if (this.search.length > 0) {
+        this.divS = 2;
+        axios
+          .post(`${api_url.api_url}/selectproductALL`, {
+            search: this.search,
+          })
+          .then((response) => {
+            console.log(response.data);
+            this.productall = response.data;
+          });
+      } else {
+        this.divS = 1;
+      }
+    },
     godetail(item) {
-      this.$store.commit("Detail/SET_PRODUCT_ID", item.PRODUCT_ID);
+       localStorage.setItem("IDPRODUCT", item.PRODUCT_ID);
       this.$router.push({ path: "/userdetail" });
     },
     gopromotion() {

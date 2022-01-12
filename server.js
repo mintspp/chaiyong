@@ -54,6 +54,16 @@ app.post('/insertMember', async (req, res) => {
   res.send(query)
 });
 
+app.post('/login', async (req, res) => {
+  const {
+    body
+  } = req;
+  var query = await query_command(`SELECT * FROM MEMBER 
+  WHERE USERNAME ='${body.USERNAME}' AND PASSWORD ='${body.PASSWORD}'`)
+
+  res.send(query)
+});
+
 app.post('/insertProduct', async (req, res) => {
   const {
     body
@@ -63,6 +73,30 @@ app.post('/insertProduct', async (req, res) => {
   //console.log(query);
   res.send(query)
 });
+
+app.post('/Shoppingcart', async(req, res) => {
+  const {
+      body
+  } = req;
+          var select = await query_command(`SELECT COUNT(*) AS countshopping FROM SHOPPING_CART JOIN cart ON shopping_cart.CART_ID = cart.CART_ID
+          WHERE MEMBER_ID = ${body.MEMBER_ID} AND STATUS = '1'`)
+          // console.log(select[0].countshopping > 0);
+          if (select[0].countshopping > 0) {
+            var cart = await query_command(`SELECT * FROM cart WHERE MEMBER_ID = ${body.MEMBER_ID} ORDER BY CART_ID DESC LIMIT 1`)
+            // console.log(cart[0].CART_ID);
+            var insertpd = await query_command(`INSERT INTO SHOPPING_CART (CART_ID,PRODUCT_ID,TOTAL)
+            VALUES (${cart[0].CART_ID},${body.PRODUCT_ID},'${body.TOTAL}')`)
+          }else{
+            var insertMB = await query_command(`INSERT INTO CART (MEMBER_ID)
+            VALUES (${body.MEMBER_ID})`)
+            console.log(insertMB.insertId);
+            var insertpd = await query_command(`INSERT INTO SHOPPING_CART (CART_ID,PRODUCT_ID,TOTAL)
+            VALUES (${insertMB.insertId},${body.PRODUCT_ID},'${body.TOTAL}')`)
+          }
+         
+  res.send(insertpd)
+});
+
 
 app.post('/updateProduct', async (req, res) => {
   const {
@@ -84,6 +118,30 @@ app.post('/updateProduct', async (req, res) => {
   res.send(query)
 });
 
+app.post('/updateMember', async (req, res) => {
+  const {
+    body
+  } = req;
+  console.log(body);
+  var query = await query_command(`UPDATE member
+  SET 
+  NAME = '${body.NAME}', 
+  LNAME = '${body.LNAME}', 
+  PHONE_NUMBER = '${body.PHONE_NUMBER}', 
+  EMAIL = '${body.EMAIL}', 
+  USERNAME = '${body.USERNAME}', 
+  PASSWORD = '${body.PASSWORD}',
+  ADDRESS = '${body.ADDRESS}',
+  ZIPCODE = '${body.ZIPCODE}',
+  SUBDISTRICT = '${body.SUBDISTRICT}',
+  DISTRICT = '${body.DISTRICT}',
+  PROVINCE = '${body.PROVINCE}',
+  IMG = '${body.IMG}'
+  WHERE MEMBER_ID = ${body.MEMBER_ID};`);
+  console.log(query);
+  res.send(query)
+});
+
 app.post('/updateProductstatus', async (req, res) => {
   const {
     body
@@ -97,12 +155,45 @@ app.post('/updateProductstatus', async (req, res) => {
   res.send(query)
 });
 
+app.post('/selectshoppinguser', async (req, res) => {
+  const {
+    body
+  } = req;
+
+  var query = await query_command(`SELECT cart.MEMBER_ID,shopping_cart.*,product.* FROM cart 
+  JOIN shopping_cart ON cart.CART_ID = shopping_cart.CART_ID
+  JOIN product ON shopping_cart.PRODUCT_ID = product.PRODUCT_ID
+  WHERE MEMBER_ID = ${body.MEMBER_ID} AND shopping_cart.STATUS = '1'`);
+  //console.log(query);
+  res.send(query)
+});
+
 app.post('/selectproductALL', async (req, res) => {
   const {
     body
   } = req;
 
   var query = await query_command(`SELECT * FROM product WHERE STATUS IN ('1','2','3') AND PRODUCT_NAME LIKE "%${body.search}%" `);
+  //console.log(query);
+  res.send(query)
+});
+
+app.post('/selectmemberALL', async (req, res) => {
+  const {
+    body
+  } = req;
+
+  var query = await query_command(`SELECT * FROM member WHERE TYPE = '1' AND NAME LIKE "%${body.search}%"`);
+  //console.log(query);
+  res.send(query)
+});
+
+app.post('/checkmember', async (req, res) => {
+  const {
+    body
+  } = req;
+
+  var query = await query_command(`SELECT * FROM member WHERE MEMBER_ID = '${body.MEMBER_ID}'`);
   //console.log(query);
   res.send(query)
 });
@@ -117,15 +208,26 @@ app.post('/selectproduct3', async (req, res) => {
   res.send(query)
 });
 
-app.post('/selectproducts', async (req, res) => {
+app.post('/selectproduct3s', async (req, res) => {
   const {
     body
   } = req;
   console.log('bkk')
-  var query = await query_command(`SELECT * FROM product WHERE STATUS = '3'`);
+  var query = await query_command(`SELECT * FROM product WHERE STATUS = '3' AND PRODUCT_NAME LIKE "%${body.search}%"`);
   console.log(query);
   res.send(query)
 });
+
+app.post('/selectproduct2s', async (req, res) => {
+  const {
+    body
+  } = req;
+
+  var query = await query_command(`SELECT * FROM product WHERE STATUS = '2' AND PRODUCT_NAME LIKE "%${body.search}%" `);
+  //console.log(query);
+  res.send(query)
+});
+
 
 app.post('/selectproduct2', async (req, res) => {
   const {

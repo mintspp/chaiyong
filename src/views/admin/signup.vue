@@ -71,7 +71,6 @@
                   v-model="ADDRESS"
                 ></b-form-input>
               </b-col>
-              
             </b-row>
             <b-row>
               <!-- รหัสไปรษณีย์ -->
@@ -111,7 +110,7 @@
                 ></b-form-file>
               </b-col>
             </b-row>
-      
+
             <div>
               <b-button
                 pill
@@ -176,7 +175,7 @@ export default {
       this.picture = null;
       this.imageData = event.target.files[0];
     },
-    addREGISTER() {
+    async addREGISTER() {
       this.picture = null;
       const storageRef = firebase
         .storage()
@@ -196,7 +195,7 @@ export default {
           storageRef.snapshot.ref.getDownloadURL().then((url) => {
             this.picture = url;
             // console.log(url);
-            axios
+             axios
               .post(`${api_url.api_url}/insertMember`, {
                 NAME: this.NAME,
                 LNAME: this.LNAME,
@@ -213,7 +212,21 @@ export default {
               })
               .then((response) => {
                 console.log(response.data);
-                // this.$router.push({ path: "/addmember2" });
+                var data = {
+                  USERNAME: this.USERNAME,
+                  PASSWORD: this.PASSWORD,
+                };
+                 axios
+                  .post(`${api_url.api_url}/login`, data)
+                  .then((response) => {
+                    console.log(response.data);
+                    var res = response.data[0];
+                    localStorage.setItem("USER", res.NAME + " " + res.LNAME);
+                    localStorage.setItem("IDMEMBER", res.MEMBER_ID);
+                    localStorage.setItem("login", 1);
+                    console.log(localStorage.getItem("USER"));
+                    this.$router.push({ path: "/" });
+                  });
               });
           });
         }
