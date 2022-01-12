@@ -40,18 +40,18 @@
       <div style="padding: 10px">
         <b-row>
           <b-col xl="10" lg="10" sm="12">
-            <div align="left">
-              <b style="font-size: 20px; padding: 10px">ข้อมูลสินค้า </b>
+            <div align="center">
+              <b style="font-size: 16px; padding: 0px">ข้อมูลสินค้า </b>
             </div>
           </b-col>
           <b-col align="right">
             <b-button
               pill
               variant="warning"
-              style="width: 100%"
+
               @click="showModal"
             >
-              <b style="font-size: 18px; padding: 10px">เพิ่มสินค้า</b>
+              <b style="font-size: 16px; padding: 10px">เพิ่มสินค้า</b>
             </b-button>
           </b-col>
         </b-row>
