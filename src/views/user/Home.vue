@@ -84,7 +84,7 @@
                   v-for="item in product1"
                   :key="item.PRODUCT_ID"
                   cols="6"
-                  lg="3"
+                  lg="2"
                   style="padding: 5px"
                 >
                   <b-card-group
@@ -94,10 +94,11 @@
                     style="max-width: 20rem"
                     class="mb-2"
                     border-variant="light"
-                    @click="godetail(item)"
                   >
-                    <b-card :img-src="item.IMG" img-top>
-                      <b-card-text class="text1">
+                    <b-card style="padding: 0px" class="card55">
+                      <b-card-img @click="godetail(item)" :src="item.IMG">
+                      </b-card-img>
+                      <b-card-text class="text1" style="padding: 20px">
                         <div align="left">
                           <div style="line-height: 0.7">
                             <b style="font-size: 12px">{{
@@ -117,10 +118,19 @@
                               </div>
                             </b-col>
                             <b-col cols="6">
-                              <div align="right">
+                              <div v-if="item.checklike > 0" align="right">
+                                <b-icon
+                                  icon="heart-fill"
+                                  style="width: 30px; height: 30px"
+                                  @click="Like(item)"
+                                  variant="danger"
+                                ></b-icon>
+                              </div>
+                              <div v-else align="right">
                                 <b-icon
                                   icon="heart"
-                                  style="width: 20px; height: 20px"
+                                  style="width: 30px; height: 30px"
+                                  @click="Like(item)"
                                   variant="danger"
                                 ></b-icon>
                               </div>
@@ -152,7 +162,7 @@
                   v-for="item in product2"
                   :key="item.PRODUCT_ID"
                   cols="6"
-                  lg="3"
+                  lg="2"
                   style="padding: 5px"
                 >
                   <b-card-group
@@ -162,27 +172,43 @@
                     style="max-width: 20rem"
                     class="mb-2"
                     border-variant="light"
-                    @click="godetail(item)"
                   >
-                    <b-card :img-src="item.IMG" img-top>
-                      <b-card-text>
+                    <b-card style="padding: 0px" class="card55">
+                      <b-card-img @click="godetail(item)" :src="item.IMG">
+                      </b-card-img>
+                      <b-card-text class="text1" style="padding: 20px">
                         <div align="left">
-                          <div class="fonts" style="font-size: 15px">
-                            <b>{{ item.PRODUCT_NAME }}</b>
+                          <div style="line-height: 0.7">
+                            <b style="font-size: 12px">{{
+                              item.PRODUCT_NAME
+                            }}</b>
                           </div>
+                        </div>
+                        <div style="margin-top: 15px">
                           <b-row>
-                            <b-col cols="6"
-                              ><div align="left">
-                                <h6 style="font-size: 12px">
-                                  ฿{{ item.PRICE }}
-                                </h6>
+                            <b-col cols="6">
+                              <div align="left">
+                                <div style="line-height: 1.8">
+                                  <h6 style="font-size: 18px">
+                                    ฿{{ item.PRICE }}
+                                  </h6>
+                                </div>
                               </div>
                             </b-col>
                             <b-col cols="6">
-                              <div align="right">
+                              <div v-if="item.checklike > 0" align="right">
+                                <b-icon
+                                  icon="heart-fill"
+                                  style="width: 30px; height: 30px"
+                                  @click="Like(item)"
+                                  variant="danger"
+                                ></b-icon>
+                              </div>
+                              <div v-else align="right">
                                 <b-icon
                                   icon="heart"
-                                  style="width: 20px; height: 20px"
+                                  style="width: 30px; height: 30px"
+                                  @click="Like(item)"
                                   variant="danger"
                                 ></b-icon>
                               </div>
@@ -220,26 +246,44 @@
             >
               <b-card-group
                 deck
+                img-top
+                tag="article"
                 style="max-width: 20rem"
-                @click="godetail(item)"
+                class="mb-2"
+                border-variant="light"
               >
-                <b-card :img-src="item.IMG" img-top>
-                  <b-card-text>
+                <b-card style="padding: 0px" class="card55">
+                  <b-card-img @click="godetail(item)" :src="item.IMG">
+                  </b-card-img>
+                  <b-card-text class="text1" style="padding: 20px">
                     <div align="left">
-                      <div class="fonts" style="font-size: 15px">
-                        <p>{{ item.PRODUCT_NAME }}</p>
+                      <div style="line-height: 0.7">
+                        <b style="font-size: 12px">{{ item.PRODUCT_NAME }}</b>
                       </div>
+                    </div>
+                    <div style="margin-top: 15px">
                       <b-row>
-                        <b-col cols="6"
-                          ><div align="left">
-                            <h6 style="font-size: 12px">฿{{ item.PRICE }}</h6>
+                        <b-col cols="6">
+                          <div align="left">
+                            <div style="line-height: 1.8">
+                              <h6 style="font-size: 18px">฿{{ item.PRICE }}</h6>
+                            </div>
                           </div>
                         </b-col>
                         <b-col cols="6">
-                          <div align="right">
+                          <div v-if="item.checklike > 0" align="right">
+                            <b-icon
+                              icon="heart-fill"
+                              style="width: 30px; height: 30px"
+                              @click="Like(item)"
+                              variant="danger"
+                            ></b-icon>
+                          </div>
+                          <div v-else align="right">
                             <b-icon
                               icon="heart"
-                              style="width: 20px; height: 20px"
+                              style="width: 30px; height: 30px"
+                              @click="Like(item)"
                               variant="danger"
                             ></b-icon>
                           </div>
@@ -278,15 +322,7 @@
                           <h6 style="font-size: 12px">฿{{ item.PRICE }}</h6>
                         </div>
                       </b-col>
-                      <b-col cols="6">
-                        <div align="right">
-                          <b-icon
-                            icon="heart"
-                            style="width: 20px; height: 20px"
-                            variant="danger"
-                          ></b-icon>
-                        </div>
-                      </b-col>
+                      <b-col cols="6"> </b-col>
                     </b-row>
                   </div>
                 </b-card-text>
@@ -302,7 +338,7 @@
       <b-row>
         <b-col cols="4">
           <div style="padding-top: 10px">
-            <b-icon icon="house-fill" variant="light" font-scale="1.5"></b-icon>
+            <b-icon @click="backindex()" icon="house-fill" variant="light" font-scale="1.5"></b-icon>
           </div>
           <font color="#FFFFFF">สินค้า</font>
         </b-col>
@@ -345,26 +381,69 @@ export default {
     product3: null,
     productall: null,
     divS: 1,
+    search: "",
   }),
-  created() {
+  async created() {
     // สินค้าโปรโมชั่น
-    axios.post(`${api_url.api_url}/selectproduct3`).then((response) => {
-      console.log(response.data);
-      this.product1 = response.data;
-    });
+    let p1 = await axios.post(`${api_url.api_url}/selectproduct3`);
+    this.product1 = p1.data;
     // สินค้าขายดี
-    axios.post(`${api_url.api_url}/selectproduct2`).then((response) => {
-      console.log(response.data);
-      this.product2 = response.data;
-    });
+    let p2 = await axios.post(`${api_url.api_url}/selectproduct2`);
+    this.product2 = p2.data;
     // ทั้งหมด
-    axios.post(`${api_url.api_url}/selectproduct`).then((response) => {
-      console.log(response.data);
-      this.product3 = response.data;
-    });
+    let p3 = await axios.post(`${api_url.api_url}/selectproduct`);
+    this.product3 = p3.data;
+    // checklike
+    var order1 = [];
+    for (let index = 0; index < p1.data.length; index++) {
+      const element = p1.data[index];
+      console.log(element.PRODUCT_ID);
+      order1.push(element);
+      let check = await axios.post(`${api_url.api_url}/selectproductlike`, {
+        PRODUCT_ID: element.PRODUCT_ID,
+        MEMBER_ID: localStorage.getItem("IDMEMBER"),
+      });
+      console.log(check.data.length);
+      order1[index].checklike = check.data.length;
+    }
+    console.log(order1);
+    this.product1 = order1;
+
+    var order2 = [];
+    for (let index = 0; index < p2.data.length; index++) {
+      const element = p2.data[index];
+      console.log(element.PRODUCT_ID);
+      order2.push(element);
+      let check = await axios.post(`${api_url.api_url}/selectproductlike`, {
+        PRODUCT_ID: element.PRODUCT_ID,
+        MEMBER_ID: localStorage.getItem("IDMEMBER"),
+      });
+      console.log(check.data.length);
+      order2[index].checklike = check.data.length;
+    }
+    console.log(order2);
+    this.product2 = order2;
+
+    var order3 = [];
+    for (let index = 0; index < p3.data.length; index++) {
+      const element = p3.data[index];
+      console.log(element.PRODUCT_ID);
+      order3.push(element);
+      let check = await axios.post(`${api_url.api_url}/selectproductlike`, {
+        PRODUCT_ID: element.PRODUCT_ID,
+        MEMBER_ID: localStorage.getItem("IDMEMBER"),
+      });
+      console.log(check.data.length);
+      order3[index].checklike = check.data.length;
+    }
+    console.log(order3);
+    this.product3 = order3;
   },
   mounted() {},
   methods: {
+    backindex() {
+      this.$router.push({ path: "/" });
+    },
     serchProduct() {
       // สินค้า
       console.log(this.search.length);
@@ -383,7 +462,7 @@ export default {
       }
     },
     godetail(item) {
-       localStorage.setItem("IDPRODUCT", item.PRODUCT_ID);
+      localStorage.setItem("IDPRODUCT", item.PRODUCT_ID);
       this.$router.push({ path: "/userdetail" });
     },
     gopromotion() {
@@ -394,6 +473,85 @@ export default {
     },
     goshopping() {
       this.$router.push({ path: "/usershopping" });
+    },
+    async reset() {
+      // สินค้าโปรโมชั่น
+      let p1 = await axios.post(`${api_url.api_url}/selectproduct3`);
+      this.product1 = p1.data;
+      // สินค้าขายดี
+      let p2 = await axios.post(`${api_url.api_url}/selectproduct2`);
+      this.product2 = p2.data;
+      // ทั้งหมด
+      let p3 = await axios.post(`${api_url.api_url}/selectproduct`);
+      this.product3 = p3.data;
+      // checklike
+      var order1 = [];
+      for (let index = 0; index < p1.data.length; index++) {
+        const element = p1.data[index];
+        console.log(element.PRODUCT_ID);
+        order1.push(element);
+        let check = await axios.post(`${api_url.api_url}/selectproductlike`, {
+          PRODUCT_ID: element.PRODUCT_ID,
+          MEMBER_ID: localStorage.getItem("IDMEMBER"),
+        });
+        console.log(check.data.length);
+        order1[index].checklike = check.data.length;
+      }
+      console.log(order1);
+      this.product1 = order1;
+
+      var order2 = [];
+      for (let index = 0; index < p2.data.length; index++) {
+        const element = p2.data[index];
+        console.log(element.PRODUCT_ID);
+        order2.push(element);
+        let check = await axios.post(`${api_url.api_url}/selectproductlike`, {
+          PRODUCT_ID: element.PRODUCT_ID,
+          MEMBER_ID: localStorage.getItem("IDMEMBER"),
+        });
+        console.log(check.data.length);
+        order2[index].checklike = check.data.length;
+      }
+      console.log(order2);
+      this.product2 = order2;
+
+      var order3 = [];
+      for (let index = 0; index < p3.data.length; index++) {
+        const element = p3.data[index];
+        console.log(element.PRODUCT_ID);
+        order3.push(element);
+        let check = await axios.post(`${api_url.api_url}/selectproductlike`, {
+          PRODUCT_ID: element.PRODUCT_ID,
+          MEMBER_ID: localStorage.getItem("IDMEMBER"),
+        });
+        console.log(check.data.length);
+        order3[index].checklike = check.data.length;
+      }
+      console.log(order3);
+      this.product3 = order3;
+    },
+    Like(x) {
+      console.log(x);
+      if (x.checklike > 0) {
+        axios
+          .post(`${api_url.api_url}/updateLike`, {
+            PRODUCT_ID: x.PRODUCT_ID,
+          })
+          .then((response) => {
+            console.log(response.data);
+            this.reset(response);
+          });
+      } else {
+        axios
+          .post(`${api_url.api_url}/insertLike`, {
+            PRODUCT_ID: x.PRODUCT_ID,
+            MEMBER_ID: localStorage.getItem("IDMEMBER"),
+          })
+          .then((response) => {
+            console.log(response.data);
+            this.reset(response);
+          });
+      }
     },
   },
 };
@@ -527,5 +685,10 @@ export default {
 }
 .b1 {
   line-height: 0.2;
+}
+
+div .card55 .card-body {
+  min-height: 0px;
+  padding: 0px;
 }
 </style>

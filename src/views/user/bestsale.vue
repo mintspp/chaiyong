@@ -33,9 +33,17 @@
           lg="2"
           style="padding: 5px"
         >
-          <b-card-group deck style="max-width: 20rem" @click="godetail(item)">
-            <b-card :img-src="item.IMG" img-top>
-              <b-card-text class="text1">
+          <b-card-group
+            deck
+            img-top
+            tag="article"
+            style="max-width: 20rem"
+            class="mb-2"
+            border-variant="light"
+          >
+            <b-card style="padding: 0px" class="card55">
+              <b-card-img @click="godetail(item)" :src="item.IMG"> </b-card-img>
+              <b-card-text class="text1" style="padding: 20px">
                 <div align="left">
                   <div style="line-height: 0.7">
                     <b style="font-size: 12px">{{ item.PRODUCT_NAME }}</b>
@@ -51,10 +59,19 @@
                       </div>
                     </b-col>
                     <b-col cols="6">
-                      <div align="right">
+                      <div v-if="item.checklike > 0" align="right">
+                        <b-icon
+                          icon="heart-fill"
+                          style="width: 30px; height: 30px"
+                          @click="Like(item)"
+                          variant="danger"
+                        ></b-icon>
+                      </div>
+                      <div v-else align="right">
                         <b-icon
                           icon="heart"
-                          style="width: 20px; height: 20px"
+                          style="width: 30px; height: 30px"
+                          @click="Like(item)"
                           variant="danger"
                         ></b-icon>
                       </div>
@@ -109,16 +126,27 @@ export default {
     product2: null,
     search: "",
   }),
-  created() {
+  async created() {
     // สินค้าขายดี
-    axios
-      .post(`${api_url.api_url}/selectproduct2s`, {
-        search: this.search,
-      })
-      .then((response) => {
-        console.log(response.data);
-        this.product2 = response.data;
+    let p2 = await axios.post(`${api_url.api_url}/selectproduct2s`, {
+      search: this.search,
+    });
+    this.product2 = p2.data;
+    // checklike
+    var order2 = [];
+    for (let index = 0; index < p2.data.length; index++) {
+      const element = p2.data[index];
+      console.log(element.PRODUCT_ID);
+      order2.push(element);
+      let check = await axios.post(`${api_url.api_url}/selectproductlike`, {
+        PRODUCT_ID: element.PRODUCT_ID,
+        MEMBER_ID: localStorage.getItem("IDMEMBER"),
       });
+      console.log(check.data.length);
+      order2[index].checklike = check.data.length;
+    }
+    console.log(order2);
+    this.product2 = order2;
   },
   methods: {
     serchProduct() {
@@ -136,8 +164,53 @@ export default {
       this.$router.push({ path: "/" });
     },
     godetail(item) {
-       localStorage.setItem("IDPRODUCT", item.PRODUCT_ID);
+      localStorage.setItem("IDPRODUCT", item.PRODUCT_ID);
       this.$router.push({ path: "/userdetail" });
+    },
+    async reset() {
+      // สินค้าขายดี
+      let p2 = await axios.post(`${api_url.api_url}/selectproduct2s`, {
+        search: this.search,
+      });
+      this.product2 = p2.data;
+      // checklike
+      var order2 = [];
+      for (let index = 0; index < p2.data.length; index++) {
+        const element = p2.data[index];
+        console.log(element.PRODUCT_ID);
+        order2.push(element);
+        let check = await axios.post(`${api_url.api_url}/selectproductlike`, {
+          PRODUCT_ID: element.PRODUCT_ID,
+          MEMBER_ID: localStorage.getItem("IDMEMBER"),
+        });
+        console.log(check.data.length);
+        order2[index].checklike = check.data.length;
+      }
+      console.log(order2);
+      this.product2 = order2;
+    },
+    Like(x) {
+      console.log(x);
+      if (x.checklike > 0) {
+        axios
+          .post(`${api_url.api_url}/updateLike`, {
+            PRODUCT_ID: x.PRODUCT_ID,
+          })
+          .then((response) => {
+            console.log(response.data);
+            this.reset(response);
+          });
+      } else {
+        axios
+          .post(`${api_url.api_url}/insertLike`, {
+            PRODUCT_ID: x.PRODUCT_ID,
+            MEMBER_ID: localStorage.getItem("IDMEMBER"),
+          })
+          .then((response) => {
+            console.log(response.data);
+            this.reset(response);
+          });
+      }
     },
   },
 };

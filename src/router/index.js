@@ -10,6 +10,7 @@ import usershopping from '../views/user/shopping.vue';
 import usercart from '../views/user/cart.vue';
 import userlike from '../views/user/like.vue';
 import userprofile from '../views/user/profile.vue';
+import userhistoryshopping from '../views/user/historyshopping.vue';
 
 import adminlogin from '../views/admin/login.vue';
 import adminsignup from '../views/admin/signup.vue';
@@ -70,6 +71,11 @@ const routes = [
     path: '/userprofile',
     name: 'userlike',
     component: userprofile
+  },
+  {
+    path: '/userhistoryshopping',
+    name: 'user',
+    component: userhistoryshopping
   },
   {
     path: '/adminlogin',
